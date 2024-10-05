@@ -1,9 +1,0 @@
-[console_scripts]
-HardwareStatusPublisher = py_pkg.hardwareTest:main
-addTwoInt_noop = py_pkg.client_sumServer_noop:main
-client_sumServer = py_pkg.client_sumServer:main
-news_station = py_pkg.news_station:main
-py_node = py_pkg.first_node:main
-radio = py_pkg.radio:main
-sum_server = py_pkg.sum_server:main
-

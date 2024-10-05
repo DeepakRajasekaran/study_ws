@@ -1,2 +1,0 @@
-Invoking command in '/home/lucifer/humble_ws/study_ws/build/cpp_pkg': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/lucifer/humble_ws/study_ws/install/py_pkg:/opt/ros/humble /usr/bin/cmake --build /home/lucifer/humble_ws/study_ws/build/cpp_pkg -- -j8 -l8
-Invoked command in '/home/lucifer/humble_ws/study_ws/build/cpp_pkg' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/lucifer/humble_ws/study_ws/install/py_pkg:/opt/ros/humble /usr/bin/cmake --build /home/lucifer/humble_ws/study_ws/build/cpp_pkg -- -j8 -l8

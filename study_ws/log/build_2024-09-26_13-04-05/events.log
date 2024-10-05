@@ -1,5 +1,0 @@
-[0.000000] (-) TimerEvent: {}
-[0.000235] (-) JobUnselected: {'identifier': 'cpp_pkg'}
-[0.000265] (-) JobUnselected: {'identifier': 'irobot_interfaces'}
-[0.000283] (-) JobUnselected: {'identifier': 'py_pkg'}
-[0.000299] (-) EventReactorShutdown: {}

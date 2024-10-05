@@ -1,1 +1,0 @@
-/home/lucifer/humble_ws/study_ws/build/cpp_pkg/ament_cmake_environment_hooks/local_setup.sh

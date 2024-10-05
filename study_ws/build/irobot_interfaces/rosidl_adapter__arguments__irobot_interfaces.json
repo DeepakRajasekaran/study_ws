@@ -1,7 +1,0 @@
-{
-  "package_name": "irobot_interfaces",
-  "non_idl_tuples": [
-    "/home/lucifer/humble_ws/study_ws/src/irobot_interfaces:msg/HardwareStatus.msg",
-    "/home/lucifer/humble_ws/study_ws/src/irobot_interfaces:srv/ComputeRectangleArea.srv"
-  ]
-}
