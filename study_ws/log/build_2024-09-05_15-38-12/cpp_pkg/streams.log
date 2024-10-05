@@ -1,0 +1,27 @@
+[0.011s] Invoking command in '/home/lucifer/humble_ws/study_ws/build/cpp_pkg': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/lucifer/humble_ws/study_ws/install/py_pkg:/opt/ros/humble /usr/bin/cmake --build /home/lucifer/humble_ws/study_ws/build/cpp_pkg -- -j8 -l8
+[0.070s] [ 75%] [32mBuilding CXX object CMakeFiles/news_station.dir/src/news_station.cpp.o[0m
+[0.070s] [ 75%] Built target cpp_node
+[5.152s] [100%] [32m[1mLinking CXX executable news_station[0m
+[5.364s] [100%] Built target news_station
+[5.377s] Invoked command in '/home/lucifer/humble_ws/study_ws/build/cpp_pkg' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/lucifer/humble_ws/study_ws/install/py_pkg:/opt/ros/humble /usr/bin/cmake --build /home/lucifer/humble_ws/study_ws/build/cpp_pkg -- -j8 -l8
+[5.421s] Invoking command in '/home/lucifer/humble_ws/study_ws/build/cpp_pkg': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/lucifer/humble_ws/study_ws/install/py_pkg:/opt/ros/humble /usr/bin/cmake --install /home/lucifer/humble_ws/study_ws/build/cpp_pkg
+[5.429s] -- Install configuration: ""
+[5.430s] -- Up-to-date: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/lib/cpp_pkg/cpp_node
+[5.430s] -- Installing: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/lib/cpp_pkg/news_station
+[5.432s] -- Set runtime path of "/home/lucifer/humble_ws/study_ws/install/cpp_pkg/lib/cpp_pkg/news_station" to ""
+[5.432s] -- Up-to-date: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/share/ament_index/resource_index/package_run_dependencies/cpp_pkg
+[5.432s] -- Up-to-date: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/share/ament_index/resource_index/parent_prefix_path/cpp_pkg
+[5.433s] -- Up-to-date: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/share/cpp_pkg/environment/ament_prefix_path.sh
+[5.433s] -- Up-to-date: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/share/cpp_pkg/environment/ament_prefix_path.dsv
+[5.433s] -- Up-to-date: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/share/cpp_pkg/environment/path.sh
+[5.433s] -- Up-to-date: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/share/cpp_pkg/environment/path.dsv
+[5.433s] -- Up-to-date: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/share/cpp_pkg/local_setup.bash
+[5.433s] -- Up-to-date: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/share/cpp_pkg/local_setup.sh
+[5.433s] -- Up-to-date: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/share/cpp_pkg/local_setup.zsh
+[5.433s] -- Up-to-date: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/share/cpp_pkg/local_setup.dsv
+[5.433s] -- Up-to-date: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/share/cpp_pkg/package.dsv
+[5.433s] -- Up-to-date: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/share/ament_index/resource_index/packages/cpp_pkg
+[5.433s] -- Up-to-date: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/share/cpp_pkg/cmake/cpp_pkgConfig.cmake
+[5.433s] -- Up-to-date: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/share/cpp_pkg/cmake/cpp_pkgConfig-version.cmake
+[5.434s] -- Up-to-date: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/share/cpp_pkg/package.xml
+[5.436s] Invoked command in '/home/lucifer/humble_ws/study_ws/build/cpp_pkg' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/lucifer/humble_ws/study_ws/install/py_pkg:/opt/ros/humble /usr/bin/cmake --install /home/lucifer/humble_ws/study_ws/build/cpp_pkg

@@ -1,0 +1,78 @@
+[0.015s] Invoking command in '/home/lucifer/humble_ws/study_ws/build/cpp_pkg': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/lucifer/humble_ws/study_ws/install/py_pkg:/opt/ros/humble /usr/bin/cmake --build /home/lucifer/humble_ws/study_ws/build/cpp_pkg -- -j8 -l8
+[0.039s] -- Found ament_cmake: 1.3.10 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.163s] -- Found rclcpp: 16.0.10 (/opt/ros/humble/share/rclcpp/cmake)
+[0.191s] -- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.193s] -- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.199s] -- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.208s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.220s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.254s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.256s] -- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.363s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.424s] -- Found example_interfaces: 0.9.3 (/opt/ros/humble/share/example_interfaces/cmake)
+[0.481s] -- Found ament_lint_auto: 0.12.11 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[0.551s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[0.551s] -- Configured cppcheck include dirs: 
+[0.552s] -- Configured cppcheck exclude dirs and/or files: 
+[0.552s] -- Added test 'lint_cmake' to check CMake code style
+[0.554s] -- Added test 'uncrustify' to check C / C++ code style
+[0.554s] -- Configured uncrustify additional arguments: 
+[0.554s] -- Added test 'xmllint' to check XML markup files
+[0.556s] -- Configuring done
+[0.575s] -- Generating done
+[0.578s] -- Build files have been written to: /home/lucifer/humble_ws/study_ws/build/cpp_pkg
+[0.609s] [35m[1mConsolidate compiler generated dependencies of target cpp_node[0m
+[0.609s] [35m[1mConsolidate compiler generated dependencies of target news_station[0m
+[0.629s] [ 25%] [32mBuilding CXX object CMakeFiles/news_station.dir/src/news_station.cpp.o[0m
+[0.630s] [ 75%] Built target cpp_node
+[3.283s] [01m[K/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/news_station.cpp:23:23:[m[K [01;31m[Kerror: [m[K‘[01m[Kstd_msgs[m[K’ was not declared in this scope
+[3.284s]    23 |     rclcpp::Publisher<[01;31m[Kstd_msgs[m[K::msg::String>::SharedPtr publisher_;
+[3.284s]       |                       [01;31m[K^~~~~~~~[m[K
+[3.284s] [01m[K/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/news_station.cpp:23:44:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[3.284s]    23 |     rclcpp::Publisher<std_msgs::msg::String[01;31m[K>[m[K::SharedPtr publisher_;
+[3.284s]       |                                            [01;31m[K^[m[K
+[3.284s] [01m[K/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/news_station.cpp:23:47:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ at end of member declaration
+[3.284s]    23 |     rclcpp::Publisher<std_msgs::msg::String>::[01;31m[KSharedPtr[m[K publisher_;
+[3.284s]       |                                               [01;31m[K^~~~~~~~~[m[K
+[3.284s]       |                                                        [32m[K;[m[K
+[3.286s] [01m[K/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/news_station.cpp:23:57:[m[K [01;31m[Kerror: [m[K‘[01m[Kpublisher_[m[K’ does not name a type; did you mean ‘[01m[Krmw_publisher_t[m[K’?
+[3.286s]    23 |     rclcpp::Publisher<std_msgs::msg::String>::SharedPtr [01;31m[Kpublisher_[m[K;
+[3.286s]       |                                                         [01;31m[K^~~~~~~~~~[m[K
+[3.286s]       |                                                         [32m[Krmw_publisher_t[m[K
+[3.293s] [01m[K/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/news_station.cpp:[m[K In constructor ‘[01m[Knews_station::news_station()[m[K’:
+[3.294s] [01m[K/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/news_station.cpp:10:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kpublisher_[m[K’ was not declared in this scope; did you mean ‘[01m[KpublishNews[m[K’?
+[3.294s]    10 |         [01;31m[Kpublisher_[m[K = this->create_publisher<std_msgs::msg::String>("news", 10);
+[3.294s]       |         [01;31m[K^~~~~~~~~~[m[K
+[3.294s]       |         [32m[KpublishNews[m[K
+[3.299s] [01m[K/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/news_station.cpp:10:45:[m[K [01;31m[Kerror: [m[K‘[01m[Kstd_msgs[m[K’ was not declared in this scope
+[3.299s]    10 |         publisher_ = this->create_publisher<[01;31m[Kstd_msgs[m[K::msg::String>("news", 10);
+[3.299s]       |                                             [01;31m[K^~~~~~~~[m[K
+[3.299s] [01m[K/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/news_station.cpp:10:28:[m[K [01;31m[Kerror: [m[Kparse error in template argument list
+[3.300s]    10 |         publisher_ = this->[01;31m[Kcreate_publisher<std_msgs::msg::String>[m[K("news", 10);
+[3.300s]       |                            [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[3.300s] [01m[K/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/news_station.cpp:10:67:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Knews_station::create_publisher<<expression error> >(const char [5], int)[m[K’
+[3.300s]    10 |         publisher_ = [01;31m[Kthis->create_publisher<std_msgs::msg::String>("news", 10)[m[K;
+[3.300s]       |                      [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~[m[K
+[3.300s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/single_threaded_executor.hpp:28[m[K,
+[3.300s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:22[m[K,
+[3.300s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[3.300s]                  from [01m[K/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/news_station.cpp:1[m[K:
+[3.300s] [01m[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:195:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class MessageT, class AllocatorT, class PublisherT> std::shared_ptr<PublisherT> rclcpp::Node::create_publisher(const string&, const rclcpp::QoS&, const rclcpp::PublisherOptionsWithAllocator<AllocatorT>&)[m[K’
+[3.300s]   195 |   [01;36m[Kcreate_publisher[m[K(
+[3.300s]       |   [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[3.301s] [01m[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:195:3:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[3.301s] [01m[K/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/news_station.cpp:10:67:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[3.301s]    10 |         publisher_ = [01;31m[Kthis->create_publisher<std_msgs::msg::String>("news", 10)[m[K;
+[3.301s]       |                      [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~[m[K
+[3.311s] [01m[K/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/news_station.cpp:[m[K In member function ‘[01m[Kvoid news_station::publishNews()[m[K’:
+[3.311s] [01m[K/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/news_station.cpp:18:20:[m[K [01;31m[Kerror: [m[K‘[01m[Kstd_msgs[m[K’ has not been declared
+[3.311s]    18 |         auto msg = [01;31m[Kstd_msgs[m[K::msg::String();
+[3.311s]       |                    [01;31m[K^~~~~~~~[m[K
+[3.318s] [01m[K/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/news_station.cpp:20:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kpublisher_[m[K’ was not declared in this scope; did you mean ‘[01m[KpublishNews[m[K’?
+[3.318s]    20 |         [01;31m[Kpublisher_[m[K->publish(msg);
+[3.318s]       |         [01;31m[K^~~~~~~~~~[m[K
+[3.318s]       |         [32m[KpublishNews[m[K
+[3.869s] gmake[2]: *** [CMakeFiles/news_station.dir/build.make:76: CMakeFiles/news_station.dir/src/news_station.cpp.o] Error 1
+[3.870s] gmake[1]: *** [CMakeFiles/Makefile2:165: CMakeFiles/news_station.dir/all] Error 2
+[3.870s] gmake: *** [Makefile:146: all] Error 2
+[3.872s] Invoked command in '/home/lucifer/humble_ws/study_ws/build/cpp_pkg' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/lucifer/humble_ws/study_ws/install/py_pkg:/opt/ros/humble /usr/bin/cmake --build /home/lucifer/humble_ws/study_ws/build/cpp_pkg -- -j8 -l8

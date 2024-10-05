@@ -1,0 +1,102 @@
+[0.000000] (-) TimerEvent: {}
+[0.000120] (-) JobUnselected: {'identifier': 'irobot_interfaces'}
+[0.000144] (-) JobUnselected: {'identifier': 'py_pkg'}
+[0.000165] (cpp_pkg) JobQueued: {'identifier': 'cpp_pkg', 'dependencies': OrderedDict([('irobot_interfaces', '/home/lucifer/humble_ws/study_ws/install/irobot_interfaces')])}
+[0.000187] (cpp_pkg) JobStarted: {'identifier': 'cpp_pkg'}
+[0.009435] (cpp_pkg) JobProgress: {'identifier': 'cpp_pkg', 'progress': 'cmake'}
+[0.010304] (cpp_pkg) JobProgress: {'identifier': 'cpp_pkg', 'progress': 'build'}
+[0.010340] (cpp_pkg) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/lucifer/humble_ws/study_ws/build/cpp_pkg', '--', '-j8', '-l8'], 'cwd': '/home/lucifer/humble_ws/study_ws/build/cpp_pkg', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LANGUAGE', 'en_IN:en'), ('USER', 'lucifer'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/lucifer/humble_ws/study_ws/install/irobot_interfaces/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('OLDPWD', '/home/lucifer/humble_ws/study_ws/install/py_pkg/lib/python3.10/site-packages/py_pkg'), ('HOME', '/home/lucifer'), ('LESS', '-R'), ('DESKTOP_SESSION', 'ubuntu'), ('GIO_LAUNCHED_DESKTOP_FILE', '/usr/share/applications/terminator.desktop'), ('ZSH', '/home/lucifer/.oh-my-zsh'), ('LSCOLORS', 'Gxfxcxdxbxegedabagacad'), ('GTK_MODULES', 'gail:atk-bridge'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('PAGER', 'less'), ('ROS_PYTHON_VERSION', '3'), ('MANAGERPID', '1455'), ('SYSTEMD_EXEC_PID', '1619'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '3080'), ('COLORTERM', 'truecolor'), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator25ef4b219e3b005583550f2b0f9f990c3'), ('WAYLAND_DISPLAY', 'wayland-0'), ('ROS_DISTRO', 'humble'), ('COLCON_PREFIX_PATH', '/home/lucifer/humble_ws/study_ws/install'), ('LOGNAME', 'lucifer'), ('_', '/usr/bin/colcon'), ('JOURNAL_STREAM', '8:14865'), ('XDG_SESSION_CLASS', 'user'), ('ROS_VERSION', '2'), ('USERNAME', 'lucifer'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/chappie:@/tmp/.ICE-unix/1590,unix/chappie:/tmp/.ICE-unix/1590'), ('INVOCATION_ID', 'a3246bdae92142a6905b93b07b198b7d'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('IBUS_DISABLE_SNOOPER', '1'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XMODIFIERS', '@im=ibus'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.GIQXU2'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('AMENT_PREFIX_PATH', '/home/lucifer/humble_ws/study_ws/install/irobot_interfaces:/home/lucifer/humble_ws/study_ws/install/py_pkg:/home/lucifer/humble_ws/study_ws/install/cpp_pkg:/opt/ros/humble'), ('TERMINATOR_UUID', 'urn:uuid:f945619a-272c-4f28-9948-98fc0b0cb32b'), ('SHELL', '/usr/bin/zsh'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('QT_IM_MODULE', 'ibus'), ('LC_ALL', 'en_US.UTF-8'), ('PWD', '/home/lucifer/humble_ws/study_ws/build/cpp_pkg'), ('XDG_DATA_DIRS', '/home/lucifer/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/lucifer/humble_ws/study_ws/install/irobot_interfaces/local/lib/python3.10/dist-packages:/home/lucifer/humble_ws/study_ws/install/py_pkg/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/lucifer/humble_ws/study_ws/install/irobot_interfaces:/home/lucifer/humble_ws/study_ws/install/cpp_pkg:/home/lucifer/humble_ws/study_ws/install/py_pkg:/opt/ros/humble')]), 'shell': False}
+[0.083360] (cpp_pkg) StdoutLine: {'line': b'[ 11%] Built target news_station\n'}
+[0.083646] (cpp_pkg) StdoutLine: {'line': b'[ 22%] Built target cpp_node\n'}
+[0.083881] (cpp_pkg) StdoutLine: {'line': b'[ 38%] Built target radio\n'}
+[0.084008] (cpp_pkg) StdoutLine: {'line': b'[ 44%] Built target NumberPublisher\n'}
+[0.084515] (cpp_pkg) StdoutLine: {'line': b'[ 55%] Built target sumServer\n'}
+[0.088341] (cpp_pkg) StdoutLine: {'line': b'[ 77%] Built target NumberCounter\n'}
+[0.088496] (cpp_pkg) StdoutLine: {'line': b'[ 77%] Built target client_sumServer_noop\n'}
+[0.089245] (cpp_pkg) StdoutLine: {'line': b'[ 88%] Built target client_sumServer\n'}
+[0.097053] (cpp_pkg) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target HardwareStatusPublisher\x1b[0m\n'}
+[0.099379] (-) TimerEvent: {}
+[0.114850] (cpp_pkg) StdoutLine: {'line': b'[ 94%] \x1b[32mBuilding CXX object CMakeFiles/HardwareStatusPublisher.dir/src/hw_statusPublisher.cpp.o\x1b[0m\n'}
+[0.199583] (-) TimerEvent: {}
+[0.299940] (-) TimerEvent: {}
+[0.400248] (-) TimerEvent: {}
+[0.500595] (-) TimerEvent: {}
+[0.600936] (-) TimerEvent: {}
+[0.701259] (-) TimerEvent: {}
+[0.801573] (-) TimerEvent: {}
+[0.901925] (-) TimerEvent: {}
+[1.002268] (-) TimerEvent: {}
+[1.102581] (-) TimerEvent: {}
+[1.202930] (-) TimerEvent: {}
+[1.303269] (-) TimerEvent: {}
+[1.403592] (-) TimerEvent: {}
+[1.503924] (-) TimerEvent: {}
+[1.604199] (-) TimerEvent: {}
+[1.704521] (-) TimerEvent: {}
+[1.804846] (-) TimerEvent: {}
+[1.905149] (-) TimerEvent: {}
+[2.005483] (-) TimerEvent: {}
+[2.105818] (-) TimerEvent: {}
+[2.206124] (-) TimerEvent: {}
+[2.306481] (-) TimerEvent: {}
+[2.406844] (-) TimerEvent: {}
+[2.507204] (-) TimerEvent: {}
+[2.607535] (-) TimerEvent: {}
+[2.707866] (-) TimerEvent: {}
+[2.808193] (-) TimerEvent: {}
+[2.908548] (-) TimerEvent: {}
+[3.008926] (-) TimerEvent: {}
+[3.109238] (-) TimerEvent: {}
+[3.209562] (-) TimerEvent: {}
+[3.309909] (-) TimerEvent: {}
+[3.410233] (-) TimerEvent: {}
+[3.510562] (-) TimerEvent: {}
+[3.610893] (-) TimerEvent: {}
+[3.711204] (-) TimerEvent: {}
+[3.811505] (-) TimerEvent: {}
+[3.911801] (-) TimerEvent: {}
+[4.012073] (-) TimerEvent: {}
+[4.112398] (-) TimerEvent: {}
+[4.212726] (-) TimerEvent: {}
+[4.313057] (-) TimerEvent: {}
+[4.413372] (-) TimerEvent: {}
+[4.513701] (-) TimerEvent: {}
+[4.613993] (-) TimerEvent: {}
+[4.696451] (cpp_pkg) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable HardwareStatusPublisher\x1b[0m\n'}
+[4.714100] (-) TimerEvent: {}
+[4.814416] (-) TimerEvent: {}
+[4.914731] (-) TimerEvent: {}
+[4.918538] (cpp_pkg) StdoutLine: {'line': b'[100%] Built target HardwareStatusPublisher\n'}
+[4.931309] (cpp_pkg) CommandEnded: {'returncode': 0}
+[4.992553] (cpp_pkg) JobProgress: {'identifier': 'cpp_pkg', 'progress': 'install'}
+[5.002896] (cpp_pkg) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/lucifer/humble_ws/study_ws/build/cpp_pkg'], 'cwd': '/home/lucifer/humble_ws/study_ws/build/cpp_pkg', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LANGUAGE', 'en_IN:en'), ('USER', 'lucifer'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/lucifer/humble_ws/study_ws/install/irobot_interfaces/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('OLDPWD', '/home/lucifer/humble_ws/study_ws/install/py_pkg/lib/python3.10/site-packages/py_pkg'), ('HOME', '/home/lucifer'), ('LESS', '-R'), ('DESKTOP_SESSION', 'ubuntu'), ('GIO_LAUNCHED_DESKTOP_FILE', '/usr/share/applications/terminator.desktop'), ('ZSH', '/home/lucifer/.oh-my-zsh'), ('LSCOLORS', 'Gxfxcxdxbxegedabagacad'), ('GTK_MODULES', 'gail:atk-bridge'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('PAGER', 'less'), ('ROS_PYTHON_VERSION', '3'), ('MANAGERPID', '1455'), ('SYSTEMD_EXEC_PID', '1619'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '3080'), ('COLORTERM', 'truecolor'), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator25ef4b219e3b005583550f2b0f9f990c3'), ('WAYLAND_DISPLAY', 'wayland-0'), ('ROS_DISTRO', 'humble'), ('COLCON_PREFIX_PATH', '/home/lucifer/humble_ws/study_ws/install'), ('LOGNAME', 'lucifer'), ('_', '/usr/bin/colcon'), ('JOURNAL_STREAM', '8:14865'), ('XDG_SESSION_CLASS', 'user'), ('ROS_VERSION', '2'), ('USERNAME', 'lucifer'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/chappie:@/tmp/.ICE-unix/1590,unix/chappie:/tmp/.ICE-unix/1590'), ('INVOCATION_ID', 'a3246bdae92142a6905b93b07b198b7d'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('IBUS_DISABLE_SNOOPER', '1'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XMODIFIERS', '@im=ibus'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.GIQXU2'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('AMENT_PREFIX_PATH', '/home/lucifer/humble_ws/study_ws/install/irobot_interfaces:/home/lucifer/humble_ws/study_ws/install/py_pkg:/home/lucifer/humble_ws/study_ws/install/cpp_pkg:/opt/ros/humble'), ('TERMINATOR_UUID', 'urn:uuid:f945619a-272c-4f28-9948-98fc0b0cb32b'), ('SHELL', '/usr/bin/zsh'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('QT_IM_MODULE', 'ibus'), ('LC_ALL', 'en_US.UTF-8'), ('PWD', '/home/lucifer/humble_ws/study_ws/build/cpp_pkg'), ('XDG_DATA_DIRS', '/home/lucifer/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/lucifer/humble_ws/study_ws/install/irobot_interfaces/local/lib/python3.10/dist-packages:/home/lucifer/humble_ws/study_ws/install/py_pkg/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/lucifer/humble_ws/study_ws/install/irobot_interfaces:/home/lucifer/humble_ws/study_ws/install/cpp_pkg:/home/lucifer/humble_ws/study_ws/install/py_pkg:/opt/ros/humble')]), 'shell': False}
+[5.011215] (cpp_pkg) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[5.011759] (cpp_pkg) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[5.012229] (cpp_pkg) StdoutLine: {'line': b'-- Up-to-date symlink: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/lib/cpp_pkg/cpp_node\n'}
+[5.012449] (cpp_pkg) StdoutLine: {'line': b'-- Up-to-date symlink: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/lib/cpp_pkg/news_station\n'}
+[5.012650] (cpp_pkg) StdoutLine: {'line': b'-- Up-to-date symlink: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/lib/cpp_pkg/radio\n'}
+[5.012793] (cpp_pkg) StdoutLine: {'line': b'-- Up-to-date symlink: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/lib/cpp_pkg/NumberPublisher\n'}
+[5.013110] (cpp_pkg) StdoutLine: {'line': b'-- Up-to-date symlink: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/lib/cpp_pkg/NumberCounter\n'}
+[5.013338] (cpp_pkg) StdoutLine: {'line': b'-- Up-to-date symlink: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/lib/cpp_pkg/client_sumServer\n'}
+[5.013599] (cpp_pkg) StdoutLine: {'line': b'-- Up-to-date symlink: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/lib/cpp_pkg/client_sumServer_noop\n'}
+[5.013812] (cpp_pkg) StdoutLine: {'line': b'-- Up-to-date symlink: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/lib/cpp_pkg/sumServer\n'}
+[5.014032] (cpp_pkg) StdoutLine: {'line': b'-- Symlinking: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/lib/cpp_pkg/HardwareStatusPublisher\n'}
+[5.014862] (-) TimerEvent: {}
+[5.023847] (cpp_pkg) StdoutLine: {'line': b'-- Up-to-date symlink: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/share/ament_index/resource_index/package_run_dependencies/cpp_pkg\n'}
+[5.024456] (cpp_pkg) StdoutLine: {'line': b'-- Up-to-date symlink: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/share/ament_index/resource_index/parent_prefix_path/cpp_pkg\n'}
+[5.024653] (cpp_pkg) StdoutLine: {'line': b'-- Up-to-date symlink: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/share/cpp_pkg/environment/ament_prefix_path.sh\n'}
+[5.024814] (cpp_pkg) StdoutLine: {'line': b'-- Up-to-date symlink: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/share/cpp_pkg/environment/ament_prefix_path.dsv\n'}
+[5.025135] (cpp_pkg) StdoutLine: {'line': b'-- Up-to-date symlink: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/share/cpp_pkg/environment/path.sh\n'}
+[5.025343] (cpp_pkg) StdoutLine: {'line': b'-- Up-to-date symlink: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/share/cpp_pkg/environment/path.dsv\n'}
+[5.025498] (cpp_pkg) StdoutLine: {'line': b'-- Up-to-date symlink: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/share/cpp_pkg/local_setup.bash\n'}
+[5.025708] (cpp_pkg) StdoutLine: {'line': b'-- Up-to-date symlink: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/share/cpp_pkg/local_setup.sh\n'}
+[5.025965] (cpp_pkg) StdoutLine: {'line': b'-- Up-to-date symlink: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/share/cpp_pkg/local_setup.zsh\n'}
+[5.026139] (cpp_pkg) StdoutLine: {'line': b'-- Up-to-date symlink: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/share/cpp_pkg/local_setup.dsv\n'}
+[5.026282] (cpp_pkg) StdoutLine: {'line': b'-- Symlinking: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/share/cpp_pkg/package.dsv\n'}
+[5.036075] (cpp_pkg) StdoutLine: {'line': b'-- Up-to-date symlink: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/share/ament_index/resource_index/packages/cpp_pkg\n'}
+[5.036332] (cpp_pkg) StdoutLine: {'line': b'-- Up-to-date symlink: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/share/cpp_pkg/cmake/cpp_pkgConfig.cmake\n'}
+[5.036532] (cpp_pkg) StdoutLine: {'line': b'-- Up-to-date symlink: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/share/cpp_pkg/cmake/cpp_pkgConfig-version.cmake\n'}
+[5.036674] (cpp_pkg) StdoutLine: {'line': b'-- Up-to-date symlink: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/share/cpp_pkg/package.xml\n'}
+[5.038849] (cpp_pkg) CommandEnded: {'returncode': 0}
+[5.112663] (cpp_pkg) JobEnded: {'identifier': 'cpp_pkg', 'rc': 0}
+[5.113056] (-) EventReactorShutdown: {}

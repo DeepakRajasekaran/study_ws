@@ -1,0 +1,8 @@
+[ 12%] Built target cpp_node
+[ 25%] Built target news_station
+[ 50%] Built target radio
+[ 50%] Built target NumberCounter
+[ 56%] [32mBuilding CXX object CMakeFiles/client_sumServer.dir/src/client_sumServer.cpp.o[0m
+[ 68%] Built target sumServer
+[ 81%] Built target client_sumServer_noop
+[ 93%] Built target NumberPublisher

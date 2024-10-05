@@ -1,0 +1,448 @@
+[0.000000] (-) TimerEvent: {}
+[0.000115] (irobot_interfaces) JobQueued: {'identifier': 'irobot_interfaces', 'dependencies': OrderedDict()}
+[0.000143] (cpp_pkg) JobQueued: {'identifier': 'cpp_pkg', 'dependencies': OrderedDict([('irobot_interfaces', '/home/lucifer/humble_ws/study_ws/install/irobot_interfaces')])}
+[0.000165] (py_pkg) JobQueued: {'identifier': 'py_pkg', 'dependencies': OrderedDict([('irobot_interfaces', '/home/lucifer/humble_ws/study_ws/install/irobot_interfaces')])}
+[0.000188] (irobot_interfaces) JobStarted: {'identifier': 'irobot_interfaces'}
+[0.007253] (irobot_interfaces) JobProgress: {'identifier': 'irobot_interfaces', 'progress': 'cmake'}
+[0.008310] (irobot_interfaces) JobProgress: {'identifier': 'irobot_interfaces', 'progress': 'build'}
+[0.008347] (irobot_interfaces) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/lucifer/humble_ws/study_ws/build/irobot_interfaces', '--', '-j8', '-l8'], 'cwd': '/home/lucifer/humble_ws/study_ws/build/irobot_interfaces', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LANGUAGE', 'en_IN:en'), ('USER', 'lucifer'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/lucifer/humble_ws/study_ws/install/irobot_interfaces/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('OLDPWD', '/home/lucifer'), ('HOME', '/home/lucifer'), ('LESS', '-R'), ('DESKTOP_SESSION', 'ubuntu'), ('GIO_LAUNCHED_DESKTOP_FILE', '/usr/share/applications/terminator.desktop'), ('ZSH', '/home/lucifer/.oh-my-zsh'), ('LSCOLORS', 'Gxfxcxdxbxegedabagacad'), ('GTK_MODULES', 'gail:atk-bridge'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('PAGER', 'less'), ('ROS_PYTHON_VERSION', '3'), ('MANAGERPID', '1478'), ('SYSTEMD_EXEC_PID', '1639'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '17430'), ('COLORTERM', 'truecolor'), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator25ef4b219e3b005583550f2b0f9f990c3'), ('WAYLAND_DISPLAY', 'wayland-0'), ('ROS_DISTRO', 'humble'), ('COLCON_PREFIX_PATH', '/home/lucifer/humble_ws/study_ws/install'), ('LOGNAME', 'lucifer'), ('_', '/usr/bin/colcon'), ('JOURNAL_STREAM', '8:14666'), ('XDG_SESSION_CLASS', 'user'), ('ROS_VERSION', '2'), ('USERNAME', 'lucifer'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/chappie:@/tmp/.ICE-unix/1594,unix/chappie:/tmp/.ICE-unix/1594'), ('INVOCATION_ID', '015f388818b3449aa8814a5e3c3da97f'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('IBUS_DISABLE_SNOOPER', '1'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XMODIFIERS', '@im=ibus'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.OXGTU2'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('AMENT_PREFIX_PATH', '/home/lucifer/humble_ws/study_ws/install/py_pkg:/home/lucifer/humble_ws/study_ws/install/cpp_pkg:/home/lucifer/humble_ws/study_ws/install/irobot_interfaces:/opt/ros/humble'), ('TERMINATOR_UUID', 'urn:uuid:dd887d16-de6f-4e30-91c6-753bb69ec4c8'), ('SHELL', '/usr/bin/zsh'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('QT_IM_MODULE', 'ibus'), ('LC_ALL', 'en_US.UTF-8'), ('PWD', '/home/lucifer/humble_ws/study_ws/build/irobot_interfaces'), ('XDG_DATA_DIRS', '/home/lucifer/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/lucifer/humble_ws/study_ws/install/py_pkg/lib/python3.10/site-packages:/home/lucifer/humble_ws/study_ws/install/irobot_interfaces/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/lucifer/humble_ws/study_ws/install/cpp_pkg:/home/lucifer/humble_ws/study_ws/install/irobot_interfaces:/home/lucifer/humble_ws/study_ws/install/py_pkg:/opt/ros/humble')]), 'shell': False}
+[0.063374] (irobot_interfaces) StdoutLine: {'line': b'[  2%] Built target irobot_interfaces__cpp\n'}
+[0.063863] (irobot_interfaces) StdoutLine: {'line': b'[ 12%] Built target irobot_interfaces__rosidl_generator_c\n'}
+[0.078039] (irobot_interfaces) StdoutLine: {'line': b'[ 12%] Built target ament_cmake_python_copy_irobot_interfaces\n'}
+[0.090277] (irobot_interfaces) StdoutLine: {'line': b'[ 23%] Built target irobot_interfaces__rosidl_typesupport_c\n'}
+[0.091677] (irobot_interfaces) StdoutLine: {'line': b'[ 33%] Built target irobot_interfaces__rosidl_typesupport_fastrtps_cpp\n'}
+[0.093507] (irobot_interfaces) StdoutLine: {'line': b'[ 43%] Built target irobot_interfaces__rosidl_typesupport_cpp\n'}
+[0.094133] (irobot_interfaces) StdoutLine: {'line': b'[ 53%] Built target irobot_interfaces__rosidl_typesupport_introspection_cpp\n'}
+[0.094386] (irobot_interfaces) StdoutLine: {'line': b'[ 64%] Built target irobot_interfaces__rosidl_typesupport_introspection_c\n'}
+[0.099360] (-) TimerEvent: {}
+[0.100135] (irobot_interfaces) StdoutLine: {'line': b'[ 74%] Built target irobot_interfaces__rosidl_typesupport_fastrtps_c\n'}
+[0.119522] (irobot_interfaces) StdoutLine: {'line': b'[ 74%] Built target irobot_interfaces\n'}
+[0.142883] (irobot_interfaces) StdoutLine: {'line': b'[ 76%] Built target irobot_interfaces__py\n'}
+[0.168454] (irobot_interfaces) StdoutLine: {'line': b'[ 84%] Built target irobot_interfaces__rosidl_generator_py\n'}
+[0.192053] (irobot_interfaces) StdoutLine: {'line': b'[100%] Built target irobot_interfaces__rosidl_typesupport_introspection_c__pyext\n'}
+[0.192304] (irobot_interfaces) StdoutLine: {'line': b'[100%] Built target irobot_interfaces__rosidl_typesupport_fastrtps_c__pyext\n'}
+[0.192451] (irobot_interfaces) StdoutLine: {'line': b'[100%] Built target irobot_interfaces__rosidl_typesupport_c__pyext\n'}
+[0.199474] (-) TimerEvent: {}
+[0.299719] (-) TimerEvent: {}
+[0.358317] (irobot_interfaces) StdoutLine: {'line': b'running egg_info\n'}
+[0.358786] (irobot_interfaces) StdoutLine: {'line': b'writing irobot_interfaces.egg-info/PKG-INFO\n'}
+[0.359010] (irobot_interfaces) StdoutLine: {'line': b'writing dependency_links to irobot_interfaces.egg-info/dependency_links.txt\n'}
+[0.359189] (irobot_interfaces) StdoutLine: {'line': b'writing top-level names to irobot_interfaces.egg-info/top_level.txt\n'}
+[0.361218] (irobot_interfaces) StdoutLine: {'line': b"reading manifest file 'irobot_interfaces.egg-info/SOURCES.txt'\n"}
+[0.361805] (irobot_interfaces) StdoutLine: {'line': b"writing manifest file 'irobot_interfaces.egg-info/SOURCES.txt'\n"}
+[0.388250] (irobot_interfaces) StdoutLine: {'line': b'[100%] Built target ament_cmake_python_build_irobot_interfaces_egg\n'}
+[0.399828] (-) TimerEvent: {}
+[0.400836] (irobot_interfaces) CommandEnded: {'returncode': 0}
+[0.489918] (irobot_interfaces) JobProgress: {'identifier': 'irobot_interfaces', 'progress': 'install'}
+[0.499048] (irobot_interfaces) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/lucifer/humble_ws/study_ws/build/irobot_interfaces'], 'cwd': '/home/lucifer/humble_ws/study_ws/build/irobot_interfaces', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LANGUAGE', 'en_IN:en'), ('USER', 'lucifer'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/lucifer/humble_ws/study_ws/install/irobot_interfaces/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('OLDPWD', '/home/lucifer'), ('HOME', '/home/lucifer'), ('LESS', '-R'), ('DESKTOP_SESSION', 'ubuntu'), ('GIO_LAUNCHED_DESKTOP_FILE', '/usr/share/applications/terminator.desktop'), ('ZSH', '/home/lucifer/.oh-my-zsh'), ('LSCOLORS', 'Gxfxcxdxbxegedabagacad'), ('GTK_MODULES', 'gail:atk-bridge'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('PAGER', 'less'), ('ROS_PYTHON_VERSION', '3'), ('MANAGERPID', '1478'), ('SYSTEMD_EXEC_PID', '1639'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '17430'), ('COLORTERM', 'truecolor'), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator25ef4b219e3b005583550f2b0f9f990c3'), ('WAYLAND_DISPLAY', 'wayland-0'), ('ROS_DISTRO', 'humble'), ('COLCON_PREFIX_PATH', '/home/lucifer/humble_ws/study_ws/install'), ('LOGNAME', 'lucifer'), ('_', '/usr/bin/colcon'), ('JOURNAL_STREAM', '8:14666'), ('XDG_SESSION_CLASS', 'user'), ('ROS_VERSION', '2'), ('USERNAME', 'lucifer'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/chappie:@/tmp/.ICE-unix/1594,unix/chappie:/tmp/.ICE-unix/1594'), ('INVOCATION_ID', '015f388818b3449aa8814a5e3c3da97f'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('IBUS_DISABLE_SNOOPER', '1'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XMODIFIERS', '@im=ibus'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.OXGTU2'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('AMENT_PREFIX_PATH', '/home/lucifer/humble_ws/study_ws/install/py_pkg:/home/lucifer/humble_ws/study_ws/install/cpp_pkg:/home/lucifer/humble_ws/study_ws/install/irobot_interfaces:/opt/ros/humble'), ('TERMINATOR_UUID', 'urn:uuid:dd887d16-de6f-4e30-91c6-753bb69ec4c8'), ('SHELL', '/usr/bin/zsh'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('QT_IM_MODULE', 'ibus'), ('LC_ALL', 'en_US.UTF-8'), ('PWD', '/home/lucifer/humble_ws/study_ws/build/irobot_interfaces'), ('XDG_DATA_DIRS', '/home/lucifer/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/lucifer/humble_ws/study_ws/install/py_pkg/lib/python3.10/site-packages:/home/lucifer/humble_ws/study_ws/install/irobot_interfaces/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/lucifer/humble_ws/study_ws/install/cpp_pkg:/home/lucifer/humble_ws/study_ws/install/irobot_interfaces:/home/lucifer/humble_ws/study_ws/install/py_pkg:/opt/ros/humble')]), 'shell': False}
+[0.499997] (-) TimerEvent: {}
+[0.507656] (irobot_interfaces) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[0.507996] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/share/ament_index/resource_index/rosidl_interfaces/irobot_interfaces\n'}
+[0.508763] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/include/irobot_interfaces/irobot_interfaces\n'}
+[0.508970] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/include/irobot_interfaces/irobot_interfaces/srv\n'}
+[0.509161] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/include/irobot_interfaces/irobot_interfaces/srv/detail\n'}
+[0.509347] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/include/irobot_interfaces/irobot_interfaces/srv/detail/compute_rectangle_area__type_support.h\n'}
+[0.509508] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/include/irobot_interfaces/irobot_interfaces/srv/detail/compute_rectangle_area__functions.h\n'}
+[0.509723] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/include/irobot_interfaces/irobot_interfaces/srv/detail/compute_rectangle_area__functions.c\n'}
+[0.510064] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/include/irobot_interfaces/irobot_interfaces/srv/detail/compute_rectangle_area__struct.h\n'}
+[0.510321] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/include/irobot_interfaces/irobot_interfaces/srv/compute_rectangle_area.h\n'}
+[0.510572] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/include/irobot_interfaces/irobot_interfaces/msg\n'}
+[0.510763] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/include/irobot_interfaces/irobot_interfaces/msg/rosidl_generator_c__visibility_control.h\n'}
+[0.510978] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/include/irobot_interfaces/irobot_interfaces/msg/detail\n'}
+[0.511150] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/include/irobot_interfaces/irobot_interfaces/msg/detail/hardware_status__functions.h\n'}
+[0.511377] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/include/irobot_interfaces/irobot_interfaces/msg/detail/hardware_status__type_support.h\n'}
+[0.511622] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/include/irobot_interfaces/irobot_interfaces/msg/detail/hardware_status__struct.h\n'}
+[0.511931] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/include/irobot_interfaces/irobot_interfaces/msg/detail/hardware_status__functions.c\n'}
+[0.512193] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/include/irobot_interfaces/irobot_interfaces/msg/hardware_status.h\n'}
+[0.512555] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/share/irobot_interfaces/environment/library_path.sh\n'}
+[0.512896] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/share/irobot_interfaces/environment/library_path.dsv\n'}
+[0.513248] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/lib/libirobot_interfaces__rosidl_generator_c.so\n'}
+[0.513977] (irobot_interfaces) StdoutLine: {'line': b'-- Set runtime path of "/home/lucifer/humble_ws/study_ws/install/irobot_interfaces/lib/libirobot_interfaces__rosidl_generator_c.so" to ""\n'}
+[0.514165] (irobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/include/irobot_interfaces/irobot_interfaces\n'}
+[0.514300] (irobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/include/irobot_interfaces/irobot_interfaces/srv\n'}
+[0.514532] (irobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/include/irobot_interfaces/irobot_interfaces/srv/detail\n'}
+[0.514672] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/include/irobot_interfaces/irobot_interfaces/srv/detail/compute_rectangle_area__rosidl_typesupport_fastrtps_c.h\n'}
+[0.514854] (irobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/include/irobot_interfaces/irobot_interfaces/msg\n'}
+[0.514988] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/include/irobot_interfaces/irobot_interfaces/msg/rosidl_typesupport_fastrtps_c__visibility_control.h\n'}
+[0.515118] (irobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/include/irobot_interfaces/irobot_interfaces/msg/detail\n'}
+[0.515275] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/include/irobot_interfaces/irobot_interfaces/msg/detail/hardware_status__rosidl_typesupport_fastrtps_c.h\n'}
+[0.515475] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/lib/libirobot_interfaces__rosidl_typesupport_fastrtps_c.so\n'}
+[0.516134] (irobot_interfaces) StdoutLine: {'line': b'-- Set runtime path of "/home/lucifer/humble_ws/study_ws/install/irobot_interfaces/lib/libirobot_interfaces__rosidl_typesupport_fastrtps_c.so" to ""\n'}
+[0.516354] (irobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/include/irobot_interfaces/irobot_interfaces\n'}
+[0.516533] (irobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/include/irobot_interfaces/irobot_interfaces/srv\n'}
+[0.516681] (irobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/include/irobot_interfaces/irobot_interfaces/srv/detail\n'}
+[0.516857] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/include/irobot_interfaces/irobot_interfaces/srv/detail/compute_rectangle_area__rosidl_typesupport_introspection_c.h\n'}
+[0.517053] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/include/irobot_interfaces/irobot_interfaces/srv/detail/compute_rectangle_area__type_support.c\n'}
+[0.517200] (irobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/include/irobot_interfaces/irobot_interfaces/msg\n'}
+[0.517386] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/include/irobot_interfaces/irobot_interfaces/msg/rosidl_typesupport_introspection_c__visibility_control.h\n'}
+[0.517531] (irobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/include/irobot_interfaces/irobot_interfaces/msg/detail\n'}
+[0.517691] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/include/irobot_interfaces/irobot_interfaces/msg/detail/hardware_status__rosidl_typesupport_introspection_c.h\n'}
+[0.517826] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/include/irobot_interfaces/irobot_interfaces/msg/detail/hardware_status__type_support.c\n'}
+[0.518029] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/lib/libirobot_interfaces__rosidl_typesupport_introspection_c.so\n'}
+[0.518794] (irobot_interfaces) StdoutLine: {'line': b'-- Set runtime path of "/home/lucifer/humble_ws/study_ws/install/irobot_interfaces/lib/libirobot_interfaces__rosidl_typesupport_introspection_c.so" to ""\n'}
+[0.518978] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/lib/libirobot_interfaces__rosidl_typesupport_c.so\n'}
+[0.519637] (irobot_interfaces) StdoutLine: {'line': b'-- Set runtime path of "/home/lucifer/humble_ws/study_ws/install/irobot_interfaces/lib/libirobot_interfaces__rosidl_typesupport_c.so" to ""\n'}
+[0.519853] (irobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/include/irobot_interfaces/irobot_interfaces\n'}
+[0.520006] (irobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/include/irobot_interfaces/irobot_interfaces/srv\n'}
+[0.520164] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/include/irobot_interfaces/irobot_interfaces/srv/compute_rectangle_area.hpp\n'}
+[0.520351] (irobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/include/irobot_interfaces/irobot_interfaces/srv/detail\n'}
+[0.520532] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/include/irobot_interfaces/irobot_interfaces/srv/detail/compute_rectangle_area__builder.hpp\n'}
+[0.520666] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/include/irobot_interfaces/irobot_interfaces/srv/detail/compute_rectangle_area__struct.hpp\n'}
+[0.520833] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/include/irobot_interfaces/irobot_interfaces/srv/detail/compute_rectangle_area__traits.hpp\n'}
+[0.521063] (irobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/include/irobot_interfaces/irobot_interfaces/msg\n'}
+[0.521229] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/include/irobot_interfaces/irobot_interfaces/msg/hardware_status.hpp\n'}
+[0.521440] (irobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/include/irobot_interfaces/irobot_interfaces/msg/detail\n'}
+[0.521597] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/include/irobot_interfaces/irobot_interfaces/msg/detail/hardware_status__builder.hpp\n'}
+[0.521812] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/include/irobot_interfaces/irobot_interfaces/msg/detail/hardware_status__struct.hpp\n'}
+[0.522111] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/include/irobot_interfaces/irobot_interfaces/msg/detail/hardware_status__traits.hpp\n'}
+[0.522409] (irobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/include/irobot_interfaces/irobot_interfaces\n'}
+[0.522618] (irobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/include/irobot_interfaces/irobot_interfaces/srv\n'}
+[0.522774] (irobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/include/irobot_interfaces/irobot_interfaces/srv/detail\n'}
+[0.522937] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/include/irobot_interfaces/irobot_interfaces/srv/detail/dds_fastrtps\n'}
+[0.523108] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/include/irobot_interfaces/irobot_interfaces/srv/detail/compute_rectangle_area__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[0.523261] (irobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/include/irobot_interfaces/irobot_interfaces/msg\n'}
+[0.523460] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/include/irobot_interfaces/irobot_interfaces/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h\n'}
+[0.523605] (irobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/include/irobot_interfaces/irobot_interfaces/msg/detail\n'}
+[0.523738] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/include/irobot_interfaces/irobot_interfaces/msg/detail/dds_fastrtps\n'}
+[0.523916] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/include/irobot_interfaces/irobot_interfaces/msg/detail/hardware_status__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[0.524037] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/lib/libirobot_interfaces__rosidl_typesupport_fastrtps_cpp.so\n'}
+[0.524651] (irobot_interfaces) StdoutLine: {'line': b'-- Set runtime path of "/home/lucifer/humble_ws/study_ws/install/irobot_interfaces/lib/libirobot_interfaces__rosidl_typesupport_fastrtps_cpp.so" to ""\n'}
+[0.524829] (irobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/include/irobot_interfaces/irobot_interfaces\n'}
+[0.525028] (irobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/include/irobot_interfaces/irobot_interfaces/srv\n'}
+[0.525129] (irobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/include/irobot_interfaces/irobot_interfaces/srv/detail\n'}
+[0.525315] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/include/irobot_interfaces/irobot_interfaces/srv/detail/compute_rectangle_area__type_support.cpp\n'}
+[0.525436] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/include/irobot_interfaces/irobot_interfaces/srv/detail/compute_rectangle_area__rosidl_typesupport_introspection_cpp.hpp\n'}
+[0.525624] (irobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/include/irobot_interfaces/irobot_interfaces/msg\n'}
+[0.525814] (irobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/include/irobot_interfaces/irobot_interfaces/msg/detail\n'}
+[0.525965] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/include/irobot_interfaces/irobot_interfaces/msg/detail/hardware_status__rosidl_typesupport_introspection_cpp.hpp\n'}
+[0.526194] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/include/irobot_interfaces/irobot_interfaces/msg/detail/hardware_status__type_support.cpp\n'}
+[0.526448] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/lib/libirobot_interfaces__rosidl_typesupport_introspection_cpp.so\n'}
+[0.527174] (irobot_interfaces) StdoutLine: {'line': b'-- Set runtime path of "/home/lucifer/humble_ws/study_ws/install/irobot_interfaces/lib/libirobot_interfaces__rosidl_typesupport_introspection_cpp.so" to ""\n'}
+[0.527367] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/lib/libirobot_interfaces__rosidl_typesupport_cpp.so\n'}
+[0.528123] (irobot_interfaces) StdoutLine: {'line': b'-- Set runtime path of "/home/lucifer/humble_ws/study_ws/install/irobot_interfaces/lib/libirobot_interfaces__rosidl_typesupport_cpp.so" to ""\n'}
+[0.528318] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/share/irobot_interfaces/environment/pythonpath.sh\n'}
+[0.528478] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/share/irobot_interfaces/environment/pythonpath.dsv\n'}
+[0.528693] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/local/lib/python3.10/dist-packages/irobot_interfaces-0.0.0-py3.10.egg-info\n'}
+[0.528857] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/local/lib/python3.10/dist-packages/irobot_interfaces-0.0.0-py3.10.egg-info/top_level.txt\n'}
+[0.529021] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/local/lib/python3.10/dist-packages/irobot_interfaces-0.0.0-py3.10.egg-info/dependency_links.txt\n'}
+[0.529150] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/local/lib/python3.10/dist-packages/irobot_interfaces-0.0.0-py3.10.egg-info/SOURCES.txt\n'}
+[0.529235] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/local/lib/python3.10/dist-packages/irobot_interfaces-0.0.0-py3.10.egg-info/PKG-INFO\n'}
+[0.529315] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/local/lib/python3.10/dist-packages/irobot_interfaces\n'}
+[0.529395] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/local/lib/python3.10/dist-packages/irobot_interfaces/srv\n'}
+[0.529450] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/local/lib/python3.10/dist-packages/irobot_interfaces/srv/_compute_rectangle_area_s.c\n'}
+[0.529519] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/local/lib/python3.10/dist-packages/irobot_interfaces/srv/__init__.py\n'}
+[0.529591] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/local/lib/python3.10/dist-packages/irobot_interfaces/srv/_compute_rectangle_area.py\n'}
+[0.529680] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/local/lib/python3.10/dist-packages/irobot_interfaces/_irobot_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c\n'}
+[0.529800] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/local/lib/python3.10/dist-packages/irobot_interfaces/msg\n'}
+[0.529931] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/local/lib/python3.10/dist-packages/irobot_interfaces/msg/_hardware_status_s.c\n'}
+[0.530022] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/local/lib/python3.10/dist-packages/irobot_interfaces/msg/_hardware_status.py\n'}
+[0.530186] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/local/lib/python3.10/dist-packages/irobot_interfaces/msg/__init__.py\n'}
+[0.530284] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/local/lib/python3.10/dist-packages/irobot_interfaces/irobot_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so\n'}
+[0.530361] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/local/lib/python3.10/dist-packages/irobot_interfaces/irobot_interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so\n'}
+[0.530468] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/local/lib/python3.10/dist-packages/irobot_interfaces/_irobot_interfaces_s.ep.rosidl_typesupport_c.c\n'}
+[0.530612] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/local/lib/python3.10/dist-packages/irobot_interfaces/irobot_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so\n'}
+[0.530690] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/local/lib/python3.10/dist-packages/irobot_interfaces/libirobot_interfaces__rosidl_generator_py.so\n'}
+[0.530801] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/local/lib/python3.10/dist-packages/irobot_interfaces/_irobot_interfaces_s.ep.rosidl_typesupport_introspection_c.c\n'}
+[0.530959] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/local/lib/python3.10/dist-packages/irobot_interfaces/__init__.py\n'}
+[0.564291] (irobot_interfaces) StdoutLine: {'line': b"Listing '/home/lucifer/humble_ws/study_ws/install/irobot_interfaces/local/lib/python3.10/dist-packages/irobot_interfaces'...\n"}
+[0.564466] (irobot_interfaces) StdoutLine: {'line': b"Compiling '/home/lucifer/humble_ws/study_ws/install/irobot_interfaces/local/lib/python3.10/dist-packages/irobot_interfaces/__init__.py'...\n"}
+[0.564527] (irobot_interfaces) StdoutLine: {'line': b"Listing '/home/lucifer/humble_ws/study_ws/install/irobot_interfaces/local/lib/python3.10/dist-packages/irobot_interfaces/msg'...\n"}
+[0.564580] (irobot_interfaces) StdoutLine: {'line': b"Compiling '/home/lucifer/humble_ws/study_ws/install/irobot_interfaces/local/lib/python3.10/dist-packages/irobot_interfaces/msg/__init__.py'...\n"}
+[0.564631] (irobot_interfaces) StdoutLine: {'line': b"Compiling '/home/lucifer/humble_ws/study_ws/install/irobot_interfaces/local/lib/python3.10/dist-packages/irobot_interfaces/msg/_hardware_status.py'...\n"}
+[0.564688] (irobot_interfaces) StdoutLine: {'line': b"Listing '/home/lucifer/humble_ws/study_ws/install/irobot_interfaces/local/lib/python3.10/dist-packages/irobot_interfaces/srv'...\n"}
+[0.564738] (irobot_interfaces) StdoutLine: {'line': b"Compiling '/home/lucifer/humble_ws/study_ws/install/irobot_interfaces/local/lib/python3.10/dist-packages/irobot_interfaces/srv/__init__.py'...\n"}
+[0.564787] (irobot_interfaces) StdoutLine: {'line': b"Compiling '/home/lucifer/humble_ws/study_ws/install/irobot_interfaces/local/lib/python3.10/dist-packages/irobot_interfaces/srv/_compute_rectangle_area.py'...\n"}
+[0.568794] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/local/lib/python3.10/dist-packages/irobot_interfaces/irobot_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so\n'}
+[0.569244] (irobot_interfaces) StdoutLine: {'line': b'-- Set runtime path of "/home/lucifer/humble_ws/study_ws/install/irobot_interfaces/local/lib/python3.10/dist-packages/irobot_interfaces/irobot_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so" to ""\n'}
+[0.569480] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/local/lib/python3.10/dist-packages/irobot_interfaces/irobot_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so\n'}
+[0.569859] (irobot_interfaces) StdoutLine: {'line': b'-- Set runtime path of "/home/lucifer/humble_ws/study_ws/install/irobot_interfaces/local/lib/python3.10/dist-packages/irobot_interfaces/irobot_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so" to ""\n'}
+[0.570077] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/local/lib/python3.10/dist-packages/irobot_interfaces/irobot_interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so\n'}
+[0.570441] (irobot_interfaces) StdoutLine: {'line': b'-- Set runtime path of "/home/lucifer/humble_ws/study_ws/install/irobot_interfaces/local/lib/python3.10/dist-packages/irobot_interfaces/irobot_interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so" to ""\n'}
+[0.570621] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/lib/libirobot_interfaces__rosidl_generator_py.so\n'}
+[0.570948] (irobot_interfaces) StdoutLine: {'line': b'-- Set runtime path of "/home/lucifer/humble_ws/study_ws/install/irobot_interfaces/lib/libirobot_interfaces__rosidl_generator_py.so" to ""\n'}
+[0.571071] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/share/irobot_interfaces/msg/HardwareStatus.idl\n'}
+[0.571480] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/share/irobot_interfaces/srv/ComputeRectangleArea.idl\n'}
+[0.571729] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/share/irobot_interfaces/msg/HardwareStatus.msg\n'}
+[0.572013] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/share/irobot_interfaces/srv/ComputeRectangleArea.srv\n'}
+[0.572238] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/share/irobot_interfaces/srv/ComputeRectangleArea_Request.msg\n'}
+[0.572508] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/share/irobot_interfaces/srv/ComputeRectangleArea_Response.msg\n'}
+[0.572809] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/share/ament_index/resource_index/package_run_dependencies/irobot_interfaces\n'}
+[0.573096] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/share/ament_index/resource_index/parent_prefix_path/irobot_interfaces\n'}
+[0.573390] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/share/irobot_interfaces/environment/ament_prefix_path.sh\n'}
+[0.573635] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/share/irobot_interfaces/environment/ament_prefix_path.dsv\n'}
+[0.573864] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/share/irobot_interfaces/environment/path.sh\n'}
+[0.574161] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/share/irobot_interfaces/environment/path.dsv\n'}
+[0.574384] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/share/irobot_interfaces/local_setup.bash\n'}
+[0.574644] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/share/irobot_interfaces/local_setup.sh\n'}
+[0.574852] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/share/irobot_interfaces/local_setup.zsh\n'}
+[0.575073] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/share/irobot_interfaces/local_setup.dsv\n'}
+[0.575279] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/share/irobot_interfaces/package.dsv\n'}
+[0.575525] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/share/ament_index/resource_index/packages/irobot_interfaces\n'}
+[0.575722] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/share/irobot_interfaces/cmake/export_irobot_interfaces__rosidl_generator_cExport.cmake\n'}
+[0.575836] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/share/irobot_interfaces/cmake/export_irobot_interfaces__rosidl_generator_cExport-noconfig.cmake\n'}
+[0.576096] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/share/irobot_interfaces/cmake/export_irobot_interfaces__rosidl_typesupport_fastrtps_cExport.cmake\n'}
+[0.576309] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/share/irobot_interfaces/cmake/export_irobot_interfaces__rosidl_typesupport_fastrtps_cExport-noconfig.cmake\n'}
+[0.576557] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/share/irobot_interfaces/cmake/irobot_interfaces__rosidl_typesupport_introspection_cExport.cmake\n'}
+[0.576718] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/share/irobot_interfaces/cmake/irobot_interfaces__rosidl_typesupport_introspection_cExport-noconfig.cmake\n'}
+[0.577055] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/share/irobot_interfaces/cmake/irobot_interfaces__rosidl_typesupport_cExport.cmake\n'}
+[0.577172] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/share/irobot_interfaces/cmake/irobot_interfaces__rosidl_typesupport_cExport-noconfig.cmake\n'}
+[0.577407] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/share/irobot_interfaces/cmake/export_irobot_interfaces__rosidl_generator_cppExport.cmake\n'}
+[0.577614] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/share/irobot_interfaces/cmake/export_irobot_interfaces__rosidl_typesupport_fastrtps_cppExport.cmake\n'}
+[0.577730] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/share/irobot_interfaces/cmake/export_irobot_interfaces__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake\n'}
+[0.577924] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/share/irobot_interfaces/cmake/irobot_interfaces__rosidl_typesupport_introspection_cppExport.cmake\n'}
+[0.578042] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/share/irobot_interfaces/cmake/irobot_interfaces__rosidl_typesupport_introspection_cppExport-noconfig.cmake\n'}
+[0.578345] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/share/irobot_interfaces/cmake/irobot_interfaces__rosidl_typesupport_cppExport.cmake\n'}
+[0.578498] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/share/irobot_interfaces/cmake/irobot_interfaces__rosidl_typesupport_cppExport-noconfig.cmake\n'}
+[0.578680] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/share/irobot_interfaces/cmake/export_irobot_interfaces__rosidl_generator_pyExport.cmake\n'}
+[0.578787] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/share/irobot_interfaces/cmake/export_irobot_interfaces__rosidl_generator_pyExport-noconfig.cmake\n'}
+[0.579017] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/share/irobot_interfaces/cmake/rosidl_cmake-extras.cmake\n'}
+[0.579312] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/share/irobot_interfaces/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[0.579552] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/share/irobot_interfaces/cmake/ament_cmake_export_libraries-extras.cmake\n'}
+[0.579808] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/share/irobot_interfaces/cmake/ament_cmake_export_targets-extras.cmake\n'}
+[0.580013] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/share/irobot_interfaces/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake\n'}
+[0.580193] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/share/irobot_interfaces/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[0.580386] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/share/irobot_interfaces/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake\n'}
+[0.580495] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/share/irobot_interfaces/cmake/irobot_interfacesConfig.cmake\n'}
+[0.580744] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/share/irobot_interfaces/cmake/irobot_interfacesConfig-version.cmake\n'}
+[0.581048] (irobot_interfaces) StdoutLine: {'line': b'-- Installing: /home/lucifer/humble_ws/study_ws/install/irobot_interfaces/share/irobot_interfaces/package.xml\n'}
+[0.583670] (irobot_interfaces) CommandEnded: {'returncode': 0}
+[0.600079] (-) TimerEvent: {}
+[0.679808] (irobot_interfaces) JobEnded: {'identifier': 'irobot_interfaces', 'rc': 0}
+[0.680610] (cpp_pkg) JobStarted: {'identifier': 'cpp_pkg'}
+[0.683388] (py_pkg) JobStarted: {'identifier': 'py_pkg'}
+[0.688099] (cpp_pkg) JobProgress: {'identifier': 'cpp_pkg', 'progress': 'cmake'}
+[0.689986] (cpp_pkg) JobProgress: {'identifier': 'cpp_pkg', 'progress': 'build'}
+[0.690060] (cpp_pkg) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/lucifer/humble_ws/study_ws/build/cpp_pkg', '--', '-j8', '-l8'], 'cwd': '/home/lucifer/humble_ws/study_ws/build/cpp_pkg', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LANGUAGE', 'en_IN:en'), ('USER', 'lucifer'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/lucifer/humble_ws/study_ws/install/irobot_interfaces/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('OLDPWD', '/home/lucifer'), ('HOME', '/home/lucifer'), ('LESS', '-R'), ('DESKTOP_SESSION', 'ubuntu'), ('GIO_LAUNCHED_DESKTOP_FILE', '/usr/share/applications/terminator.desktop'), ('ZSH', '/home/lucifer/.oh-my-zsh'), ('LSCOLORS', 'Gxfxcxdxbxegedabagacad'), ('GTK_MODULES', 'gail:atk-bridge'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('PAGER', 'less'), ('ROS_PYTHON_VERSION', '3'), ('MANAGERPID', '1478'), ('SYSTEMD_EXEC_PID', '1639'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '17430'), ('COLORTERM', 'truecolor'), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator25ef4b219e3b005583550f2b0f9f990c3'), ('WAYLAND_DISPLAY', 'wayland-0'), ('ROS_DISTRO', 'humble'), ('COLCON_PREFIX_PATH', '/home/lucifer/humble_ws/study_ws/install'), ('LOGNAME', 'lucifer'), ('_', '/usr/bin/colcon'), ('JOURNAL_STREAM', '8:14666'), ('XDG_SESSION_CLASS', 'user'), ('ROS_VERSION', '2'), ('USERNAME', 'lucifer'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/chappie:@/tmp/.ICE-unix/1594,unix/chappie:/tmp/.ICE-unix/1594'), ('INVOCATION_ID', '015f388818b3449aa8814a5e3c3da97f'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('IBUS_DISABLE_SNOOPER', '1'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XMODIFIERS', '@im=ibus'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.OXGTU2'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('AMENT_PREFIX_PATH', '/home/lucifer/humble_ws/study_ws/install/py_pkg:/home/lucifer/humble_ws/study_ws/install/cpp_pkg:/home/lucifer/humble_ws/study_ws/install/irobot_interfaces:/opt/ros/humble'), ('TERMINATOR_UUID', 'urn:uuid:dd887d16-de6f-4e30-91c6-753bb69ec4c8'), ('SHELL', '/usr/bin/zsh'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('QT_IM_MODULE', 'ibus'), ('LC_ALL', 'en_US.UTF-8'), ('PWD', '/home/lucifer/humble_ws/study_ws/build/cpp_pkg'), ('XDG_DATA_DIRS', '/home/lucifer/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/lucifer/humble_ws/study_ws/install/py_pkg/lib/python3.10/site-packages:/home/lucifer/humble_ws/study_ws/install/irobot_interfaces/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/lucifer/humble_ws/study_ws/install/irobot_interfaces:/home/lucifer/humble_ws/study_ws/install/cpp_pkg:/home/lucifer/humble_ws/study_ws/install/py_pkg:/opt/ros/humble')]), 'shell': False}
+[0.700181] (-) TimerEvent: {}
+[0.727549] (cpp_pkg) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.10 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.800279] (-) TimerEvent: {}
+[0.852003] (cpp_pkg) StdoutLine: {'line': b'-- Override CMake install command with custom implementation using symlinks instead of copying resources\n'}
+[0.866116] (cpp_pkg) StdoutLine: {'line': b'-- Found rclcpp: 16.0.10 (/opt/ros/humble/share/rclcpp/cmake)\n'}
+[0.900395] (-) TimerEvent: {}
+[0.901935] (cpp_pkg) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[0.905241] (cpp_pkg) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[0.913609] (cpp_pkg) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[0.925634] (cpp_pkg) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.942334] (cpp_pkg) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.988024] (cpp_pkg) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[0.990485] (cpp_pkg) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[1.000519] (-) TimerEvent: {}
+[1.098893] (cpp_pkg) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[1.100629] (-) TimerEvent: {}
+[1.164439] (cpp_pkg) StdoutLine: {'line': b'-- Found example_interfaces: 0.9.3 (/opt/ros/humble/share/example_interfaces/cmake)\n'}
+[1.200772] (-) TimerEvent: {}
+[1.218444] (cpp_pkg) StdoutLine: {'line': b'-- Found irobot_interfaces: 0.0.0 (/home/lucifer/humble_ws/study_ws/install/irobot_interfaces/share/irobot_interfaces/cmake)\n'}
+[1.235592] (cpp_pkg) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.12.11 (/opt/ros/humble/share/ament_lint_auto/cmake)\n'}
+[1.300904] (-) TimerEvent: {}
+[1.312362] (cpp_pkg) StdoutLine: {'line': b"-- Added test 'cppcheck' to perform static code analysis on C / C++ code\n"}
+[1.312605] (cpp_pkg) StdoutLine: {'line': b'-- Configured cppcheck include dirs: \n'}
+[1.312693] (cpp_pkg) StdoutLine: {'line': b'-- Configured cppcheck exclude dirs and/or files: \n'}
+[1.313506] (cpp_pkg) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[1.314907] (cpp_pkg) StdoutLine: {'line': b"-- Added test 'uncrustify' to check C / C++ code style\n"}
+[1.314999] (cpp_pkg) StdoutLine: {'line': b'-- Configured uncrustify additional arguments: \n'}
+[1.315647] (cpp_pkg) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[1.318608] (cpp_pkg) StdoutLine: {'line': b'-- Configuring done\n'}
+[1.322293] (cpp_pkg) StderrLine: {'line': b'\x1b[33mCMake Warning (dev) at CMakeLists.txt:24 (add_executable):\n'}
+[1.322439] (cpp_pkg) StderrLine: {'line': b'  Policy CMP0115 is not set: Source file extensions must be explicit.  Run\n'}
+[1.322501] (cpp_pkg) StderrLine: {'line': b'  "cmake --help-policy CMP0115" for policy details.  Use the cmake_policy\n'}
+[1.322555] (cpp_pkg) StderrLine: {'line': b'  command to set the policy and suppress this warning.\n'}
+[1.322607] (cpp_pkg) StderrLine: {'line': b'\n'}
+[1.322657] (cpp_pkg) StderrLine: {'line': b'  File:\n'}
+[1.322748] (cpp_pkg) StderrLine: {'line': b'\n'}
+[1.322798] (cpp_pkg) StderrLine: {'line': b'    /home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/NumberPublisher.cpp\n'}
+[1.322857] (cpp_pkg) StderrLine: {'line': b'This warning is for project developers.  Use -Wno-dev to suppress it.\n'}
+[1.322913] (cpp_pkg) StderrLine: {'line': b'\x1b[0m\n'}
+[1.322964] (cpp_pkg) StderrLine: {'line': b'\x1b[33mCMake Warning (dev) at CMakeLists.txt:27 (add_executable):\n'}
+[1.323012] (cpp_pkg) StderrLine: {'line': b'  Policy CMP0115 is not set: Source file extensions must be explicit.  Run\n'}
+[1.323061] (cpp_pkg) StderrLine: {'line': b'  "cmake --help-policy CMP0115" for policy details.  Use the cmake_policy\n'}
+[1.323108] (cpp_pkg) StderrLine: {'line': b'  command to set the policy and suppress this warning.\n'}
+[1.323155] (cpp_pkg) StderrLine: {'line': b'\n'}
+[1.323203] (cpp_pkg) StderrLine: {'line': b'  File:\n'}
+[1.323250] (cpp_pkg) StderrLine: {'line': b'\n'}
+[1.323298] (cpp_pkg) StderrLine: {'line': b'    /home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/NumberCounter.cpp\n'}
+[1.323346] (cpp_pkg) StderrLine: {'line': b'This warning is for project developers.  Use -Wno-dev to suppress it.\n'}
+[1.323393] (cpp_pkg) StderrLine: {'line': b'\x1b[0m\n'}
+[1.323440] (cpp_pkg) StderrLine: {'line': b'\x1b[33mCMake Warning (dev) at CMakeLists.txt:33 (add_executable):\n'}
+[1.323487] (cpp_pkg) StderrLine: {'line': b'  Policy CMP0115 is not set: Source file extensions must be explicit.  Run\n'}
+[1.323535] (cpp_pkg) StderrLine: {'line': b'  "cmake --help-policy CMP0115" for policy details.  Use the cmake_policy\n'}
+[1.323582] (cpp_pkg) StderrLine: {'line': b'  command to set the policy and suppress this warning.\n'}
+[1.323630] (cpp_pkg) StderrLine: {'line': b'\n'}
+[1.323677] (cpp_pkg) StderrLine: {'line': b'  File:\n'}
+[1.323724] (cpp_pkg) StderrLine: {'line': b'\n'}
+[1.323771] (cpp_pkg) StderrLine: {'line': b'    /home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/client_sumServer_noop.cpp\n'}
+[1.323820] (cpp_pkg) StderrLine: {'line': b'This warning is for project developers.  Use -Wno-dev to suppress it.\n'}
+[1.323877] (cpp_pkg) StderrLine: {'line': b'\x1b[0m\n'}
+[1.366092] (cpp_pkg) StdoutLine: {'line': b'-- Generating done\n'}
+[1.368359] (cpp_pkg) StdoutLine: {'line': b'-- Build files have been written to: /home/lucifer/humble_ws/study_ws/build/cpp_pkg\n'}
+[1.401058] (-) TimerEvent: {}
+[1.402006] (cpp_pkg) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target cpp_node\x1b[0m\n'}
+[1.402897] (cpp_pkg) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target news_station\x1b[0m\n'}
+[1.403153] (cpp_pkg) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target NumberPublisher\x1b[0m\n'}
+[1.403300] (cpp_pkg) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target NumberCounter\x1b[0m\n'}
+[1.403418] (cpp_pkg) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target sumServer\x1b[0m\n'}
+[1.404514] (cpp_pkg) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target client_sumServer_noop\x1b[0m\n'}
+[1.405893] (cpp_pkg) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target client_sumServer\x1b[0m\n'}
+[1.407069] (cpp_pkg) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target radio\x1b[0m\n'}
+[1.435384] (cpp_pkg) StdoutLine: {'line': b'[ 38%] Built target NumberPublisher\n'}
+[1.435660] (cpp_pkg) StdoutLine: {'line': b'[ 38%] Built target sumServer\n'}
+[1.435899] (cpp_pkg) StdoutLine: {'line': b'[ 38%] Built target NumberCounter\n'}
+[1.436061] (cpp_pkg) StdoutLine: {'line': b'[ 55%] Built target client_sumServer_noop\n'}
+[1.437242] (cpp_pkg) StdoutLine: {'line': b'[ 50%] Built target news_station\n'}
+[1.437677] (cpp_pkg) StdoutLine: {'line': b'[ 77%] Built target radio\n'}
+[1.437955] (cpp_pkg) StdoutLine: {'line': b'[ 77%] Built target cpp_node\n'}
+[1.441734] (cpp_pkg) StdoutLine: {'line': b'[ 88%] Built target client_sumServer\n'}
+[1.448773] (cpp_pkg) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target HardwareStatusPublisher\x1b[0m\n'}
+[1.467296] (cpp_pkg) StdoutLine: {'line': b'[ 94%] \x1b[32mBuilding CXX object CMakeFiles/HardwareStatusPublisher.dir/src/hw_statusPublisher.cpp.o\x1b[0m\n'}
+[1.501183] (-) TimerEvent: {}
+[1.527762] (py_pkg) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/py_pkg', 'build', '--build-base', '/home/lucifer/humble_ws/study_ws/build/py_pkg/build', 'install', '--record', '/home/lucifer/humble_ws/study_ws/build/py_pkg/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/lucifer/humble_ws/study_ws/src/py_pkg', 'env': {'GJS_DEBUG_TOPICS': 'JS ERROR;JS LOG', 'LANGUAGE': 'en_IN:en', 'USER': 'lucifer', 'XDG_SESSION_TYPE': 'wayland', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/lucifer/humble_ws/study_ws/install/irobot_interfaces/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib', 'OLDPWD': '/home/lucifer', 'HOME': '/home/lucifer', 'LESS': '-R', 'DESKTOP_SESSION': 'ubuntu', 'GIO_LAUNCHED_DESKTOP_FILE': '/usr/share/applications/terminator.desktop', 'ZSH': '/home/lucifer/.oh-my-zsh', 'LSCOLORS': 'Gxfxcxdxbxegedabagacad', 'GTK_MODULES': 'gail:atk-bridge', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'PAGER': 'less', 'ROS_PYTHON_VERSION': '3', 'MANAGERPID': '1478', 'SYSTEMD_EXEC_PID': '1639', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'GIO_LAUNCHED_DESKTOP_FILE_PID': '17430', 'COLORTERM': 'truecolor', 'TERMINATOR_DBUS_NAME': 'net.tenshu.Terminator25ef4b219e3b005583550f2b0f9f990c3', 'WAYLAND_DISPLAY': 'wayland-0', 'ROS_DISTRO': 'humble', 'COLCON_PREFIX_PATH': '/home/lucifer/humble_ws/study_ws/install', 'LOGNAME': 'lucifer', '_': '/usr/bin/colcon', 'JOURNAL_STREAM': '8:14666', 'XDG_SESSION_CLASS': 'user', 'ROS_VERSION': '2', 'USERNAME': 'lucifer', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/chappie:@/tmp/.ICE-unix/1594,unix/chappie:/tmp/.ICE-unix/1594', 'INVOCATION_ID': '015f388818b3449aa8814a5e3c3da97f', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'IBUS_DISABLE_SNOOPER': '1', 'TERMINATOR_DBUS_PATH': '/net/tenshu/Terminator2', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XMODIFIERS': '@im=ibus', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.OXGTU2', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'SSH_AGENT_LAUNCHER': 'gnome-keyring', 'AMENT_PREFIX_PATH': '/home/lucifer/humble_ws/study_ws/install/py_pkg:/home/lucifer/humble_ws/study_ws/install/cpp_pkg:/home/lucifer/humble_ws/study_ws/install/irobot_interfaces:/opt/ros/humble', 'TERMINATOR_UUID': 'urn:uuid:dd887d16-de6f-4e30-91c6-753bb69ec4c8', 'SHELL': '/usr/bin/zsh', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'GJS_DEBUG_OUTPUT': 'stderr', 'QT_IM_MODULE': 'ibus', 'LC_ALL': 'en_US.UTF-8', 'PWD': '/home/lucifer/humble_ws/study_ws/build/py_pkg', 'XDG_DATA_DIRS': '/home/lucifer/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/lucifer/humble_ws/study_ws/build/py_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/lucifer/humble_ws/study_ws/install/py_pkg/lib/python3.10/site-packages:/home/lucifer/humble_ws/study_ws/install/py_pkg/lib/python3.10/site-packages:/home/lucifer/humble_ws/study_ws/install/irobot_interfaces/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'COLCON': '1', 'VTE_VERSION': '6800', 'CMAKE_PREFIX_PATH': '/home/lucifer/humble_ws/study_ws/install/irobot_interfaces:/home/lucifer/humble_ws/study_ws/install/cpp_pkg'}, 'shell': False}
+[1.601316] (-) TimerEvent: {}
+[1.701558] (-) TimerEvent: {}
+[1.800137] (py_pkg) StdoutLine: {'line': b'running egg_info\n'}
+[1.800663] (py_pkg) StdoutLine: {'line': b'writing ../../build/py_pkg/py_pkg.egg-info/PKG-INFO\n'}
+[1.801084] (py_pkg) StdoutLine: {'line': b'writing dependency_links to ../../build/py_pkg/py_pkg.egg-info/dependency_links.txt\n'}
+[1.801300] (py_pkg) StdoutLine: {'line': b'writing entry points to ../../build/py_pkg/py_pkg.egg-info/entry_points.txt\n'}
+[1.801512] (py_pkg) StdoutLine: {'line': b'writing requirements to ../../build/py_pkg/py_pkg.egg-info/requires.txt\n'}
+[1.801634] (-) TimerEvent: {}
+[1.801805] (py_pkg) StdoutLine: {'line': b'writing top-level names to ../../build/py_pkg/py_pkg.egg-info/top_level.txt\n'}
+[1.803583] (py_pkg) StdoutLine: {'line': b"reading manifest file '../../build/py_pkg/py_pkg.egg-info/SOURCES.txt'\n"}
+[1.804262] (py_pkg) StdoutLine: {'line': b"adding license file 'LICENSE'\n"}
+[1.804993] (py_pkg) StdoutLine: {'line': b"writing manifest file '../../build/py_pkg/py_pkg.egg-info/SOURCES.txt'\n"}
+[1.805173] (py_pkg) StdoutLine: {'line': b'running build\n'}
+[1.805282] (py_pkg) StdoutLine: {'line': b'running build_py\n'}
+[1.806103] (py_pkg) StdoutLine: {'line': b'copying py_pkg/hardwareTest.py -> /home/lucifer/humble_ws/study_ws/build/py_pkg/build/lib/py_pkg\n'}
+[1.806480] (py_pkg) StdoutLine: {'line': b'copying py_pkg/client_RectangleArea.py -> /home/lucifer/humble_ws/study_ws/build/py_pkg/build/lib/py_pkg\n'}
+[1.806649] (py_pkg) StdoutLine: {'line': b'copying py_pkg/template_python_node.py -> /home/lucifer/humble_ws/study_ws/build/py_pkg/build/lib/py_pkg\n'}
+[1.806810] (py_pkg) StdoutLine: {'line': b'copying py_pkg/RectangleArea_server.py -> /home/lucifer/humble_ws/study_ws/build/py_pkg/build/lib/py_pkg\n'}
+[1.807162] (py_pkg) StdoutLine: {'line': b'running install\n'}
+[1.807469] (py_pkg) StdoutLine: {'line': b'running install_lib\n'}
+[1.808169] (py_pkg) StdoutLine: {'line': b'creating /home/lucifer/humble_ws/study_ws/install/py_pkg/lib/python3.10/site-packages/py_pkg\n'}
+[1.808435] (py_pkg) StdoutLine: {'line': b'copying /home/lucifer/humble_ws/study_ws/build/py_pkg/build/lib/py_pkg/news_station.py -> /home/lucifer/humble_ws/study_ws/install/py_pkg/lib/python3.10/site-packages/py_pkg\n'}
+[1.808635] (py_pkg) StdoutLine: {'line': b'copying /home/lucifer/humble_ws/study_ws/build/py_pkg/build/lib/py_pkg/hardwareTest.py -> /home/lucifer/humble_ws/study_ws/install/py_pkg/lib/python3.10/site-packages/py_pkg\n'}
+[1.808832] (py_pkg) StdoutLine: {'line': b'copying /home/lucifer/humble_ws/study_ws/build/py_pkg/build/lib/py_pkg/first_node.py -> /home/lucifer/humble_ws/study_ws/install/py_pkg/lib/python3.10/site-packages/py_pkg\n'}
+[1.808988] (py_pkg) StdoutLine: {'line': b'copying /home/lucifer/humble_ws/study_ws/build/py_pkg/build/lib/py_pkg/radio.py -> /home/lucifer/humble_ws/study_ws/install/py_pkg/lib/python3.10/site-packages/py_pkg\n'}
+[1.809095] (py_pkg) StdoutLine: {'line': b'copying /home/lucifer/humble_ws/study_ws/build/py_pkg/build/lib/py_pkg/client_sumServer.py -> /home/lucifer/humble_ws/study_ws/install/py_pkg/lib/python3.10/site-packages/py_pkg\n'}
+[1.809231] (py_pkg) StdoutLine: {'line': b'copying /home/lucifer/humble_ws/study_ws/build/py_pkg/build/lib/py_pkg/__init__.py -> /home/lucifer/humble_ws/study_ws/install/py_pkg/lib/python3.10/site-packages/py_pkg\n'}
+[1.809359] (py_pkg) StdoutLine: {'line': b'copying /home/lucifer/humble_ws/study_ws/build/py_pkg/build/lib/py_pkg/sum_server.py -> /home/lucifer/humble_ws/study_ws/install/py_pkg/lib/python3.10/site-packages/py_pkg\n'}
+[1.809486] (py_pkg) StdoutLine: {'line': b'copying /home/lucifer/humble_ws/study_ws/build/py_pkg/build/lib/py_pkg/client_RectangleArea.py -> /home/lucifer/humble_ws/study_ws/install/py_pkg/lib/python3.10/site-packages/py_pkg\n'}
+[1.809633] (py_pkg) StdoutLine: {'line': b'copying /home/lucifer/humble_ws/study_ws/build/py_pkg/build/lib/py_pkg/client_sumServer_noop.py -> /home/lucifer/humble_ws/study_ws/install/py_pkg/lib/python3.10/site-packages/py_pkg\n'}
+[1.809822] (py_pkg) StdoutLine: {'line': b'copying /home/lucifer/humble_ws/study_ws/build/py_pkg/build/lib/py_pkg/template_python_node.py -> /home/lucifer/humble_ws/study_ws/install/py_pkg/lib/python3.10/site-packages/py_pkg\n'}
+[1.810010] (py_pkg) StdoutLine: {'line': b'copying /home/lucifer/humble_ws/study_ws/build/py_pkg/build/lib/py_pkg/RectangleArea_server.py -> /home/lucifer/humble_ws/study_ws/install/py_pkg/lib/python3.10/site-packages/py_pkg\n'}
+[1.810644] (py_pkg) StdoutLine: {'line': b'byte-compiling /home/lucifer/humble_ws/study_ws/install/py_pkg/lib/python3.10/site-packages/py_pkg/news_station.py to news_station.cpython-310.pyc\n'}
+[1.811140] (py_pkg) StdoutLine: {'line': b'byte-compiling /home/lucifer/humble_ws/study_ws/install/py_pkg/lib/python3.10/site-packages/py_pkg/hardwareTest.py to hardwareTest.cpython-310.pyc\n'}
+[1.811505] (py_pkg) StdoutLine: {'line': b'byte-compiling /home/lucifer/humble_ws/study_ws/install/py_pkg/lib/python3.10/site-packages/py_pkg/first_node.py to first_node.cpython-310.pyc\n'}
+[1.811858] (py_pkg) StdoutLine: {'line': b'byte-compiling /home/lucifer/humble_ws/study_ws/install/py_pkg/lib/python3.10/site-packages/py_pkg/radio.py to radio.cpython-310.pyc\n'}
+[1.812201] (py_pkg) StdoutLine: {'line': b'byte-compiling /home/lucifer/humble_ws/study_ws/install/py_pkg/lib/python3.10/site-packages/py_pkg/client_sumServer.py to client_sumServer.cpython-310.pyc\n'}
+[1.812711] (py_pkg) StdoutLine: {'line': b'byte-compiling /home/lucifer/humble_ws/study_ws/install/py_pkg/lib/python3.10/site-packages/py_pkg/__init__.py to __init__.cpython-310.pyc\n'}
+[1.812900] (py_pkg) StdoutLine: {'line': b'byte-compiling /home/lucifer/humble_ws/study_ws/install/py_pkg/lib/python3.10/site-packages/py_pkg/sum_server.py to sum_server.cpython-310.pyc\n'}
+[1.813255] (py_pkg) StdoutLine: {'line': b'byte-compiling /home/lucifer/humble_ws/study_ws/install/py_pkg/lib/python3.10/site-packages/py_pkg/client_RectangleArea.py to client_RectangleArea.cpython-310.pyc\n'}
+[1.813576] (py_pkg) StdoutLine: {'line': b'byte-compiling /home/lucifer/humble_ws/study_ws/install/py_pkg/lib/python3.10/site-packages/py_pkg/client_sumServer_noop.py to client_sumServer_noop.cpython-310.pyc\n'}
+[1.813898] (py_pkg) StdoutLine: {'line': b'byte-compiling /home/lucifer/humble_ws/study_ws/install/py_pkg/lib/python3.10/site-packages/py_pkg/template_python_node.py to template_python_node.cpython-310.pyc\n'}
+[1.814210] (py_pkg) StdoutLine: {'line': b'byte-compiling /home/lucifer/humble_ws/study_ws/install/py_pkg/lib/python3.10/site-packages/py_pkg/RectangleArea_server.py to RectangleArea_server.cpython-310.pyc\n'}
+[1.814531] (py_pkg) StdoutLine: {'line': b'running install_data\n'}
+[1.814746] (py_pkg) StdoutLine: {'line': b'creating /home/lucifer/humble_ws/study_ws/install/py_pkg/share/ament_index\n'}
+[1.814873] (py_pkg) StdoutLine: {'line': b'creating /home/lucifer/humble_ws/study_ws/install/py_pkg/share/ament_index/resource_index\n'}
+[1.815083] (py_pkg) StdoutLine: {'line': b'creating /home/lucifer/humble_ws/study_ws/install/py_pkg/share/ament_index/resource_index/packages\n'}
+[1.815232] (py_pkg) StdoutLine: {'line': b'copying resource/py_pkg -> /home/lucifer/humble_ws/study_ws/install/py_pkg/share/ament_index/resource_index/packages\n'}
+[1.815362] (py_pkg) StdoutLine: {'line': b'copying package.xml -> /home/lucifer/humble_ws/study_ws/install/py_pkg/share/py_pkg\n'}
+[1.815475] (py_pkg) StdoutLine: {'line': b'running install_egg_info\n'}
+[1.817350] (py_pkg) StdoutLine: {'line': b'Copying ../../build/py_pkg/py_pkg.egg-info to /home/lucifer/humble_ws/study_ws/install/py_pkg/lib/python3.10/site-packages/py_pkg-0.0.0-py3.10.egg-info\n'}
+[1.818361] (py_pkg) StdoutLine: {'line': b'running install_scripts\n'}
+[1.838102] (py_pkg) StdoutLine: {'line': b'Installing HardwareStatusPublisher script to /home/lucifer/humble_ws/study_ws/install/py_pkg/lib/py_pkg\n'}
+[1.838362] (py_pkg) StdoutLine: {'line': b'Installing addTwoInt_noop script to /home/lucifer/humble_ws/study_ws/install/py_pkg/lib/py_pkg\n'}
+[1.838521] (py_pkg) StdoutLine: {'line': b'Installing client_sumServer script to /home/lucifer/humble_ws/study_ws/install/py_pkg/lib/py_pkg\n'}
+[1.838715] (py_pkg) StdoutLine: {'line': b'Installing news_station script to /home/lucifer/humble_ws/study_ws/install/py_pkg/lib/py_pkg\n'}
+[1.838821] (py_pkg) StdoutLine: {'line': b'Installing py_node script to /home/lucifer/humble_ws/study_ws/install/py_pkg/lib/py_pkg\n'}
+[1.838934] (py_pkg) StdoutLine: {'line': b'Installing radio script to /home/lucifer/humble_ws/study_ws/install/py_pkg/lib/py_pkg\n'}
+[1.839034] (py_pkg) StdoutLine: {'line': b'Installing sum_server script to /home/lucifer/humble_ws/study_ws/install/py_pkg/lib/py_pkg\n'}
+[1.839288] (py_pkg) StdoutLine: {'line': b"writing list of installed files to '/home/lucifer/humble_ws/study_ws/build/py_pkg/install.log'\n"}
+[1.865585] (py_pkg) CommandEnded: {'returncode': 0}
+[1.871956] (py_pkg) JobEnded: {'identifier': 'py_pkg', 'rc': 0}
+[1.901762] (-) TimerEvent: {}
+[2.002064] (-) TimerEvent: {}
+[2.102379] (-) TimerEvent: {}
+[2.202743] (-) TimerEvent: {}
+[2.303084] (-) TimerEvent: {}
+[2.403411] (-) TimerEvent: {}
+[2.503754] (-) TimerEvent: {}
+[2.604144] (-) TimerEvent: {}
+[2.704701] (-) TimerEvent: {}
+[2.805023] (-) TimerEvent: {}
+[2.905404] (-) TimerEvent: {}
+[3.005753] (-) TimerEvent: {}
+[3.106064] (-) TimerEvent: {}
+[3.206405] (-) TimerEvent: {}
+[3.306740] (-) TimerEvent: {}
+[3.407038] (-) TimerEvent: {}
+[3.507387] (-) TimerEvent: {}
+[3.607772] (-) TimerEvent: {}
+[3.708114] (-) TimerEvent: {}
+[3.808473] (-) TimerEvent: {}
+[3.908817] (-) TimerEvent: {}
+[4.009121] (-) TimerEvent: {}
+[4.109497] (-) TimerEvent: {}
+[4.209873] (-) TimerEvent: {}
+[4.310201] (-) TimerEvent: {}
+[4.410558] (-) TimerEvent: {}
+[4.510922] (-) TimerEvent: {}
+[4.611352] (-) TimerEvent: {}
+[4.711785] (-) TimerEvent: {}
+[4.812160] (-) TimerEvent: {}
+[4.912537] (-) TimerEvent: {}
+[5.012911] (-) TimerEvent: {}
+[5.113250] (-) TimerEvent: {}
+[5.213577] (-) TimerEvent: {}
+[5.313957] (-) TimerEvent: {}
+[5.414291] (-) TimerEvent: {}
+[5.514627] (-) TimerEvent: {}
+[5.614952] (-) TimerEvent: {}
+[5.715258] (-) TimerEvent: {}
+[5.815584] (-) TimerEvent: {}
+[5.915869] (-) TimerEvent: {}
+[6.016188] (-) TimerEvent: {}
+[6.116537] (-) TimerEvent: {}
+[6.216854] (-) TimerEvent: {}
+[6.317118] (-) TimerEvent: {}
+[6.417443] (-) TimerEvent: {}
+[6.517758] (-) TimerEvent: {}
+[6.618135] (-) TimerEvent: {}
+[6.658513] (cpp_pkg) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable HardwareStatusPublisher\x1b[0m\n'}
+[6.718319] (-) TimerEvent: {}
+[6.818807] (-) TimerEvent: {}
+[6.919349] (-) TimerEvent: {}
+[6.933790] (cpp_pkg) StdoutLine: {'line': b'[100%] Built target HardwareStatusPublisher\n'}
+[6.946846] (cpp_pkg) CommandEnded: {'returncode': 0}
+[7.006948] (cpp_pkg) JobProgress: {'identifier': 'cpp_pkg', 'progress': 'install'}
+[7.007920] (cpp_pkg) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/lucifer/humble_ws/study_ws/build/cpp_pkg'], 'cwd': '/home/lucifer/humble_ws/study_ws/build/cpp_pkg', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LANGUAGE', 'en_IN:en'), ('USER', 'lucifer'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/lucifer/humble_ws/study_ws/install/irobot_interfaces/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('OLDPWD', '/home/lucifer'), ('HOME', '/home/lucifer'), ('LESS', '-R'), ('DESKTOP_SESSION', 'ubuntu'), ('GIO_LAUNCHED_DESKTOP_FILE', '/usr/share/applications/terminator.desktop'), ('ZSH', '/home/lucifer/.oh-my-zsh'), ('LSCOLORS', 'Gxfxcxdxbxegedabagacad'), ('GTK_MODULES', 'gail:atk-bridge'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('PAGER', 'less'), ('ROS_PYTHON_VERSION', '3'), ('MANAGERPID', '1478'), ('SYSTEMD_EXEC_PID', '1639'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '17430'), ('COLORTERM', 'truecolor'), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator25ef4b219e3b005583550f2b0f9f990c3'), ('WAYLAND_DISPLAY', 'wayland-0'), ('ROS_DISTRO', 'humble'), ('COLCON_PREFIX_PATH', '/home/lucifer/humble_ws/study_ws/install'), ('LOGNAME', 'lucifer'), ('_', '/usr/bin/colcon'), ('JOURNAL_STREAM', '8:14666'), ('XDG_SESSION_CLASS', 'user'), ('ROS_VERSION', '2'), ('USERNAME', 'lucifer'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/chappie:@/tmp/.ICE-unix/1594,unix/chappie:/tmp/.ICE-unix/1594'), ('INVOCATION_ID', '015f388818b3449aa8814a5e3c3da97f'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('IBUS_DISABLE_SNOOPER', '1'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XMODIFIERS', '@im=ibus'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.OXGTU2'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('AMENT_PREFIX_PATH', '/home/lucifer/humble_ws/study_ws/install/py_pkg:/home/lucifer/humble_ws/study_ws/install/cpp_pkg:/home/lucifer/humble_ws/study_ws/install/irobot_interfaces:/opt/ros/humble'), ('TERMINATOR_UUID', 'urn:uuid:dd887d16-de6f-4e30-91c6-753bb69ec4c8'), ('SHELL', '/usr/bin/zsh'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('QT_IM_MODULE', 'ibus'), ('LC_ALL', 'en_US.UTF-8'), ('PWD', '/home/lucifer/humble_ws/study_ws/build/cpp_pkg'), ('XDG_DATA_DIRS', '/home/lucifer/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/lucifer/humble_ws/study_ws/install/py_pkg/lib/python3.10/site-packages:/home/lucifer/humble_ws/study_ws/install/irobot_interfaces/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/lucifer/humble_ws/study_ws/install/irobot_interfaces:/home/lucifer/humble_ws/study_ws/install/cpp_pkg:/home/lucifer/humble_ws/study_ws/install/py_pkg:/opt/ros/humble')]), 'shell': False}
+[7.016328] (cpp_pkg) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[7.016810] (cpp_pkg) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[7.017346] (cpp_pkg) StdoutLine: {'line': b'-- Symlinking: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/lib/cpp_pkg/cpp_node\n'}
+[7.019460] (-) TimerEvent: {}
+[7.027105] (cpp_pkg) StdoutLine: {'line': b'-- Symlinking: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/lib/cpp_pkg/news_station\n'}
+[7.036787] (cpp_pkg) StdoutLine: {'line': b'-- Symlinking: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/lib/cpp_pkg/radio\n'}
+[7.046833] (cpp_pkg) StdoutLine: {'line': b'-- Symlinking: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/lib/cpp_pkg/NumberPublisher\n'}
+[7.056736] (cpp_pkg) StdoutLine: {'line': b'-- Symlinking: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/lib/cpp_pkg/NumberCounter\n'}
+[7.066322] (cpp_pkg) StdoutLine: {'line': b'-- Symlinking: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/lib/cpp_pkg/client_sumServer\n'}
+[7.076183] (cpp_pkg) StdoutLine: {'line': b'-- Symlinking: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/lib/cpp_pkg/client_sumServer_noop\n'}
+[7.085867] (cpp_pkg) StdoutLine: {'line': b'-- Symlinking: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/lib/cpp_pkg/sumServer\n'}
+[7.095555] (cpp_pkg) StdoutLine: {'line': b'-- Symlinking: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/lib/cpp_pkg/HardwareStatusPublisher\n'}
+[7.105140] (cpp_pkg) StdoutLine: {'line': b'-- Symlinking: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/share/ament_index/resource_index/package_run_dependencies/cpp_pkg\n'}
+[7.115278] (cpp_pkg) StdoutLine: {'line': b'-- Symlinking: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/share/ament_index/resource_index/parent_prefix_path/cpp_pkg\n'}
+[7.119568] (-) TimerEvent: {}
+[7.127256] (cpp_pkg) StdoutLine: {'line': b'-- Symlinking: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/share/cpp_pkg/environment/ament_prefix_path.sh\n'}
+[7.137675] (cpp_pkg) StdoutLine: {'line': b'-- Symlinking: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/share/cpp_pkg/environment/ament_prefix_path.dsv\n'}
+[7.148929] (cpp_pkg) StdoutLine: {'line': b'-- Symlinking: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/share/cpp_pkg/environment/path.sh\n'}
+[7.162660] (cpp_pkg) StdoutLine: {'line': b'-- Symlinking: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/share/cpp_pkg/environment/path.dsv\n'}
+[7.172343] (cpp_pkg) StdoutLine: {'line': b'-- Symlinking: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/share/cpp_pkg/local_setup.bash\n'}
+[7.182045] (cpp_pkg) StdoutLine: {'line': b'-- Symlinking: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/share/cpp_pkg/local_setup.sh\n'}
+[7.191065] (cpp_pkg) StdoutLine: {'line': b'-- Symlinking: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/share/cpp_pkg/local_setup.zsh\n'}
+[7.200330] (cpp_pkg) StdoutLine: {'line': b'-- Symlinking: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/share/cpp_pkg/local_setup.dsv\n'}
+[7.209963] (cpp_pkg) StdoutLine: {'line': b'-- Symlinking: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/share/cpp_pkg/package.dsv\n'}
+[7.219440] (cpp_pkg) StdoutLine: {'line': b'-- Symlinking: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/share/ament_index/resource_index/packages/cpp_pkg\n'}
+[7.219600] (-) TimerEvent: {}
+[7.229065] (cpp_pkg) StdoutLine: {'line': b'-- Symlinking: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/share/cpp_pkg/cmake/cpp_pkgConfig.cmake\n'}
+[7.238589] (cpp_pkg) StdoutLine: {'line': b'-- Symlinking: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/share/cpp_pkg/cmake/cpp_pkgConfig-version.cmake\n'}
+[7.247833] (cpp_pkg) StdoutLine: {'line': b'-- Symlinking: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/share/cpp_pkg/package.xml\n'}
+[7.260322] (cpp_pkg) CommandEnded: {'returncode': 0}
+[7.319705] (-) TimerEvent: {}
+[7.331090] (cpp_pkg) JobEnded: {'identifier': 'cpp_pkg', 'rc': 0}
+[7.332017] (-) EventReactorShutdown: {}

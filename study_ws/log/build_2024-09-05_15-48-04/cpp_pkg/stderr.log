@@ -1,0 +1,7 @@
+[01m[K/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/news_station.cpp:[m[K In member function ‘[01m[Kvoid news_station::publishNews()[m[K’:
+[01m[K/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/news_station.cpp:21:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kcounter[m[K’ was not declared in this scope
+   21 |         [01;31m[Kcounter[m[K = counter+1;
+      |         [01;31m[K^~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/news_station.dir/build.make:76: CMakeFiles/news_station.dir/src/news_station.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:165: CMakeFiles/news_station.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

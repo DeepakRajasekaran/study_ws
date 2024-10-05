@@ -1,0 +1,7 @@
+[01m[K/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/hw_statusPublisher.cpp:[m[K In constructor ‘[01m[KHardwareStatusPublisherNode::HardwareStatusPublisherNode()[m[K’:
+[01m[K/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/hw_statusPublisher.cpp:13:24:[m[K [01;31m[Kerror: [m[K‘[01m[KHardwareStatusPublisher[m[K’ has not been declared
+   13 |             std::bind(&[01;31m[KHardwareStatusPublisher[m[K::publishHardwareStatus, this));
+      |                        [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/HardwareStatusPublisher.dir/build.make:76: CMakeFiles/HardwareStatusPublisher.dir/src/hw_statusPublisher.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:361: CMakeFiles/HardwareStatusPublisher.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

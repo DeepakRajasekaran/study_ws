@@ -1,0 +1,10 @@
+[ 44%] Built target NumberPublisher
+[ 44%] Built target cpp_node
+[ 50%] Built target radio
+[ 44%] Built target news_station
+[ 55%] Built target NumberCounter
+[ 66%] Built target sumServer
+[ 77%] Built target client_sumServer_noop
+[ 88%] Built target client_sumServer
+[35m[1mConsolidate compiler generated dependencies of target HardwareStatusPublisher[0m
+[ 94%] [32mBuilding CXX object CMakeFiles/HardwareStatusPublisher.dir/src/hw_statusPublisher.cpp.o[0m

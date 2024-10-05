@@ -1,0 +1,151 @@
+[0.000000] (-) TimerEvent: {}
+[0.000115] (cpp_pkg) JobQueued: {'identifier': 'cpp_pkg', 'dependencies': OrderedDict()}
+[0.000142] (py_pkg) JobQueued: {'identifier': 'py_pkg', 'dependencies': OrderedDict()}
+[0.000161] (cpp_pkg) JobStarted: {'identifier': 'cpp_pkg'}
+[0.005283] (py_pkg) JobStarted: {'identifier': 'py_pkg'}
+[0.011178] (cpp_pkg) JobProgress: {'identifier': 'cpp_pkg', 'progress': 'cmake'}
+[0.011852] (cpp_pkg) JobProgress: {'identifier': 'cpp_pkg', 'progress': 'build'}
+[0.012602] (cpp_pkg) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/lucifer/humble_ws/study_ws/build/cpp_pkg', '--', '-j8', '-l8'], 'cwd': '/home/lucifer/humble_ws/study_ws/build/cpp_pkg', 'env': OrderedDict([('LANGUAGE', 'en_IN:en'), ('USER', 'lucifer'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('OLDPWD', '/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src'), ('HOME', '/home/lucifer'), ('LESS', '-R'), ('DESKTOP_SESSION', 'ubuntu'), ('ZSH', '/home/lucifer/.oh-my-zsh'), ('LSCOLORS', 'Gxfxcxdxbxegedabagacad'), ('GTK_MODULES', 'gail:atk-bridge'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('PAGER', 'less'), ('ROS_PYTHON_VERSION', '3'), ('MANAGERPID', '1444'), ('SYSTEMD_EXEC_PID', '1764'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '5009'), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator25ef4b219e3b005583550f2b0f9f990c3'), ('WAYLAND_DISPLAY', 'wayland-0'), ('ROS_DISTRO', 'humble'), ('COLCON_PREFIX_PATH', '/home/lucifer/humble_ws/study_ws/install'), ('LOGNAME', 'lucifer'), ('_', '/usr/bin/colcon'), ('JOURNAL_STREAM', '8:13957'), ('XDG_SESSION_CLASS', 'user'), ('ROS_VERSION', '2'), ('USERNAME', 'lucifer'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/chappie:@/tmp/.ICE-unix/1576,unix/chappie:/tmp/.ICE-unix/1576'), ('INVOCATION_ID', '911737e93a884f18b77c9269619edd62'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('IBUS_DISABLE_SNOOPER', '1'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XMODIFIERS', '@im=ibus'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.THIET2'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('AMENT_PREFIX_PATH', '/home/lucifer/humble_ws/study_ws/install/py_pkg:/home/lucifer/humble_ws/study_ws/install/cpp_pkg:/opt/ros/humble'), ('TERMINATOR_UUID', 'urn:uuid:a8620fd7-e297-4b8e-aa9c-eb1e4830fa57'), ('SHELL', '/usr/bin/zsh'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('QT_IM_MODULE', 'ibus'), ('LC_ALL', 'en_US.UTF-8'), ('PWD', '/home/lucifer/humble_ws/study_ws/build/cpp_pkg'), ('XDG_DATA_DIRS', '/home/lucifer/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/lucifer/humble_ws/study_ws/install/py_pkg/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/lucifer/humble_ws/study_ws/install/cpp_pkg:/home/lucifer/humble_ws/study_ws/install/py_pkg:/opt/ros/humble')]), 'shell': False}
+[0.039155] (cpp_pkg) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.10 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.099496] (-) TimerEvent: {}
+[0.162958] (cpp_pkg) StdoutLine: {'line': b'-- Found rclcpp: 16.0.10 (/opt/ros/humble/share/rclcpp/cmake)\n'}
+[0.190785] (cpp_pkg) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[0.193170] (cpp_pkg) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[0.198690] (cpp_pkg) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[0.199585] (-) TimerEvent: {}
+[0.208235] (cpp_pkg) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.220313] (cpp_pkg) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.254327] (cpp_pkg) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[0.255719] (cpp_pkg) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[0.299731] (-) TimerEvent: {}
+[0.362954] (cpp_pkg) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[0.399862] (-) TimerEvent: {}
+[0.424277] (cpp_pkg) StdoutLine: {'line': b'-- Found example_interfaces: 0.9.3 (/opt/ros/humble/share/example_interfaces/cmake)\n'}
+[0.480837] (cpp_pkg) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.12.11 (/opt/ros/humble/share/ament_lint_auto/cmake)\n'}
+[0.499959] (-) TimerEvent: {}
+[0.551216] (cpp_pkg) StdoutLine: {'line': b"-- Added test 'cppcheck' to perform static code analysis on C / C++ code\n"}
+[0.551467] (cpp_pkg) StdoutLine: {'line': b'-- Configured cppcheck include dirs: \n'}
+[0.551610] (cpp_pkg) StdoutLine: {'line': b'-- Configured cppcheck exclude dirs and/or files: \n'}
+[0.552399] (cpp_pkg) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[0.553956] (cpp_pkg) StdoutLine: {'line': b"-- Added test 'uncrustify' to check C / C++ code style\n"}
+[0.554073] (cpp_pkg) StdoutLine: {'line': b'-- Configured uncrustify additional arguments: \n'}
+[0.554469] (cpp_pkg) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[0.555641] (cpp_pkg) StdoutLine: {'line': b'-- Configuring done\n'}
+[0.575489] (cpp_pkg) StdoutLine: {'line': b'-- Generating done\n'}
+[0.578538] (cpp_pkg) StdoutLine: {'line': b'-- Build files have been written to: /home/lucifer/humble_ws/study_ws/build/cpp_pkg\n'}
+[0.600070] (-) TimerEvent: {}
+[0.608678] (cpp_pkg) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target cpp_node\x1b[0m\n'}
+[0.608852] (cpp_pkg) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target news_station\x1b[0m\n'}
+[0.629145] (cpp_pkg) StdoutLine: {'line': b'[ 25%] \x1b[32mBuilding CXX object CMakeFiles/news_station.dir/src/news_station.cpp.o\x1b[0m\n'}
+[0.630426] (cpp_pkg) StdoutLine: {'line': b'[ 75%] Built target cpp_node\n'}
+[0.700207] (-) TimerEvent: {}
+[0.710623] (py_pkg) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/py_pkg', 'build', '--build-base', '/home/lucifer/humble_ws/study_ws/build/py_pkg/build', 'install', '--record', '/home/lucifer/humble_ws/study_ws/build/py_pkg/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/lucifer/humble_ws/study_ws/src/py_pkg', 'env': {'LANGUAGE': 'en_IN:en', 'USER': 'lucifer', 'XDG_SESSION_TYPE': 'wayland', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib', 'OLDPWD': '/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src', 'HOME': '/home/lucifer', 'LESS': '-R', 'DESKTOP_SESSION': 'ubuntu', 'ZSH': '/home/lucifer/.oh-my-zsh', 'LSCOLORS': 'Gxfxcxdxbxegedabagacad', 'GTK_MODULES': 'gail:atk-bridge', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'PAGER': 'less', 'ROS_PYTHON_VERSION': '3', 'MANAGERPID': '1444', 'SYSTEMD_EXEC_PID': '1764', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'GIO_LAUNCHED_DESKTOP_FILE_PID': '5009', 'TERMINATOR_DBUS_NAME': 'net.tenshu.Terminator25ef4b219e3b005583550f2b0f9f990c3', 'WAYLAND_DISPLAY': 'wayland-0', 'ROS_DISTRO': 'humble', 'COLCON_PREFIX_PATH': '/home/lucifer/humble_ws/study_ws/install', 'LOGNAME': 'lucifer', '_': '/usr/bin/colcon', 'JOURNAL_STREAM': '8:13957', 'XDG_SESSION_CLASS': 'user', 'ROS_VERSION': '2', 'USERNAME': 'lucifer', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/chappie:@/tmp/.ICE-unix/1576,unix/chappie:/tmp/.ICE-unix/1576', 'INVOCATION_ID': '911737e93a884f18b77c9269619edd62', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'IBUS_DISABLE_SNOOPER': '1', 'TERMINATOR_DBUS_PATH': '/net/tenshu/Terminator2', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XMODIFIERS': '@im=ibus', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.THIET2', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'SSH_AGENT_LAUNCHER': 'gnome-keyring', 'AMENT_PREFIX_PATH': '/home/lucifer/humble_ws/study_ws/install/py_pkg:/home/lucifer/humble_ws/study_ws/install/cpp_pkg:/opt/ros/humble', 'TERMINATOR_UUID': 'urn:uuid:a8620fd7-e297-4b8e-aa9c-eb1e4830fa57', 'SHELL': '/usr/bin/zsh', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'QT_IM_MODULE': 'ibus', 'LC_ALL': 'en_US.UTF-8', 'PWD': '/home/lucifer/humble_ws/study_ws/build/py_pkg', 'XDG_DATA_DIRS': '/home/lucifer/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/lucifer/humble_ws/study_ws/build/py_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/lucifer/humble_ws/study_ws/install/py_pkg/lib/python3.10/site-packages:/home/lucifer/humble_ws/study_ws/install/py_pkg/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'COLCON': '1', 'VTE_VERSION': '6800', 'CMAKE_PREFIX_PATH': '/home/lucifer/humble_ws/study_ws/install/cpp_pkg'}, 'shell': False}
+[0.800314] (-) TimerEvent: {}
+[0.900639] (-) TimerEvent: {}
+[0.985940] (py_pkg) StdoutLine: {'line': b'running egg_info\n'}
+[0.986816] (py_pkg) StdoutLine: {'line': b'writing ../../build/py_pkg/py_pkg.egg-info/PKG-INFO\n'}
+[0.987077] (py_pkg) StdoutLine: {'line': b'writing dependency_links to ../../build/py_pkg/py_pkg.egg-info/dependency_links.txt\n'}
+[0.987360] (py_pkg) StdoutLine: {'line': b'writing entry points to ../../build/py_pkg/py_pkg.egg-info/entry_points.txt\n'}
+[0.987613] (py_pkg) StdoutLine: {'line': b'writing requirements to ../../build/py_pkg/py_pkg.egg-info/requires.txt\n'}
+[0.987732] (py_pkg) StdoutLine: {'line': b'writing top-level names to ../../build/py_pkg/py_pkg.egg-info/top_level.txt\n'}
+[0.989639] (py_pkg) StdoutLine: {'line': b"reading manifest file '../../build/py_pkg/py_pkg.egg-info/SOURCES.txt'\n"}
+[0.989985] (py_pkg) StdoutLine: {'line': b"adding license file 'LICENSE'\n"}
+[0.990738] (py_pkg) StdoutLine: {'line': b"writing manifest file '../../build/py_pkg/py_pkg.egg-info/SOURCES.txt'\n"}
+[0.990934] (py_pkg) StdoutLine: {'line': b'running build\n'}
+[0.991065] (py_pkg) StdoutLine: {'line': b'running build_py\n'}
+[0.991538] (py_pkg) StdoutLine: {'line': b'running install\n'}
+[0.991999] (py_pkg) StdoutLine: {'line': b'running install_lib\n'}
+[0.993505] (py_pkg) StdoutLine: {'line': b'running install_data\n'}
+[0.993706] (py_pkg) StdoutLine: {'line': b'running install_egg_info\n'}
+[0.995361] (py_pkg) StdoutLine: {'line': b"removing '/home/lucifer/humble_ws/study_ws/install/py_pkg/lib/python3.10/site-packages/py_pkg-0.0.0-py3.10.egg-info' (and everything under it)\n"}
+[0.995722] (py_pkg) StdoutLine: {'line': b'Copying ../../build/py_pkg/py_pkg.egg-info to /home/lucifer/humble_ws/study_ws/install/py_pkg/lib/python3.10/site-packages/py_pkg-0.0.0-py3.10.egg-info\n'}
+[0.996721] (py_pkg) StdoutLine: {'line': b'running install_scripts\n'}
+[1.000728] (-) TimerEvent: {}
+[1.019294] (py_pkg) StdoutLine: {'line': b'Installing news_station script to /home/lucifer/humble_ws/study_ws/install/py_pkg/lib/py_pkg\n'}
+[1.019631] (py_pkg) StdoutLine: {'line': b'Installing py_node script to /home/lucifer/humble_ws/study_ws/install/py_pkg/lib/py_pkg\n'}
+[1.019826] (py_pkg) StdoutLine: {'line': b'Installing radio script to /home/lucifer/humble_ws/study_ws/install/py_pkg/lib/py_pkg\n'}
+[1.020203] (py_pkg) StdoutLine: {'line': b"writing list of installed files to '/home/lucifer/humble_ws/study_ws/build/py_pkg/install.log'\n"}
+[1.049103] (py_pkg) CommandEnded: {'returncode': 0}
+[1.060660] (py_pkg) JobEnded: {'identifier': 'py_pkg', 'rc': 0}
+[1.100865] (-) TimerEvent: {}
+[1.201234] (-) TimerEvent: {}
+[1.301579] (-) TimerEvent: {}
+[1.401908] (-) TimerEvent: {}
+[1.502262] (-) TimerEvent: {}
+[1.602625] (-) TimerEvent: {}
+[1.702992] (-) TimerEvent: {}
+[1.803396] (-) TimerEvent: {}
+[1.903747] (-) TimerEvent: {}
+[2.004154] (-) TimerEvent: {}
+[2.104501] (-) TimerEvent: {}
+[2.204858] (-) TimerEvent: {}
+[2.305255] (-) TimerEvent: {}
+[2.405577] (-) TimerEvent: {}
+[2.505879] (-) TimerEvent: {}
+[2.606238] (-) TimerEvent: {}
+[2.706610] (-) TimerEvent: {}
+[2.807049] (-) TimerEvent: {}
+[2.907442] (-) TimerEvent: {}
+[3.007843] (-) TimerEvent: {}
+[3.108282] (-) TimerEvent: {}
+[3.208647] (-) TimerEvent: {}
+[3.283471] (cpp_pkg) StderrLine: {'line': b'\x1b[01m\x1b[K/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/news_station.cpp:23:23:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kstd_msgs\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[3.283677] (cpp_pkg) StderrLine: {'line': b'   23 |     rclcpp::Publisher<\x1b[01;31m\x1b[Kstd_msgs\x1b[m\x1b[K::msg::String>::SharedPtr publisher_;\n'}
+[3.283757] (cpp_pkg) StderrLine: {'line': b'      |                       \x1b[01;31m\x1b[K^~~~~~~~\x1b[m\x1b[K\n'}
+[3.283858] (cpp_pkg) StderrLine: {'line': b'\x1b[01m\x1b[K/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/news_station.cpp:23:44:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[3.283935] (cpp_pkg) StderrLine: {'line': b'   23 |     rclcpp::Publisher<std_msgs::msg::String\x1b[01;31m\x1b[K>\x1b[m\x1b[K::SharedPtr publisher_;\n'}
+[3.284004] (cpp_pkg) StderrLine: {'line': b'      |                                            \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[3.284200] (cpp_pkg) StderrLine: {'line': b'\x1b[01m\x1b[K/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/news_station.cpp:23:47:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected \xe2\x80\x98\x1b[01m\x1b[K;\x1b[m\x1b[K\xe2\x80\x99 at end of member declaration\n'}
+[3.284314] (cpp_pkg) StderrLine: {'line': b'   23 |     rclcpp::Publisher<std_msgs::msg::String>::\x1b[01;31m\x1b[KSharedPtr\x1b[m\x1b[K publisher_;\n'}
+[3.284388] (cpp_pkg) StderrLine: {'line': b'      |                                               \x1b[01;31m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[3.284459] (cpp_pkg) StderrLine: {'line': b'      |                                                        \x1b[32m\x1b[K;\x1b[m\x1b[K\n'}
+[3.285982] (cpp_pkg) StderrLine: {'line': b'\x1b[01m\x1b[K/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/news_station.cpp:23:57:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kpublisher_\x1b[m\x1b[K\xe2\x80\x99 does not name a type; did you mean \xe2\x80\x98\x1b[01m\x1b[Krmw_publisher_t\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[3.286118] (cpp_pkg) StderrLine: {'line': b'   23 |     rclcpp::Publisher<std_msgs::msg::String>::SharedPtr \x1b[01;31m\x1b[Kpublisher_\x1b[m\x1b[K;\n'}
+[3.286190] (cpp_pkg) StderrLine: {'line': b'      |                                                         \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.286258] (cpp_pkg) StderrLine: {'line': b'      |                                                         \x1b[32m\x1b[Krmw_publisher_t\x1b[m\x1b[K\n'}
+[3.293508] (cpp_pkg) StderrLine: {'line': b'\x1b[01m\x1b[K/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/news_station.cpp:\x1b[m\x1b[K In constructor \xe2\x80\x98\x1b[01m\x1b[Knews_station::news_station()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[3.293654] (cpp_pkg) StderrLine: {'line': b'\x1b[01m\x1b[K/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/news_station.cpp:10:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kpublisher_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[KpublishNews\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[3.293747] (cpp_pkg) StderrLine: {'line': b'   10 |         \x1b[01;31m\x1b[Kpublisher_\x1b[m\x1b[K = this->create_publisher<std_msgs::msg::String>("news", 10);\n'}
+[3.293836] (cpp_pkg) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.293908] (cpp_pkg) StderrLine: {'line': b'      |         \x1b[32m\x1b[KpublishNews\x1b[m\x1b[K\n'}
+[3.299299] (cpp_pkg) StderrLine: {'line': b'\x1b[01m\x1b[K/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/news_station.cpp:10:45:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kstd_msgs\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[3.299414] (cpp_pkg) StderrLine: {'line': b'   10 |         publisher_ = this->create_publisher<\x1b[01;31m\x1b[Kstd_msgs\x1b[m\x1b[K::msg::String>("news", 10);\n'}
+[3.299506] (cpp_pkg) StderrLine: {'line': b'      |                                             \x1b[01;31m\x1b[K^~~~~~~~\x1b[m\x1b[K\n'}
+[3.299575] (cpp_pkg) StderrLine: {'line': b'\x1b[01m\x1b[K/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/news_station.cpp:10:28:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kparse error in template argument list\n'}
+[3.299641] (cpp_pkg) StderrLine: {'line': b'   10 |         publisher_ = this->\x1b[01;31m\x1b[Kcreate_publisher<std_msgs::msg::String>\x1b[m\x1b[K("news", 10);\n'}
+[3.299706] (cpp_pkg) StderrLine: {'line': b'      |                            \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.299811] (cpp_pkg) StderrLine: {'line': b'\x1b[01m\x1b[K/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/news_station.cpp:10:67:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno matching function for call to \xe2\x80\x98\x1b[01m\x1b[Knews_station::create_publisher<<expression error> >(const char [5], int)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[3.300012] (cpp_pkg) StderrLine: {'line': b'   10 |         publisher_ = \x1b[01;31m\x1b[Kthis->create_publisher<std_msgs::msg::String>("news", 10)\x1b[m\x1b[K;\n'}
+[3.300118] (cpp_pkg) StderrLine: {'line': b'      |                      \x1b[01;31m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.300189] (cpp_pkg) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors/single_threaded_executor.hpp:28\x1b[m\x1b[K,\n'}
+[3.300258] (cpp_pkg) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:22\x1b[m\x1b[K,\n'}
+[3.300324] (cpp_pkg) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155\x1b[m\x1b[K,\n'}
+[3.300387] (cpp_pkg) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/news_station.cpp:1\x1b[m\x1b[K:\n'}
+[3.300449] (cpp_pkg) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:195:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class MessageT, class AllocatorT, class PublisherT> std::shared_ptr<PublisherT> rclcpp::Node::create_publisher(const string&, const rclcpp::QoS&, const rclcpp::PublisherOptionsWithAllocator<AllocatorT>&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[3.300517] (cpp_pkg) StderrLine: {'line': b'  195 |   \x1b[01;36m\x1b[Kcreate_publisher\x1b[m\x1b[K(\n'}
+[3.300580] (cpp_pkg) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.300643] (cpp_pkg) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:195:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[3.300717] (cpp_pkg) StderrLine: {'line': b'\x1b[01m\x1b[K/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/news_station.cpp:10:67:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[3.300780] (cpp_pkg) StderrLine: {'line': b'   10 |         publisher_ = \x1b[01;31m\x1b[Kthis->create_publisher<std_msgs::msg::String>("news", 10)\x1b[m\x1b[K;\n'}
+[3.300862] (cpp_pkg) StderrLine: {'line': b'      |                      \x1b[01;31m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.308779] (-) TimerEvent: {}
+[3.311228] (cpp_pkg) StderrLine: {'line': b'\x1b[01m\x1b[K/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/news_station.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid news_station::publishNews()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[3.311384] (cpp_pkg) StderrLine: {'line': b'\x1b[01m\x1b[K/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/news_station.cpp:18:20:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kstd_msgs\x1b[m\x1b[K\xe2\x80\x99 has not been declared\n'}
+[3.311462] (cpp_pkg) StderrLine: {'line': b'   18 |         auto msg = \x1b[01;31m\x1b[Kstd_msgs\x1b[m\x1b[K::msg::String();\n'}
+[3.311565] (cpp_pkg) StderrLine: {'line': b'      |                    \x1b[01;31m\x1b[K^~~~~~~~\x1b[m\x1b[K\n'}
+[3.317880] (cpp_pkg) StderrLine: {'line': b'\x1b[01m\x1b[K/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/news_station.cpp:20:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kpublisher_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[KpublishNews\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[3.318013] (cpp_pkg) StderrLine: {'line': b'   20 |         \x1b[01;31m\x1b[Kpublisher_\x1b[m\x1b[K->publish(msg);\n'}
+[3.318088] (cpp_pkg) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.318155] (cpp_pkg) StderrLine: {'line': b'      |         \x1b[32m\x1b[KpublishNews\x1b[m\x1b[K\n'}
+[3.408932] (-) TimerEvent: {}
+[3.509220] (-) TimerEvent: {}
+[3.609613] (-) TimerEvent: {}
+[3.709965] (-) TimerEvent: {}
+[3.810317] (-) TimerEvent: {}
+[3.869299] (cpp_pkg) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/news_station.dir/build.make:76: CMakeFiles/news_station.dir/src/news_station.cpp.o] Error 1\n'}
+[3.869630] (cpp_pkg) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:165: CMakeFiles/news_station.dir/all] Error 2\n'}
+[3.869791] (cpp_pkg) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Error 2\n'}
+[3.872197] (cpp_pkg) CommandEnded: {'returncode': 2}
+[3.910111] (cpp_pkg) JobEnded: {'identifier': 'cpp_pkg', 'rc': 2}
+[3.910527] (-) TimerEvent: {}
+[3.920645] (-) EventReactorShutdown: {}

@@ -1,0 +1,10 @@
+[35m[1mConsolidate compiler generated dependencies of target news_station[0m
+[ 50%] Built target cpp_node
+[ 75%] [32mBuilding CXX object CMakeFiles/news_station.dir/src/news_station.cpp.o[0m
+[01m[K/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/news_station.cpp:[m[K In constructor ‘[01m[Knews_station::news_station()[m[K’:
+[01m[K/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/news_station.cpp:8:35:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K{[m[K’ before ‘[01m[K:[m[K’ token
+    8 |     news_station() : Node("news") [01;31m[K:[m[K robot_name_(r2d2)
+      |                                   [01;31m[K^[m[K
+gmake[2]: *** [CMakeFiles/news_station.dir/build.make:76: CMakeFiles/news_station.dir/src/news_station.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:165: CMakeFiles/news_station.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

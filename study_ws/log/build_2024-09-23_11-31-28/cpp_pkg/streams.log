@@ -1,0 +1,89 @@
+[0.010s] Invoking command in '/home/lucifer/humble_ws/study_ws/build/cpp_pkg': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/lucifer/humble_ws/study_ws/install/py_pkg:/opt/ros/humble /usr/bin/cmake /home/lucifer/humble_ws/study_ws/src/cpp_pkg -DCMAKE_INSTALL_PREFIX=/home/lucifer/humble_ws/study_ws/install/cpp_pkg
+[0.023s] -- Found ament_cmake: 1.3.10 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.139s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.147s] -- Found rclcpp: 16.0.10 (/opt/ros/humble/share/rclcpp/cmake)
+[0.176s] -- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.178s] -- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.184s] -- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.193s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.205s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.237s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.238s] -- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.331s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.381s] -- Found example_interfaces: 0.9.3 (/opt/ros/humble/share/example_interfaces/cmake)
+[0.421s] -- Found ament_lint_auto: 0.12.11 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[0.500s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[0.500s] -- Configured cppcheck include dirs: 
+[0.500s] -- Configured cppcheck exclude dirs and/or files: 
+[0.501s] -- Added test 'lint_cmake' to check CMake code style
+[0.502s] -- Added test 'uncrustify' to check C / C++ code style
+[0.502s] -- Configured uncrustify additional arguments: 
+[0.503s] -- Added test 'xmllint' to check XML markup files
+[0.504s] -- Configuring done
+[0.509s] [33mCMake Warning (dev) at CMakeLists.txt:23 (add_executable):
+[0.509s]   Policy CMP0115 is not set: Source file extensions must be explicit.  Run
+[0.509s]   "cmake --help-policy CMP0115" for policy details.  Use the cmake_policy
+[0.509s]   command to set the policy and suppress this warning.
+[0.509s] 
+[0.509s]   File:
+[0.509s] 
+[0.509s]     /home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/NumberPublisher.cpp
+[0.509s] This warning is for project developers.  Use -Wno-dev to suppress it.
+[0.509s] [0m
+[0.510s] [33mCMake Warning (dev) at CMakeLists.txt:26 (add_executable):
+[0.510s]   Policy CMP0115 is not set: Source file extensions must be explicit.  Run
+[0.510s]   "cmake --help-policy CMP0115" for policy details.  Use the cmake_policy
+[0.510s]   command to set the policy and suppress this warning.
+[0.510s] 
+[0.510s]   File:
+[0.510s] 
+[0.510s]     /home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/NumberCounter.cpp
+[0.510s] This warning is for project developers.  Use -Wno-dev to suppress it.
+[0.510s] [0m
+[0.537s] -- Generating done
+[0.539s] -- Build files have been written to: /home/lucifer/humble_ws/study_ws/build/cpp_pkg
+[0.549s] Invoked command in '/home/lucifer/humble_ws/study_ws/build/cpp_pkg' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/lucifer/humble_ws/study_ws/install/py_pkg:/opt/ros/humble /usr/bin/cmake /home/lucifer/humble_ws/study_ws/src/cpp_pkg -DCMAKE_INSTALL_PREFIX=/home/lucifer/humble_ws/study_ws/install/cpp_pkg
+[0.549s] Invoking command in '/home/lucifer/humble_ws/study_ws/build/cpp_pkg': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/lucifer/humble_ws/study_ws/install/py_pkg:/opt/ros/humble /usr/bin/cmake --build /home/lucifer/humble_ws/study_ws/build/cpp_pkg -- -j8 -l8
+[0.595s] [35m[1mConsolidate compiler generated dependencies of target NumberPublisher[0m
+[0.598s] [35m[1mConsolidate compiler generated dependencies of target news_station[0m
+[0.598s] [35m[1mConsolidate compiler generated dependencies of target radio[0m
+[0.598s] [35m[1mConsolidate compiler generated dependencies of target cpp_node[0m
+[0.598s] [35m[1mConsolidate compiler generated dependencies of target NumberCounter[0m
+[0.611s] [  8%] [32mBuilding CXX object CMakeFiles/client_sumServer.dir/src/client_sumServer.cpp.o[0m
+[0.642s] [ 25%] Built target news_station
+[0.642s] [ 41%] Built target cpp_node
+[0.643s] [ 58%] Built target NumberCounter
+[0.643s] [ 91%] Built target radio
+[0.643s] [ 91%] Built target NumberPublisher
+[3.372s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+[3.372s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+[3.372s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+[3.372s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+[3.372s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[3.372s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[3.372s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[3.373s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[3.373s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[3.373s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[3.373s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[3.373s]                  from [01m[K/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/client_sumServer.cpp:1[m[K:
+[3.373s] [01m[K/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/client_sumServer.cpp:[m[K In member function ‘[01m[Kvoid sumServerNode::sumServer_callback(example_interfaces::srv::AddTwoInts_Request_<std::allocator<void> >::SharedPtr, example_interfaces::srv::AddTwoInts_Response_<std::allocator<void> >::SharedPtr)[m[K’:
+[3.373s] [01m[K/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/client_sumServer.cpp:23:41:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K%[m[K’ token
+[3.373s]    23 |         RCLCPP_INFO(this->get_logger(), [01;31m[K%[m[Kd + %d = %d, request->a, request->b, response->sum)
+[3.373s]       |                                         [01;31m[K^[m[K
+[3.378s] [01m[K/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/client_sumServer.cpp:23:42:[m[K [01;31m[Kerror: [m[K‘[01m[Kd[m[K’ was not declared in this scope
+[3.378s]    23 |         RCLCPP_INFO(this->get_logger(), %[01;31m[Kd[m[K + %d = %d, request->a, request->b, response->sum)
+[3.378s]       |                                          [01;31m[K^[m[K
+[3.378s] [01m[K/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/client_sumServer.cpp:23:46:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K%[m[K’ token
+[3.378s]    23 |         RCLCPP_INFO(this->get_logger(), %d + [01;31m[K%[m[Kd = %d, request->a, request->b, response->sum)
+[3.378s]       |                                              [01;31m[K^[m[K
+[3.378s] [01m[K/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/client_sumServer.cpp:23:51:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K%[m[K’ token
+[3.378s]    23 |         RCLCPP_INFO(this->get_logger(), %d + %d = [01;31m[K%[m[Kd, request->a, request->b, response->sum)
+[3.378s]       |                                                   [01;31m[K^[m[K
+[3.378s] [01m[K/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/client_sumServer.cpp:24:5:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ before ‘[01m[K}[m[K’ token
+[3.378s]    24 |     [01;31m[K}[m[K
+[3.378s]       |     [01;31m[K^[m[K
+[4.180s] gmake[2]: *** [CMakeFiles/client_sumServer.dir/build.make:76: CMakeFiles/client_sumServer.dir/src/client_sumServer.cpp.o] Error 1
+[4.181s] gmake[1]: *** [CMakeFiles/Makefile2:277: CMakeFiles/client_sumServer.dir/all] Error 2
+[4.181s] gmake: *** [Makefile:146: all] Error 2
+[4.184s] Invoked command in '/home/lucifer/humble_ws/study_ws/build/cpp_pkg' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/lucifer/humble_ws/study_ws/install/py_pkg:/opt/ros/humble /usr/bin/cmake --build /home/lucifer/humble_ws/study_ws/build/cpp_pkg -- -j8 -l8

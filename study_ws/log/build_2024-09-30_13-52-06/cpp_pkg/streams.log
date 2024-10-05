@@ -1,0 +1,104 @@
+[0.012s] Invoking command in '/home/lucifer/humble_ws/study_ws/build/cpp_pkg': CMAKE_PREFIX_PATH=/home/lucifer/humble_ws/study_ws/install/irobot_interfaces:/home/lucifer/humble_ws/study_ws/install/cpp_pkg:/home/lucifer/humble_ws/study_ws/install/py_pkg:/opt/ros/humble /usr/bin/cmake --build /home/lucifer/humble_ws/study_ws/build/cpp_pkg -- -j8 -l8
+[0.047s] -- Found ament_cmake: 1.3.10 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.171s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.186s] -- Found rclcpp: 16.0.10 (/opt/ros/humble/share/rclcpp/cmake)
+[0.221s] -- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.225s] -- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.233s] -- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.245s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.262s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.307s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.310s] -- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.418s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.484s] -- Found example_interfaces: 0.9.3 (/opt/ros/humble/share/example_interfaces/cmake)
+[0.538s] -- Found irobot_interfaces: 0.0.0 (/home/lucifer/humble_ws/study_ws/install/irobot_interfaces/share/irobot_interfaces/cmake)
+[0.555s] -- Found ament_lint_auto: 0.12.11 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[0.632s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[0.632s] -- Configured cppcheck include dirs: 
+[0.632s] -- Configured cppcheck exclude dirs and/or files: 
+[0.633s] -- Added test 'lint_cmake' to check CMake code style
+[0.634s] -- Added test 'uncrustify' to check C / C++ code style
+[0.634s] -- Configured uncrustify additional arguments: 
+[0.635s] -- Added test 'xmllint' to check XML markup files
+[0.638s] -- Configuring done
+[0.642s] [33mCMake Warning (dev) at CMakeLists.txt:24 (add_executable):
+[0.642s]   Policy CMP0115 is not set: Source file extensions must be explicit.  Run
+[0.642s]   "cmake --help-policy CMP0115" for policy details.  Use the cmake_policy
+[0.642s]   command to set the policy and suppress this warning.
+[0.642s] 
+[0.642s]   File:
+[0.642s] 
+[0.642s]     /home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/NumberPublisher.cpp
+[0.642s] This warning is for project developers.  Use -Wno-dev to suppress it.
+[0.642s] [0m
+[0.642s] [33mCMake Warning (dev) at CMakeLists.txt:27 (add_executable):
+[0.642s]   Policy CMP0115 is not set: Source file extensions must be explicit.  Run
+[0.642s]   "cmake --help-policy CMP0115" for policy details.  Use the cmake_policy
+[0.643s]   command to set the policy and suppress this warning.
+[0.643s] 
+[0.643s]   File:
+[0.643s] 
+[0.643s]     /home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/NumberCounter.cpp
+[0.643s] This warning is for project developers.  Use -Wno-dev to suppress it.
+[0.643s] [0m
+[0.643s] [33mCMake Warning (dev) at CMakeLists.txt:33 (add_executable):
+[0.643s]   Policy CMP0115 is not set: Source file extensions must be explicit.  Run
+[0.643s]   "cmake --help-policy CMP0115" for policy details.  Use the cmake_policy
+[0.643s]   command to set the policy and suppress this warning.
+[0.643s] 
+[0.643s]   File:
+[0.643s] 
+[0.643s]     /home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/client_sumServer_noop.cpp
+[0.643s] This warning is for project developers.  Use -Wno-dev to suppress it.
+[0.643s] [0m
+[0.686s] -- Generating done
+[0.688s] -- Build files have been written to: /home/lucifer/humble_ws/study_ws/build/cpp_pkg
+[0.722s] [35m[1mConsolidate compiler generated dependencies of target cpp_node[0m
+[0.722s] [35m[1mConsolidate compiler generated dependencies of target news_station[0m
+[0.723s] [35m[1mConsolidate compiler generated dependencies of target NumberPublisher[0m
+[0.723s] [35m[1mConsolidate compiler generated dependencies of target NumberCounter[0m
+[0.723s] [35m[1mConsolidate compiler generated dependencies of target sumServer[0m
+[0.724s] [35m[1mConsolidate compiler generated dependencies of target client_sumServer_noop[0m
+[0.725s] [35m[1mConsolidate compiler generated dependencies of target client_sumServer[0m
+[0.727s] [35m[1mConsolidate compiler generated dependencies of target radio[0m
+[0.755s] [ 38%] Built target NumberPublisher
+[0.755s] [ 38%] Built target sumServer
+[0.755s] [ 38%] Built target NumberCounter
+[0.756s] [ 55%] Built target client_sumServer_noop
+[0.757s] [ 50%] Built target news_station
+[0.757s] [ 77%] Built target radio
+[0.757s] [ 77%] Built target cpp_node
+[0.761s] [ 88%] Built target client_sumServer
+[0.768s] [35m[1mConsolidate compiler generated dependencies of target HardwareStatusPublisher[0m
+[0.787s] [ 94%] [32mBuilding CXX object CMakeFiles/HardwareStatusPublisher.dir/src/hw_statusPublisher.cpp.o[0m
+[5.978s] [100%] [32m[1mLinking CXX executable HardwareStatusPublisher[0m
+[6.253s] [100%] Built target HardwareStatusPublisher
+[6.266s] Invoked command in '/home/lucifer/humble_ws/study_ws/build/cpp_pkg' returned '0': CMAKE_PREFIX_PATH=/home/lucifer/humble_ws/study_ws/install/irobot_interfaces:/home/lucifer/humble_ws/study_ws/install/cpp_pkg:/home/lucifer/humble_ws/study_ws/install/py_pkg:/opt/ros/humble /usr/bin/cmake --build /home/lucifer/humble_ws/study_ws/build/cpp_pkg -- -j8 -l8
+[6.328s] Invoking command in '/home/lucifer/humble_ws/study_ws/build/cpp_pkg': CMAKE_PREFIX_PATH=/home/lucifer/humble_ws/study_ws/install/irobot_interfaces:/home/lucifer/humble_ws/study_ws/install/cpp_pkg:/home/lucifer/humble_ws/study_ws/install/py_pkg:/opt/ros/humble /usr/bin/cmake --install /home/lucifer/humble_ws/study_ws/build/cpp_pkg
+[6.336s] -- Install configuration: ""
+[6.336s] -- Execute custom install script
+[6.337s] -- Symlinking: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/lib/cpp_pkg/cpp_node
+[6.347s] -- Symlinking: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/lib/cpp_pkg/news_station
+[6.356s] -- Symlinking: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/lib/cpp_pkg/radio
+[6.366s] -- Symlinking: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/lib/cpp_pkg/NumberPublisher
+[6.376s] -- Symlinking: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/lib/cpp_pkg/NumberCounter
+[6.386s] -- Symlinking: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/lib/cpp_pkg/client_sumServer
+[6.396s] -- Symlinking: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/lib/cpp_pkg/client_sumServer_noop
+[6.405s] -- Symlinking: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/lib/cpp_pkg/sumServer
+[6.415s] -- Symlinking: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/lib/cpp_pkg/HardwareStatusPublisher
+[6.425s] -- Symlinking: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/share/ament_index/resource_index/package_run_dependencies/cpp_pkg
+[6.435s] -- Symlinking: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/share/ament_index/resource_index/parent_prefix_path/cpp_pkg
+[6.447s] -- Symlinking: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/share/cpp_pkg/environment/ament_prefix_path.sh
+[6.457s] -- Symlinking: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/share/cpp_pkg/environment/ament_prefix_path.dsv
+[6.468s] -- Symlinking: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/share/cpp_pkg/environment/path.sh
+[6.482s] -- Symlinking: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/share/cpp_pkg/environment/path.dsv
+[6.492s] -- Symlinking: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/share/cpp_pkg/local_setup.bash
+[6.502s] -- Symlinking: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/share/cpp_pkg/local_setup.sh
+[6.511s] -- Symlinking: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/share/cpp_pkg/local_setup.zsh
+[6.520s] -- Symlinking: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/share/cpp_pkg/local_setup.dsv
+[6.529s] -- Symlinking: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/share/cpp_pkg/package.dsv
+[6.539s] -- Symlinking: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/share/ament_index/resource_index/packages/cpp_pkg
+[6.549s] -- Symlinking: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/share/cpp_pkg/cmake/cpp_pkgConfig.cmake
+[6.558s] -- Symlinking: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/share/cpp_pkg/cmake/cpp_pkgConfig-version.cmake
+[6.567s] -- Symlinking: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/share/cpp_pkg/package.xml
+[6.580s] Invoked command in '/home/lucifer/humble_ws/study_ws/build/cpp_pkg' returned '0': CMAKE_PREFIX_PATH=/home/lucifer/humble_ws/study_ws/install/irobot_interfaces:/home/lucifer/humble_ws/study_ws/install/cpp_pkg:/home/lucifer/humble_ws/study_ws/install/py_pkg:/opt/ros/humble /usr/bin/cmake --install /home/lucifer/humble_ws/study_ws/build/cpp_pkg

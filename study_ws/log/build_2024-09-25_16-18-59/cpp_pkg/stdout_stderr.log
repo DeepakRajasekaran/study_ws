@@ -1,0 +1,37 @@
+[35m[1mConsolidate compiler generated dependencies of target client_sumServer[0m
+[ 18%] Built target client_sumServer_noop
+[ 37%] Built target NumberCounter
+[ 50%] Built target NumberPublisher
+[ 43%] Built target radio
+[ 62%] Built target cpp_node
+[ 75%] Built target news_station
+[ 87%] Built target sumServer
+[ 93%] [32mBuilding CXX object CMakeFiles/client_sumServer.dir/src/client_sumServer.cpp.o[0m
+[01m[K/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/client_sumServer.cpp:[m[K In constructor ‘[01m[KClient_SumServer_Node::Client_SumServer_Node()[m[K’:
+[01m[K/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/client_sumServer.cpp:15:5:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ before ‘[01m[K}[m[K’ token
+   15 |     [01;31m[K}[m[K
+      |     [01;31m[K^[m[K
+In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/client_sumServer.cpp:1[m[K:
+[01m[K/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/client_sumServer.cpp:[m[K In member function ‘[01m[Kvoid Client_SumServer_Node::Client_SumServer_Callback(int, int)[m[K’:
+[01m[K/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/client_sumServer.cpp:32:13:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K,[m[K’ or ‘[01m[K;[m[K’ before ‘[01m[Kdo[m[K’
+   32 |             [01;31m[KRCLCPP_INFO[m[K(this->get_logger(), "%d + %d = %d", a, b, response->sum);
+      |             [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/client_sumServer.cpp:17:40:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Ka[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+   17 |     void Client_SumServer_Callback([01;35m[Kint a[m[K, int b)
+      |                                    [01;35m[K~~~~^[m[K
+[01m[K/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/client_sumServer.cpp:17:47:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kb[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+   17 |     void Client_SumServer_Callback(int a, [01;35m[Kint b[m[K)
+      |                                           [01;35m[K~~~~^[m[K
+gmake[2]: *** [CMakeFiles/client_sumServer.dir/build.make:76: CMakeFiles/client_sumServer.dir/src/client_sumServer.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:333: CMakeFiles/client_sumServer.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

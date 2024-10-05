@@ -1,0 +1,22 @@
+[0.668s] Invoking command in '/home/lucifer/humble_ws/study_ws/build/py_pkg': PYTHONPATH=/home/lucifer/humble_ws/study_ws/build/py_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/lucifer/humble_ws/study_ws/install/py_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/lucifer/humble_ws/study_ws/build/py_pkg/build --no-deps symlink_data --force
+[0.945s] running develop
+[0.946s] /usr/lib/python3/dist-packages/setuptools/command/easy_install.py:158: EasyInstallDeprecationWarning: easy_install command is deprecated. Use build and pip and other standards-based tools.
+[0.946s]   warnings.warn(
+[1.122s] running egg_info
+[1.122s] writing py_pkg.egg-info/PKG-INFO
+[1.122s] writing dependency_links to py_pkg.egg-info/dependency_links.txt
+[1.123s] writing entry points to py_pkg.egg-info/entry_points.txt
+[1.123s] writing requirements to py_pkg.egg-info/requires.txt
+[1.123s] writing top-level names to py_pkg.egg-info/top_level.txt
+[1.124s] reading manifest file 'py_pkg.egg-info/SOURCES.txt'
+[1.125s] writing manifest file 'py_pkg.egg-info/SOURCES.txt'
+[1.126s] running build_ext
+[1.127s] Creating /home/lucifer/humble_ws/study_ws/install/py_pkg/lib/python3.10/site-packages/py-pkg.egg-link (link to .)
+[1.127s] Installing news_station script to /home/lucifer/humble_ws/study_ws/install/py_pkg/lib/py_pkg
+[1.127s] Installing py_node script to /home/lucifer/humble_ws/study_ws/install/py_pkg/lib/py_pkg
+[1.128s] 
+[1.128s] Installed /home/lucifer/humble_ws/study_ws/build/py_pkg
+[1.128s] running symlink_data
+[1.128s] symbolically linking /home/lucifer/humble_ws/study_ws/build/py_pkg/resource/py_pkg -> /home/lucifer/humble_ws/study_ws/install/py_pkg/share/ament_index/resource_index/packages
+[1.128s] symbolically linking /home/lucifer/humble_ws/study_ws/build/py_pkg/package.xml -> /home/lucifer/humble_ws/study_ws/install/py_pkg/share/py_pkg
+[1.158s] Invoked command in '/home/lucifer/humble_ws/study_ws/build/py_pkg' returned '0': PYTHONPATH=/home/lucifer/humble_ws/study_ws/build/py_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/lucifer/humble_ws/study_ws/install/py_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/lucifer/humble_ws/study_ws/build/py_pkg/build --no-deps symlink_data --force

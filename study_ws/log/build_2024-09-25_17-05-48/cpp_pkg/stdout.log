@@ -1,0 +1,9 @@
+[35m[1mConsolidate compiler generated dependencies of target client_sumServer[0m
+[ 25%] Built target cpp_node
+[ 31%] Built target news_station
+[ 31%] [32mBuilding CXX object CMakeFiles/sumServer.dir/src/sumServer.cpp.o[0m
+[ 43%] Built target NumberPublisher
+[ 56%] Built target radio
+[ 68%] Built target client_sumServer_noop
+[ 81%] Built target NumberCounter
+[ 93%] Built target client_sumServer

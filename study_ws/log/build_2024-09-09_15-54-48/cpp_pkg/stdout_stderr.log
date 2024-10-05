@@ -1,0 +1,34 @@
+[35m[1mConsolidate compiler generated dependencies of target NumberPublisher[0m
+[35m[1mConsolidate compiler generated dependencies of target NumberCounter[0m
+[ 20%] Built target news_station
+[ 40%] Built target cpp_node
+[ 60%] Built target radio
+[ 70%] [32mBuilding CXX object CMakeFiles/NumberPublisher.dir/src/NumberPublisher.cpp.o[0m
+[ 80%] [32mBuilding CXX object CMakeFiles/NumberCounter.dir/src/NumberCounter.cpp.o[0m
+[ 90%] [32m[1mLinking CXX executable NumberPublisher[0m
+[ 90%] Built target NumberPublisher
+[100%] [32m[1mLinking CXX executable NumberCounter[0m
+[100%] Built target NumberCounter
+-- Install configuration: ""
+-- Up-to-date: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/lib/cpp_pkg/cpp_node
+-- Up-to-date: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/lib/cpp_pkg/news_station
+-- Up-to-date: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/lib/cpp_pkg/radio
+-- Installing: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/lib/cpp_pkg/NumberPublisher
+-- Set runtime path of "/home/lucifer/humble_ws/study_ws/install/cpp_pkg/lib/cpp_pkg/NumberPublisher" to ""
+-- Installing: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/lib/cpp_pkg/NumberCounter
+-- Set runtime path of "/home/lucifer/humble_ws/study_ws/install/cpp_pkg/lib/cpp_pkg/NumberCounter" to ""
+-- Installing: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/share/ament_index/resource_index/package_run_dependencies/cpp_pkg
+-- Up-to-date: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/share/ament_index/resource_index/parent_prefix_path/cpp_pkg
+-- Up-to-date: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/share/cpp_pkg/environment/ament_prefix_path.sh
+-- Installing: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/share/cpp_pkg/environment/ament_prefix_path.dsv
+-- Up-to-date: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/share/cpp_pkg/environment/path.sh
+-- Installing: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/share/cpp_pkg/environment/path.dsv
+-- Up-to-date: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/share/cpp_pkg/local_setup.bash
+-- Up-to-date: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/share/cpp_pkg/local_setup.sh
+-- Up-to-date: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/share/cpp_pkg/local_setup.zsh
+-- Installing: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/share/cpp_pkg/local_setup.dsv
+-- Installing: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/share/cpp_pkg/package.dsv
+-- Up-to-date: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/share/ament_index/resource_index/packages/cpp_pkg
+-- Up-to-date: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/share/cpp_pkg/cmake/cpp_pkgConfig.cmake
+-- Up-to-date: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/share/cpp_pkg/cmake/cpp_pkgConfig-version.cmake
+-- Installing: /home/lucifer/humble_ws/study_ws/install/cpp_pkg/share/cpp_pkg/package.xml

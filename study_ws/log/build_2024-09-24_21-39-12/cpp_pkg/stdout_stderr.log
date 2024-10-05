@@ -1,0 +1,251 @@
+-- Found ament_cmake: 1.3.10 (/opt/ros/humble/share/ament_cmake/cmake)
+-- Override CMake install command with custom implementation using symlinks instead of copying resources
+-- Found rclcpp: 16.0.10 (/opt/ros/humble/share/rclcpp/cmake)
+-- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+-- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+-- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+-- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+-- Using RMW implementation 'rmw_fastrtps_cpp' as default
+-- Found example_interfaces: 0.9.3 (/opt/ros/humble/share/example_interfaces/cmake)
+-- Found ament_lint_auto: 0.12.11 (/opt/ros/humble/share/ament_lint_auto/cmake)
+-- Added test 'cppcheck' to perform static code analysis on C / C++ code
+-- Configured cppcheck include dirs: 
+-- Configured cppcheck exclude dirs and/or files: 
+-- Added test 'lint_cmake' to check CMake code style
+-- Added test 'uncrustify' to check C / C++ code style
+-- Configured uncrustify additional arguments: 
+-- Added test 'xmllint' to check XML markup files
+-- Configuring done
+[33mCMake Warning (dev) at CMakeLists.txt:23 (add_executable):
+  Policy CMP0115 is not set: Source file extensions must be explicit.  Run
+  "cmake --help-policy CMP0115" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+
+  File:
+
+    /home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/NumberPublisher.cpp
+This warning is for project developers.  Use -Wno-dev to suppress it.
+[0m
+[33mCMake Warning (dev) at CMakeLists.txt:26 (add_executable):
+  Policy CMP0115 is not set: Source file extensions must be explicit.  Run
+  "cmake --help-policy CMP0115" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+
+  File:
+
+    /home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/NumberCounter.cpp
+This warning is for project developers.  Use -Wno-dev to suppress it.
+[0m
+-- Generating done
+-- Build files have been written to: /home/lucifer/humble_ws/study_ws/build/cpp_pkg
+[35m[1mConsolidate compiler generated dependencies of target NumberPublisher[0m
+[35m[1mConsolidate compiler generated dependencies of target news_station[0m
+[35m[1mConsolidate compiler generated dependencies of target cpp_node[0m
+[35m[1mConsolidate compiler generated dependencies of target radio[0m
+[35m[1mConsolidate compiler generated dependencies of target NumberCounter[0m
+[  8%] [32mBuilding CXX object CMakeFiles/client_sumServer.dir/src/client_sumServer_noop.cpp.o[0m
+[ 25%] Built target news_station
+[ 41%] Built target cpp_node
+[ 58%] Built target NumberPublisher
+[ 75%] Built target radio
+[ 91%] Built target NumberCounter
+[01m[K/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/client_sumServer_noop.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/client_sumServer_noop.cpp:9:34:[m[K [01;31m[Kerror: [m[K‘[01m[KsumServer_ClientNode[m[K’ was not declared in this scope
+    9 |     auto node = std::make_shared<[01;31m[KsumServer_ClientNode[m[K>();
+      |                                  [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/client_sumServer_noop.cpp:9:55:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Kmake_shared<<expression error> >()[m[K’
+    9 |     auto node = [01;31m[Kstd::make_shared<sumServer_ClientNode>()[m[K;
+      |                 [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~[m[K
+In file included from [01m[K/usr/include/c++/11/memory:77[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:153[m[K,
+                 from [01m[K/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/client_sumServer_noop.cpp:1[m[K:
+[01m[K/usr/include/c++/11/bits/shared_ptr.h:875:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp, class ... _Args> std::shared_ptr<_Tp> std::make_shared(_Args&& ...)[m[K’
+  875 |     [01;36m[Kmake_shared[m[K(_Args&&... __args)
+      |     [01;36m[K^~~~~~~~~~~[m[K
+[01m[K/usr/include/c++/11/bits/shared_ptr.h:875:5:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/client_sumServer_noop.cpp:9:55:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+    9 |     auto node = [01;31m[Kstd::make_shared<sumServer_ClientNode>()[m[K;
+      |                 [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~[m[K
+[01m[K/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/client_sumServer_noop.cpp:11:74:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K>[m[K’ token
+   11 |     auto client = node->create_client<example_interfaces::srv::AddTwoInts[01;31m[K>[m[K("add_two_ints");
+      |                                                                          [01;31m[K^[m[K
+In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/client_sumServer_noop.cpp:1[m[K:
+[01m[K/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/client_sumServer_noop.cpp:14:26:[m[K [01;31m[Kerror: [m[Kinvalid use of ‘[01m[Kthis[m[K’ in non-member function
+   14 |             RCLCPP_ERROR([01;31m[Kthis[m[K->get_logger(), "Interruped while waiting for the server.");
+      |                          [01;31m[K^~~~[m[K
+[01m[K/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/client_sumServer_noop.cpp:14:26:[m[K [01;31m[Kerror: [m[Kinvalid use of ‘[01m[Kthis[m[K’ in non-member function
+[01m[K/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/client_sumServer_noop.cpp:14:13:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   14 |             [01;31m[KRCLCPP_ERROR[m[K(this->get_logger(), "Interruped while waiting for the server.");
+      |             [01;31m[K^~~~~~~~~~~~[m[K
+[01m[K/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/client_sumServer_noop.cpp:14:13:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   14 |             [01;31m[KRCLCPP_ERROR[m[K(this->get_logger(), "Interruped while waiting for the server.");
+      |             [01;31m[K^~~~~~~~~~~~[m[K
+[01m[K/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/client_sumServer_noop.cpp:14:13:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   14 |             [01;31m[KRCLCPP_ERROR[m[K(this->get_logger(), "Interruped while waiting for the server.");
+      |             [01;31m[K^~~~~~~~~~~~[m[K
+In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/client_sumServer_noop.cpp:1[m[K:
+[01m[K/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/client_sumServer_noop.cpp:14:26:[m[K [01;31m[Kerror: [m[Kinvalid use of ‘[01m[Kthis[m[K’ in non-member function
+   14 |             RCLCPP_ERROR([01;31m[Kthis[m[K->get_logger(), "Interruped while waiting for the server.");
+      |                          [01;31m[K^~~~[m[K
+[01m[K/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/client_sumServer_noop.cpp:14:26:[m[K [01;31m[Kerror: [m[Kinvalid use of ‘[01m[Kthis[m[K’ in non-member function
+   14 |             RCLCPP_ERROR([01;31m[Kthis[m[K->get_logger(), "Interruped while waiting for the server.");
+      |                          [01;31m[K^~~~[m[K
+[01m[K/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/client_sumServer_noop.cpp:15:13:[m[K [01;31m[Kerror: [m[Kreturn-statement with no value, in function returning ‘[01m[Kint[m[K’ [[01;31m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-fpermissive-fpermissive]8;;[m[K]
+   15 |             [01;31m[Kreturn[m[K;
+      |             [01;31m[K^~~~~~[m[K
+In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/client_sumServer_noop.cpp:1[m[K:
+[01m[K/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/client_sumServer_noop.cpp:17:21:[m[K [01;31m[Kerror: [m[Kinvalid use of ‘[01m[Kthis[m[K’ in non-member function
+   17 |         RCLCPP_WARN([01;31m[Kthis[m[K->get_logger(), "Server not available...");
+      |                     [01;31m[K^~~~[m[K
+[01m[K/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/client_sumServer_noop.cpp:17:21:[m[K [01;31m[Kerror: [m[Kinvalid use of ‘[01m[Kthis[m[K’ in non-member function
+[01m[K/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/client_sumServer_noop.cpp:17:9:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   17 |         [01;31m[KRCLCPP_WARN[m[K(this->get_logger(), "Server not available...");
+      |         [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/client_sumServer_noop.cpp:17:9:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   17 |         [01;31m[KRCLCPP_WARN[m[K(this->get_logger(), "Server not available...");
+      |         [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/client_sumServer_noop.cpp:17:9:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   17 |         [01;31m[KRCLCPP_WARN[m[K(this->get_logger(), "Server not available...");
+      |         [01;31m[K^~~~~~~~~~~[m[K
+In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/client_sumServer_noop.cpp:1[m[K:
+[01m[K/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/client_sumServer_noop.cpp:17:21:[m[K [01;31m[Kerror: [m[Kinvalid use of ‘[01m[Kthis[m[K’ in non-member function
+   17 |         RCLCPP_WARN([01;31m[Kthis[m[K->get_logger(), "Server not available...");
+      |                     [01;31m[K^~~~[m[K
+[01m[K/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/client_sumServer_noop.cpp:17:21:[m[K [01;31m[Kerror: [m[Kinvalid use of ‘[01m[Kthis[m[K’ in non-member function
+   17 |         RCLCPP_WARN([01;31m[Kthis[m[K->get_logger(), "Server not available...");
+      |                     [01;31m[K^~~~[m[K
+[01m[K/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/client_sumServer_noop.cpp:25:69:[m[K [01;31m[Kerror: [m[K‘[01m[Krclcpp::extractor[m[K’ has not been declared
+   25 |     if (rclcpp::spin_until_future_complete(node, future) == rclcpp::[01;31m[Kextractor[m[K::FutureReturnCode::SUCCESS){
+      |                                                                     [01;31m[K^~~~~~~~~[m[K
+In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/client_sumServer_noop.cpp:1[m[K:
+[01m[K/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/client_sumServer_noop.cpp:26:21:[m[K [01;31m[Kerror: [m[Kinvalid use of ‘[01m[Kthis[m[K’ in non-member function
+   26 |         RCLCPP_INFO([01;31m[Kthis[m[K->get_logger(), "%d + %d = %d", request->a, request->b, future.get()->sum);
+      |                     [01;31m[K^~~~[m[K
+[01m[K/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/client_sumServer_noop.cpp:26:21:[m[K [01;31m[Kerror: [m[Kinvalid use of ‘[01m[Kthis[m[K’ in non-member function
+[01m[K/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/client_sumServer_noop.cpp:26:9:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   26 |         [01;31m[KRCLCPP_INFO[m[K(this->get_logger(), "%d + %d = %d", request->a, request->b, future.get()->sum);
+      |         [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/client_sumServer_noop.cpp:26:9:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   26 |         [01;31m[KRCLCPP_INFO[m[K(this->get_logger(), "%d + %d = %d", request->a, request->b, future.get()->sum);
+      |         [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/client_sumServer_noop.cpp:26:9:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   26 |         [01;31m[KRCLCPP_INFO[m[K(this->get_logger(), "%d + %d = %d", request->a, request->b, future.get()->sum);
+      |         [01;31m[K^~~~~~~~~~~[m[K
+In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/client_sumServer_noop.cpp:1[m[K:
+[01m[K/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/client_sumServer_noop.cpp:26:21:[m[K [01;31m[Kerror: [m[Kinvalid use of ‘[01m[Kthis[m[K’ in non-member function
+   26 |         RCLCPP_INFO([01;31m[Kthis[m[K->get_logger(), "%d + %d = %d", request->a, request->b, future.get()->sum);
+      |                     [01;31m[K^~~~[m[K
+[01m[K/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/client_sumServer_noop.cpp:26:21:[m[K [01;31m[Kerror: [m[Kinvalid use of ‘[01m[Kthis[m[K’ in non-member function
+   26 |         RCLCPP_INFO([01;31m[Kthis[m[K->get_logger(), "%d + %d = %d", request->a, request->b, future.get()->sum);
+      |                     [01;31m[K^~~~[m[K
+In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/client_sumServer_noop.cpp:1[m[K:
+[01m[K/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/client_sumServer_noop.cpp:29:22:[m[K [01;31m[Kerror: [m[Kinvalid use of ‘[01m[Kthis[m[K’ in non-member function
+   29 |         RCLCPP_ERROR([01;31m[Kthis[m[K->get_logger(), "Error While Calling Service..");
+      |                      [01;31m[K^~~~[m[K
+[01m[K/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/client_sumServer_noop.cpp:29:22:[m[K [01;31m[Kerror: [m[Kinvalid use of ‘[01m[Kthis[m[K’ in non-member function
+[01m[K/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/client_sumServer_noop.cpp:29:9:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   29 |         [01;31m[KRCLCPP_ERROR[m[K(this->get_logger(), "Error While Calling Service..");
+      |         [01;31m[K^~~~~~~~~~~~[m[K
+[01m[K/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/client_sumServer_noop.cpp:29:9:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   29 |         [01;31m[KRCLCPP_ERROR[m[K(this->get_logger(), "Error While Calling Service..");
+      |         [01;31m[K^~~~~~~~~~~~[m[K
+[01m[K/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/client_sumServer_noop.cpp:29:9:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   29 |         [01;31m[KRCLCPP_ERROR[m[K(this->get_logger(), "Error While Calling Service..");
+      |         [01;31m[K^~~~~~~~~~~~[m[K
+In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/client_sumServer_noop.cpp:1[m[K:
+[01m[K/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/client_sumServer_noop.cpp:29:22:[m[K [01;31m[Kerror: [m[Kinvalid use of ‘[01m[Kthis[m[K’ in non-member function
+   29 |         RCLCPP_ERROR([01;31m[Kthis[m[K->get_logger(), "Error While Calling Service..");
+      |                      [01;31m[K^~~~[m[K
+[01m[K/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/client_sumServer_noop.cpp:29:22:[m[K [01;31m[Kerror: [m[Kinvalid use of ‘[01m[Kthis[m[K’ in non-member function
+   29 |         RCLCPP_ERROR([01;31m[Kthis[m[K->get_logger(), "Error While Calling Service..");
+      |                      [01;31m[K^~~~[m[K
+gmake[2]: *** [CMakeFiles/client_sumServer.dir/build.make:76: CMakeFiles/client_sumServer.dir/src/client_sumServer_noop.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:277: CMakeFiles/client_sumServer.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

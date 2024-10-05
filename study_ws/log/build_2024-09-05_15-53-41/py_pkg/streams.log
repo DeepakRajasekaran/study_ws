@@ -1,0 +1,27 @@
+[0.687s] Invoking command in '/home/lucifer/humble_ws/study_ws/src/py_pkg': PYTHONPATH=/home/lucifer/humble_ws/study_ws/build/py_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/lucifer/humble_ws/study_ws/install/py_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/py_pkg build --build-base /home/lucifer/humble_ws/study_ws/build/py_pkg/build install --record /home/lucifer/humble_ws/study_ws/build/py_pkg/install.log --single-version-externally-managed install_data
+[0.939s] running egg_info
+[0.940s] writing ../../build/py_pkg/py_pkg.egg-info/PKG-INFO
+[0.941s] writing dependency_links to ../../build/py_pkg/py_pkg.egg-info/dependency_links.txt
+[0.941s] writing entry points to ../../build/py_pkg/py_pkg.egg-info/entry_points.txt
+[0.941s] writing requirements to ../../build/py_pkg/py_pkg.egg-info/requires.txt
+[0.941s] writing top-level names to ../../build/py_pkg/py_pkg.egg-info/top_level.txt
+[0.944s] reading manifest file '../../build/py_pkg/py_pkg.egg-info/SOURCES.txt'
+[0.944s] adding license file 'LICENSE'
+[0.945s] writing manifest file '../../build/py_pkg/py_pkg.egg-info/SOURCES.txt'
+[0.945s] running build
+[0.945s] running build_py
+[0.945s] copying py_pkg/news_station.py -> /home/lucifer/humble_ws/study_ws/build/py_pkg/build/lib/py_pkg
+[0.946s] running install
+[0.947s] running install_lib
+[0.948s] copying /home/lucifer/humble_ws/study_ws/build/py_pkg/build/lib/py_pkg/news_station.py -> /home/lucifer/humble_ws/study_ws/install/py_pkg/lib/python3.10/site-packages/py_pkg
+[0.949s] byte-compiling /home/lucifer/humble_ws/study_ws/install/py_pkg/lib/python3.10/site-packages/py_pkg/news_station.py to news_station.cpython-310.pyc
+[0.949s] running install_data
+[0.950s] running install_egg_info
+[0.952s] removing '/home/lucifer/humble_ws/study_ws/install/py_pkg/lib/python3.10/site-packages/py_pkg-0.0.0-py3.10.egg-info' (and everything under it)
+[0.953s] Copying ../../build/py_pkg/py_pkg.egg-info to /home/lucifer/humble_ws/study_ws/install/py_pkg/lib/python3.10/site-packages/py_pkg-0.0.0-py3.10.egg-info
+[0.954s] running install_scripts
+[0.976s] Installing news_station script to /home/lucifer/humble_ws/study_ws/install/py_pkg/lib/py_pkg
+[0.977s] Installing py_node script to /home/lucifer/humble_ws/study_ws/install/py_pkg/lib/py_pkg
+[0.977s] Installing radio script to /home/lucifer/humble_ws/study_ws/install/py_pkg/lib/py_pkg
+[0.977s] writing list of installed files to '/home/lucifer/humble_ws/study_ws/build/py_pkg/install.log'
+[1.000s] Invoked command in '/home/lucifer/humble_ws/study_ws/src/py_pkg' returned '0': PYTHONPATH=/home/lucifer/humble_ws/study_ws/build/py_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/lucifer/humble_ws/study_ws/install/py_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/py_pkg build --build-base /home/lucifer/humble_ws/study_ws/build/py_pkg/build install --record /home/lucifer/humble_ws/study_ws/build/py_pkg/install.log --single-version-externally-managed install_data

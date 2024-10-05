@@ -1,0 +1,40 @@
+[33mCMake Warning (dev) at CMakeLists.txt:24 (add_executable):
+  Policy CMP0115 is not set: Source file extensions must be explicit.  Run
+  "cmake --help-policy CMP0115" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+
+  File:
+
+    /home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/NumberPublisher.cpp
+This warning is for project developers.  Use -Wno-dev to suppress it.
+[0m
+[33mCMake Warning (dev) at CMakeLists.txt:27 (add_executable):
+  Policy CMP0115 is not set: Source file extensions must be explicit.  Run
+  "cmake --help-policy CMP0115" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+
+  File:
+
+    /home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/NumberCounter.cpp
+This warning is for project developers.  Use -Wno-dev to suppress it.
+[0m
+[33mCMake Warning (dev) at CMakeLists.txt:33 (add_executable):
+  Policy CMP0115 is not set: Source file extensions must be explicit.  Run
+  "cmake --help-policy CMP0115" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+
+  File:
+
+    /home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/client_sumServer_noop.cpp
+This warning is for project developers.  Use -Wno-dev to suppress it.
+[0m
+[01m[K/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/hw_statusPublisher.cpp:17:11:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K)[m[K’ token
+   17 |     void ([01;31m[K)[m[K
+      |           [01;31m[K^[m[K
+[01m[K/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/hw_statusPublisher.cpp:[m[K In constructor ‘[01m[KHardwareStatusPublisherNode::HardwareStatusPublisherNode()[m[K’:
+[01m[K/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/hw_statusPublisher.cpp:13:24:[m[K [01;31m[Kerror: [m[K‘[01m[KHardwareStatusPublisher[m[K’ has not been declared
+   13 |             std::bind(&[01;31m[KHardwareStatusPublisher[m[K::publishHardwareStatus, this));
+      |                        [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/HardwareStatusPublisher.dir/build.make:76: CMakeFiles/HardwareStatusPublisher.dir/src/hw_statusPublisher.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:361: CMakeFiles/HardwareStatusPublisher.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

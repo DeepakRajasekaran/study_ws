@@ -1,0 +1,30 @@
+[1.505s] Invoking command in '/home/lucifer/humble_ws/study_ws/src/py_pkg': PYTHONPATH=/home/lucifer/humble_ws/study_ws/build/py_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/lucifer/humble_ws/study_ws/install/py_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/py_pkg build --build-base /home/lucifer/humble_ws/study_ws/build/py_pkg/build install --record /home/lucifer/humble_ws/study_ws/build/py_pkg/install.log --single-version-externally-managed install_data
+[1.976s] running egg_info
+[1.976s] writing ../../build/py_pkg/py_pkg.egg-info/PKG-INFO
+[1.977s] writing dependency_links to ../../build/py_pkg/py_pkg.egg-info/dependency_links.txt
+[1.977s] writing entry points to ../../build/py_pkg/py_pkg.egg-info/entry_points.txt
+[1.977s] writing requirements to ../../build/py_pkg/py_pkg.egg-info/requires.txt
+[1.977s] writing top-level names to ../../build/py_pkg/py_pkg.egg-info/top_level.txt
+[1.993s] reading manifest file '../../build/py_pkg/py_pkg.egg-info/SOURCES.txt'
+[1.995s] adding license file 'LICENSE'
+[1.998s] writing manifest file '../../build/py_pkg/py_pkg.egg-info/SOURCES.txt'
+[1.999s] running build
+[1.999s] running build_py
+[2.000s] copying py_pkg/client_sumServer.py -> /home/lucifer/humble_ws/study_ws/build/py_pkg/build/lib/py_pkg
+[2.002s] running install
+[2.002s] running install_lib
+[2.004s] copying /home/lucifer/humble_ws/study_ws/build/py_pkg/build/lib/py_pkg/client_sumServer.py -> /home/lucifer/humble_ws/study_ws/install/py_pkg/lib/python3.10/site-packages/py_pkg
+[2.007s] byte-compiling /home/lucifer/humble_ws/study_ws/install/py_pkg/lib/python3.10/site-packages/py_pkg/client_sumServer.py to client_sumServer.cpython-310.pyc
+[2.008s] running install_data
+[2.009s] running install_egg_info
+[2.012s] removing '/home/lucifer/humble_ws/study_ws/install/py_pkg/lib/python3.10/site-packages/py_pkg-0.0.0-py3.10.egg-info' (and everything under it)
+[2.013s] Copying ../../build/py_pkg/py_pkg.egg-info to /home/lucifer/humble_ws/study_ws/install/py_pkg/lib/python3.10/site-packages/py_pkg-0.0.0-py3.10.egg-info
+[2.014s] running install_scripts
+[2.061s] Installing addTwoInt_noop script to /home/lucifer/humble_ws/study_ws/install/py_pkg/lib/py_pkg
+[2.061s] Installing client_sumServerNode script to /home/lucifer/humble_ws/study_ws/install/py_pkg/lib/py_pkg
+[2.061s] Installing news_station script to /home/lucifer/humble_ws/study_ws/install/py_pkg/lib/py_pkg
+[2.061s] Installing py_node script to /home/lucifer/humble_ws/study_ws/install/py_pkg/lib/py_pkg
+[2.061s] Installing radio script to /home/lucifer/humble_ws/study_ws/install/py_pkg/lib/py_pkg
+[2.062s] Installing sum_server script to /home/lucifer/humble_ws/study_ws/install/py_pkg/lib/py_pkg
+[2.062s] writing list of installed files to '/home/lucifer/humble_ws/study_ws/build/py_pkg/install.log'
+[2.086s] Invoked command in '/home/lucifer/humble_ws/study_ws/src/py_pkg' returned '0': PYTHONPATH=/home/lucifer/humble_ws/study_ws/build/py_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/lucifer/humble_ws/study_ws/install/py_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/py_pkg build --build-base /home/lucifer/humble_ws/study_ws/build/py_pkg/build install --record /home/lucifer/humble_ws/study_ws/build/py_pkg/install.log --single-version-externally-managed install_data

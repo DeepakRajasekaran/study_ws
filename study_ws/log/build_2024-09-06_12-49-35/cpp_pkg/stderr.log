@@ -1,0 +1,8 @@
+[01m[K/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/radio.cpp:[m[K In constructor ‘[01m[KradioNode::radioNode()[m[K’:
+[01m[K/home/lucifer/humble_ws/study_ws/src/cpp_pkg/src/radio.cpp:9:9:[m[K [01;31m[Kerror: [m[K‘[01m[Ksubscriber_[m[K’ was not declared in this scope; did you mean ‘[01m[Ksubscription_[m[K’?
+    9 |         [01;31m[Ksubscriber_[m[K = this->create_subscription<std_msgs::msg::String>("news", 10,
+      |         [01;31m[K^~~~~~~~~~~[m[K
+      |         [32m[Ksubscription_[m[K
+gmake[2]: *** [CMakeFiles/radio.dir/build.make:76: CMakeFiles/radio.dir/src/radio.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:193: CMakeFiles/radio.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2
