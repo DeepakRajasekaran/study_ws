@@ -10,9 +10,8 @@ public:
     sumServerNode() : Node("sum_server") 
     {   
         RCLCPP_INFO(this->get_logger(), "sumServer is initiated...");
-        server_ = this->create_service<example_interfaces::srv::AddTwoInts>("add_two_ints", 
-                                                                             std::bind(&sumServerNode::sumServer_callback, 
-                                                                             this, _1, _2));
+        server_ = this->create_service<example_interfaces::srv::AddTwoInts>(
+            "add_two_ints", std::bind(&sumServerNode::sumServer_callback, this, _1, _2));
     }
 
 private:

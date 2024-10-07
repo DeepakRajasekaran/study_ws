@@ -2,7 +2,7 @@
 import rclpy
 from rclpy.node import Node
 
-from irobot_interfaces.srv import ComputeRectangleArea
+from irobot_interfaces.srv import RectangleParameters
 
 # Python Specifics
 import random
@@ -14,13 +14,13 @@ class ClientNode(Node):
     def __init__(self):
         super().__init__('client_node')
         self.get_logger().info('Client node has been Initialized....')
-        self.client = self.create_client(ComputeRectangleArea, 'compute_rectangle_area')
+        self.client = self.create_client(RectangleParameters, 'compute_rectangle_area')
         while not self.client.wait_for_service(timeout_sec=1.0):
             self.get_logger().warn('Waiting for Server to start....')
         self.request_timer = self.create_timer(1.0, self.generate_request)
         
     def generate_request(self):
-        request = ComputeRectangleArea.Request()
+        request = RectangleParameters.Request()
         request.length = float(random.randint(1, 100))
         request.width = float(random.randint(1, 100))
         self.get_logger().info(f"Request  | length: {request.length}, width: {request.width}")

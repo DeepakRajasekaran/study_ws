@@ -2,7 +2,7 @@
 import rclpy
 from rclpy.node import Node
 
-from irobot_interfaces.srv import ComputeRectangleArea
+from irobot_interfaces.srv import RectangleParameters
 
 
 class FindRectangleAreaNode(Node): 
@@ -10,7 +10,7 @@ class FindRectangleAreaNode(Node):
         super().__init__("find_rectangle_area_server")
 
         self.get_logger().info('findRectangleArea_server node has been Initialized....')
-        self.server_ = self.create_service(ComputeRectangleArea, "compute_rectangle_area", self.find_area)
+        self.server_ = self.create_service(RectangleParameters, "compute_rectangle_area", self.find_area)
 
     def find_area(self, request, response):
         response.area = request.length * request.width

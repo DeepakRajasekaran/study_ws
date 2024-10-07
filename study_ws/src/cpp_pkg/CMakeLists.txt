@@ -39,6 +39,8 @@ ament_target_dependencies(client_sumServer rclcpp example_interfaces)
 add_executable(HardwareStatusPublisher src/hw_statusPublisher.cpp)
 ament_target_dependencies(HardwareStatusPublisher rclcpp irobot_interfaces)
 
+add_executable(findRectangleArea_server src/findRectangleArea_server.cpp)
+ament_target_dependencies(findRectangleArea_server rclcpp irobot_interfaces)
 
 install(TARGETS
   cpp_node
@@ -50,6 +52,9 @@ install(TARGETS
   client_sumServer_noop
   sumServer
   HardwareStatusPublisher
+  findRectangleArea_server
+  client_Rectangle
+  # Add the executable name here
   DESTINATION lib/${PROJECT_NAME}
 ) 
 
