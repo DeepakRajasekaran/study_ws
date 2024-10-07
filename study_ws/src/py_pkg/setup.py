@@ -27,6 +27,8 @@ setup(
             "addTwoInt_noop = py_pkg.client_sumServer_noop:main",
             "client_sumServer = py_pkg.client_sumServer:main",
             "HardwareStatusPublisher = py_pkg.hardwareTest:main",
+            "client_node = py_pkg.client_RectangleArea:main",
+            "RectangleArea_server = py_pkg.RectangleArea_server:main",
         ],
     },
 )
