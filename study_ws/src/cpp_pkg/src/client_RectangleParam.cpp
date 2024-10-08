@@ -16,6 +16,8 @@ public:
     }
 
 private:
+
+    
     void client_request()
     {
         srand(time(0));
@@ -45,6 +47,7 @@ private:
     {
         try {
             // Get the response from the future
+            RCLCPP_INFO(this->get_logger(), "executing response_callback...");
             auto response = future.get();
             RCLCPP_INFO(this->get_logger(), "Received response: Area = %.2f", response->area);
         } catch (const std::exception &e) {
