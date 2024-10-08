@@ -12,29 +12,29 @@ find_package(std_msgs REQUIRED)
 find_package(example_interfaces REQUIRED)
 find_package(irobot_interfaces REQUIRED)
 
-add_executable(cpp_node src/first_node.cpp)
-ament_target_dependencies(cpp_node rclcpp)
+#add_executable(cpp_node src/first_node.cpp)
+#ament_target_dependencies(cpp_node rclcpp)
 
-add_executable(news_station src/news_station.cpp)
-ament_target_dependencies(news_station rclcpp std_msgs)
+#add_executable(news_station src/news_station.cpp)
+#ament_target_dependencies(news_station rclcpp std_msgs)
 
-add_executable(radio src/radio.cpp)
-ament_target_dependencies(radio rclcpp std_msgs)
+#add_executable(radio src/radio.cpp)
+#ament_target_dependencies(radio rclcpp std_msgs)
 
-add_executable(NumberPublisher src/NumberPublisher)
-ament_target_dependencies(NumberPublisher rclcpp std_msgs)
+#add_executable(NumberPublisher src/NumberPublisher.cpp)
+#ament_target_dependencies(NumberPublisher rclcpp std_msgs)
 
-add_executable(NumberCounter src/NumberCounter)
-ament_target_dependencies(NumberCounter rclcpp std_msgs)
+#add_executable(NumberCounter src/NumberCounter.cpp)
+#ament_target_dependencies(NumberCounter rclcpp std_msgs)
 
-add_executable(sumServer src/sumServer.cpp)
-ament_target_dependencies(sumServer rclcpp example_interfaces)
+#add_executable(sumServer src/sumServer.cpp)
+#ament_target_dependencies(sumServer rclcpp example_interfaces)
 
-add_executable(client_sumServer_noop src/client_sumServer_noop)
-ament_target_dependencies(client_sumServer_noop rclcpp example_interfaces)
+#add_executable(client_sumServer_noop src/client_sumServer_noop.cpp)
+#ament_target_dependencies(client_sumServer_noop rclcpp example_interfaces)
 
-add_executable(client_sumServer src/client_sumServer.cpp)
-ament_target_dependencies(client_sumServer rclcpp example_interfaces)
+#add_executable(client_sumServer src/client_sumServer.cpp)
+#ament_target_dependencies(client_sumServer rclcpp example_interfaces)
 
 add_executable(HardwareStatusPublisher src/hw_statusPublisher.cpp)
 ament_target_dependencies(HardwareStatusPublisher rclcpp irobot_interfaces)
@@ -42,18 +42,21 @@ ament_target_dependencies(HardwareStatusPublisher rclcpp irobot_interfaces)
 add_executable(findRectangleArea_server src/findRectangleArea_server.cpp)
 ament_target_dependencies(findRectangleArea_server rclcpp irobot_interfaces)
 
+add_executable(client_RectangleParam src/client_RectangleParam.cpp)
+ament_target_dependencies(client_RectangleParam rclcpp irobot_interfaces)
+
 install(TARGETS
-  cpp_node
-  news_station
-  radio
-  NumberPublisher
-  NumberCounter
-  client_sumServer
-  client_sumServer_noop
-  sumServer
+#  cpp_node
+#  news_station
+#  radio
+#  NumberPublisher
+#  NumberCounter
+#  client_sumServer
+#  client_sumServer_noop
+#  sumServer
   HardwareStatusPublisher
   findRectangleArea_server
-  client_Rectangle
+  client_RectangleParam
   # Add the executable name here
   DESTINATION lib/${PROJECT_NAME}
 ) 
