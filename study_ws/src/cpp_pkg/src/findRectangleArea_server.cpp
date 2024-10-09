@@ -7,7 +7,7 @@ using std::placeholders::_2;
 class findRectangleArea : public rclcpp::Node 
 {
 public:
-    findRectangleArea() : Node("computeRectangleArea") 
+    findRectangleArea() : Node("serverNode") 
     {
         RCLCPP_INFO(this->get_logger(), "computeRectangleArea Server has been initiated...");
         

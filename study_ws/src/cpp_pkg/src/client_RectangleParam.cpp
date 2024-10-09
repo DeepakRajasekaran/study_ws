@@ -12,11 +12,14 @@ public:
         RCLCPP_INFO(this->get_logger(), "ClientNode has been initiated...");
 
         // Send a client request when the node is initiated
-        client_request();
+        timer_ = this->create_wall_timer(
+            std::chrono::seconds(1),
+            std::bind(&clientNode::client_request, this));   
     }
 
 private:
 
+    rclcpp::TimerBase::SharedPtr timer_;
     
     void client_request()
     {
@@ -37,23 +40,16 @@ private:
         RCLCPP_INFO(this->get_logger(), "Sending request: length = %.2f, width = %.2f", request->length, request->width);
 
         // Send the request asynchronously and bind the response callback
-        auto future = client->async_send_request(request,
-            std::bind(&clientNode::response_callback, this, std::placeholders::_1)
-        );
-    }
-
-    // Response callback to handle the service response
-    void response_callback(ServiceResponseFuture future)
-    {
+        auto future = client->async_send_request(request);
         try {
             // Get the response from the future
-            RCLCPP_INFO(this->get_logger(), "executing response_callback...");
             auto response = future.get();
             RCLCPP_INFO(this->get_logger(), "Received response: Area = %.2f", response->area);
         } catch (const std::exception &e) {
             // Handle any errors
             RCLCPP_ERROR(this->get_logger(), "Error occurred: %s", e.what());
         }
+        );
     }
 };
 
