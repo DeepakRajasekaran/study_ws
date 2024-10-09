@@ -12,15 +12,21 @@ public:
         RCLCPP_INFO(this->get_logger(), "ClientNode has been initiated...");
 
         // Send a client request when the node is initiated
-        timer_ = this->create_wall_timer(
+        loop = this->create_wall_timer(
             std::chrono::seconds(1),
-            std::bind(&clientNode::client_request, this));   
+            std::bind(&clientNode::timer_callback_name, this));
+        
     }
 
 private:
 
-    rclcpp::TimerBase::SharedPtr timer_;
-    
+    //rclcpp::TimerBase::SharedPtr timer_;
+    std::vector<std::thread> threads_;
+    rclcpp::TimerBase::SharedPtr loop;
+
+    void timer_callback_name(){threads_.push_back(std::thread(&clientNode::client_request, this));}
+        
+
     void client_request()
     {
         srand(time(0));
@@ -48,8 +54,7 @@ private:
         } catch (const std::exception &e) {
             // Handle any errors
             RCLCPP_ERROR(this->get_logger(), "Error occurred: %s", e.what());
-        }
-        );
+        }      
     }
 };
 
