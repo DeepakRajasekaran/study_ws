@@ -21,11 +21,11 @@ find_package(irobot_interfaces REQUIRED)
 #add_executable(radio src/radio.cpp)
 #ament_target_dependencies(radio rclcpp std_msgs)
 
-#add_executable(NumberPublisher src/NumberPublisher.cpp)
-#ament_target_dependencies(NumberPublisher rclcpp std_msgs)
+add_executable(NumberPublisher src/NumberPublisher.cpp)
+ament_target_dependencies(NumberPublisher rclcpp std_msgs)
 
-#add_executable(NumberCounter src/NumberCounter.cpp)
-#ament_target_dependencies(NumberCounter rclcpp std_msgs)
+add_executable(NumberCounter src/NumberCounter.cpp)
+ament_target_dependencies(NumberCounter rclcpp std_msgs)
 
 #add_executable(sumServer src/sumServer.cpp)
 #ament_target_dependencies(sumServer rclcpp example_interfaces)
