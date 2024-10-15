@@ -8,6 +8,7 @@ public:
             "number", 10, std::bind(&NumberCounter::callbackNumber, this, std::placeholders::_1));
 
         publisher_ = this->create_publisher<std_msgs::msg::Int64>("number_count", 10);
+        ros2_
     }
 
 private:
@@ -20,6 +21,11 @@ private:
         publisher_->publish(new_msg);
     }
 
+    void reset_callback{
+
+    }
+
+    ros2_s
     rclcpp::Subscription<std_msgs::msg::Int64>::SharedPtr subscriber_;
     rclcpp::Publisher<std_msgs::msg::Int64>::SharedPtr publisher_;
     int64_t count_;

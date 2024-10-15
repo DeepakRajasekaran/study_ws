@@ -29,6 +29,8 @@ setup(
             "HardwareStatusPublisher = py_pkg.hardwareTest:main",
             "client_node = py_pkg.client_RectangleArea:main",
             "RectangleArea_server = py_pkg.RectangleArea_server:main",
+            "numberPublisher = py_pkg.numberPublisher",
+            "numberCounter = py_pkg.numberCounter",
         ],
     },
 )

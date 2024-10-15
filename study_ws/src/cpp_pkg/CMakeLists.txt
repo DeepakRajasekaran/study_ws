@@ -49,8 +49,8 @@ install(TARGETS
 #  cpp_node
 #  news_station
 #  radio
-#  NumberPublisher
-#  NumberCounter
+  NumberPublisher
+  NumberCounter
 #  client_sumServer
 #  client_sumServer_noop
 #  sumServer
