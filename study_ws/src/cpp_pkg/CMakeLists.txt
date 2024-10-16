@@ -9,6 +9,7 @@ endif()
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
+find_package(std_srvs REQUIRED)
 find_package(example_interfaces REQUIRED)
 find_package(irobot_interfaces REQUIRED)
 
@@ -25,7 +26,7 @@ add_executable(NumberPublisher src/NumberPublisher.cpp)
 ament_target_dependencies(NumberPublisher rclcpp std_msgs)
 
 add_executable(NumberCounter src/NumberCounter.cpp)
-ament_target_dependencies(NumberCounter rclcpp std_msgs)
+ament_target_dependencies(NumberCounter rclcpp std_msgs std_srvs)
 
 #add_executable(sumServer src/sumServer.cpp)
 #ament_target_dependencies(sumServer rclcpp example_interfaces)

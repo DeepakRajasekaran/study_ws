@@ -22,7 +22,6 @@ class numPub(Node):
         self.get_logger().info('Publishing number :' + str(msg.data))
         self.number_publisher_.publish(msg)
 
-
 def main(args=None):
     rclpy.init(args=args)
     node = numPub() 
