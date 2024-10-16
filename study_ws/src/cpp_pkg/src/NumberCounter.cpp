@@ -37,6 +37,10 @@ private:
             response->message = "counter_resetted...";
             RCLCPP_INFO(this->get_logger(),"%s", response->message.c_str());
         }
+        else{
+            response->success = false;
+            response->message = "counter_not_resetted...";
+        }
     }
 
     rclcpp::Subscription<std_msgs::msg::Int64>::SharedPtr subscriber_;
