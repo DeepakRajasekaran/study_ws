@@ -31,6 +31,8 @@ setup(
        #     "RectangleArea_server = py_pkg.RectangleArea_server:main",
             "numberPublisher = py_pkg.numberPublisher:main",
             "numberCounter = py_pkg.numberCounter:main",
+            "activity004_server = py_pkg.activity004_server:main",
+            "activity004_client = py_pkg.activity004_client:main",
         ],
     },
 )

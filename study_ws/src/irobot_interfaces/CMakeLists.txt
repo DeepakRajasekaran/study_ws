@@ -14,7 +14,9 @@ find_package(rosidl_default_generators REQUIRED)
 
 rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/HardwareStatus.msg"
+  "msg/LEDStates.msg"
   "srv/RectangleParameters.srv"
+  "srv/SetLed.srv"
 )
 
 ament_package()

@@ -42,18 +42,21 @@ class BatteryNode(Node):
 
     def request_(self):
         request_call = SetLed.Request()
-        request_call.input_array = [False] * 4
-        request_call.input_array = self.process_led_states(request_call.input_array, self.battery_percent())
+        self.charge = self.battery_percent()
+        request_call.input_array = [False] * len(request_call.input_array)
+        request_call.input_array = self.process_led_states(request_call.input_array, self.charge)
 
         self.get_logger().info(f'Determined LED States: {request_call.input_array}')
         self.future = self.client_.call_async(request_call)
         self.future.add_done_callback(partial(self.response_callback, request_call))
 
     def response_callback(self, request, future):
+        green = '\033[92m'
+        endc = '\033[0m'
         try:
             response = future.result()
             if response.success:
-                self.get_logger().info('LED Array Updated.')
+                self.get_logger().info(f'{green}LED Array Updated | Battery Percent: {self.charge}%{endc}')
             else:
                 self.get_logger().warn('LED Array Update Failed.')
         except Exception as e:
