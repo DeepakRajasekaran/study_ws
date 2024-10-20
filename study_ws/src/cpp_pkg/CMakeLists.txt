@@ -46,6 +46,12 @@ ament_target_dependencies(findRectangleArea_server rclcpp irobot_interfaces)
 add_executable(client_RectangleParam src/client_RectangleParam.cpp)
 ament_target_dependencies(client_RectangleParam rclcpp irobot_interfaces)
 
+add_executable(activity004_server src/activity004_server.cpp)
+ament_target_dependencies(activity004_server rclcpp irobot_interfaces)
+
+add_executable(activity004_client src/activity004_client.cpp)
+ament_target_dependencies(activity004_client rclcpp irobot_interfaces)
+
 install(TARGETS
 #  cpp_node
 #  news_station
@@ -59,6 +65,8 @@ install(TARGETS
   findRectangleArea_server
   client_RectangleParam
   # Add the executable name here
+  activity004_server
+  activity004_client
   DESTINATION lib/${PROJECT_NAME}
 ) 
 

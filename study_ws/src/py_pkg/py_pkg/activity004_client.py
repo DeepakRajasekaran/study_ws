@@ -13,8 +13,6 @@ class BatteryNode(Node):
         super().__init__("battery_node")
         self.get_logger().info('Client has initiated...')
         self.client_ = self.create_client(SetLed, 'set_led')
-        while not self.client_.wait_for_service(timeout_sec=2.0):
-            self.get_logger().warn('Waiting for Server to start....')
         self.request_timer = self.create_timer(1.0, self.request_)
 
     def battery_percent(self):
@@ -47,6 +45,8 @@ class BatteryNode(Node):
         request_call.input_array = self.process_led_states(request_call.input_array, self.charge)
 
         self.get_logger().info(f'Determined LED States: {request_call.input_array}')
+        if not self.client_.wait_for_service(timeout_sec=2.0):
+            self.get_logger().warn('Waiting for Server to start....')
         self.future = self.client_.call_async(request_call)
         self.future.add_done_callback(partial(self.response_callback, request_call))
 
