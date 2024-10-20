@@ -13,7 +13,35 @@ class BatteryNode(Node):
         super().__init__("battery_node")
         self.get_logger().info('Client has initiated...')
         self.client_ = self.create_client(SetLed, 'set_led')
-        self.request_timer = self.create_timer(1.0, self.request_)
+        self.request_timer = self.create_timer(1.0, self.handler)
+
+    def handler(self):
+        if not self.client_.wait_for_service(timeout_sec=2.0):
+            self.get_logger().warn('Waiting for Server to start....')
+        else:
+            self.request_()
+
+    def request_(self):
+        request_call = SetLed.Request()
+        self.charge = self.battery_percent()
+        request_call.input_array = [False] * len(request_call.input_array)
+        request_call.input_array = self.process_led_states(request_call.input_array, self.charge)
+
+        self.get_logger().info(f'Determined LED States: {request_call.input_array}')
+        self.future = self.client_.call_async(request_call)
+        self.future.add_done_callback(partial(self.response_callback, request_call))
+
+    def response_callback(self, request, future):
+        green = '\033[92m'
+        endc = '\033[0m'
+        try:
+            response = future.result()
+            if response.success:
+                self.get_logger().info(f'{green}LED Array Updated | Battery Percent: {self.charge}%{endc}')
+            else:
+                self.get_logger().warn('LED Array Update Failed.')
+        except Exception as e:
+            self.get_logger().error(f"Service call failed: {e}")
 
     def battery_percent(self):
         return random.randint(1, 100)
@@ -37,30 +65,6 @@ class BatteryNode(Node):
             case x if x >= 95:
                 array = [True] * len(array)
         return array
-
-    def request_(self):
-        request_call = SetLed.Request()
-        self.charge = self.battery_percent()
-        request_call.input_array = [False] * len(request_call.input_array)
-        request_call.input_array = self.process_led_states(request_call.input_array, self.charge)
-
-        self.get_logger().info(f'Determined LED States: {request_call.input_array}')
-        if not self.client_.wait_for_service(timeout_sec=2.0):
-            self.get_logger().warn('Waiting for Server to start....')
-        self.future = self.client_.call_async(request_call)
-        self.future.add_done_callback(partial(self.response_callback, request_call))
-
-    def response_callback(self, request, future):
-        green = '\033[92m'
-        endc = '\033[0m'
-        try:
-            response = future.result()
-            if response.success:
-                self.get_logger().info(f'{green}LED Array Updated | Battery Percent: {self.charge}%{endc}')
-            else:
-                self.get_logger().warn('LED Array Update Failed.')
-        except Exception as e:
-            self.get_logger().error(f"Service call failed: {e}")
 
 def main(args=None):
     rclpy.init(args=args)

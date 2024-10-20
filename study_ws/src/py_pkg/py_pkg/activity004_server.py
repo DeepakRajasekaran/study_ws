@@ -9,14 +9,16 @@ class LED_Panel_Node(Node):
     def __init__(self):
         super().__init__("LED_Panel_Node")
         self.get_logger().info('LED Panel Node Server has initiated...')
+        self.led_states_publisher_ = self.create_publisher(LEDStates, 'led_states', 10)
         self.server_ = self.create_service(SetLed, 'set_led', self.callback_)
 
     def callback_(self, request, response):
         try:
-            led_states = LEDStates()
-            led_states.led_states = request.input_array
+            msg = LEDStates()
+            msg.led_states = request.input_array
+            self.led_states_publisher_.publish(msg)
             response.success = True
-            self.get_logger().info(f'LED States Updated: {led_states.led_states}')
+            self.get_logger().info(f'LED States Updated: {msg.led_states}')
         except Exception as e:
             response.success = False
             self.get_logger().error(f'LED States Update Failed: {e}')
