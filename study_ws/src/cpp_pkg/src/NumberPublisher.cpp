@@ -7,19 +7,19 @@ class NumberPublisher : public rclcpp::Node {
 public:
     NumberPublisher() : Node("number_publisher") {
         publisher_ = this->create_publisher<std_msgs::msg::Int64>("number", 10);
-        while true{
+        while (true){
             try{
                 this->declare_parameter<int>("publishFrequency", 1);
-                float period_ = (1000/this->get_parameter("publishFrequency").get_value<int>());
+                period_ = (1000/this->get_parameter("publishFrequency").as_int());
                 break;
             } catch (const std::exception &e){
                 RCLCPP_WARN(this->get_logger(), "Exception :  %s", e.what());
-                //sleep for 2 sec
+                std::this_thread::sleep_for(std::chrono::seconds(2));  //sleep for 2 sec
             }
         }
 
-        timer_ = this->create_wall_timer(
-            std::chrono::milliseconds(period_), std::bind(&NumberPublisher::publishNumber, this));
+        timer_ = this->create_wall_timer(std::chrono::milliseconds(period_),
+                                         std::bind(&NumberPublisher::publishNumber, this));
     }
 
 private:
@@ -29,7 +29,7 @@ private:
         RCLCPP_INFO(this->get_logger(), "Publishing: '%ld'", message.data);
         publisher_->publish(message);
     }
-    float period_;
+    int period_;
     rclcpp::Publisher<std_msgs::msg::Int64>::SharedPtr publisher_;
     rclcpp::TimerBase::SharedPtr timer_;
 };

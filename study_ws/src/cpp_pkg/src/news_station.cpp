@@ -6,10 +6,17 @@
 class news_station : public rclcpp::Node 
 {
 public:
-    news_station() : Node("news"), robot_name_("chappie :)")
+    news_station() : Node("news")
     {
         publisher_ = this->create_publisher<std_msgs::msg::String>("news", 10);
-        timer_ =  this->create_wall_timer(std::chrono::seconds(1), 
+
+        this->declare_parameter<std::string>("robot_name_", "R2D2");
+        this->declare_parameter<double>("publishFrequency", 1);
+
+        auto robot_name_ = this->get_parameter("robot_name_").as_string();
+        auto delay_ = 1000.0 / this->get_parameter("publishFrequency").get_value<double>();
+
+        timer_ =  this->create_wall_timer(std::chrono::milliseconds(static_cast<int>(delay_)), 
                                          std::bind(&news_station::publishNews, this));
         RCLCPP_INFO(this->get_logger(), "Broadcasting Started...");
     }
@@ -17,7 +24,7 @@ public:
 private:
     void publishNews(){
         auto msg = std_msgs::msg::String();
-        msg.data = "Hello, I'm " + robot_name_ +", This is a Test Broadcast..";
+        msg.data = "Hello, I'm " + robot_name_ +" :), This is a Test Broadcast..";
         publisher_->publish(msg);
     }
     std::string robot_name_;

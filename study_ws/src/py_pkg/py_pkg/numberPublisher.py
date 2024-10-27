@@ -17,6 +17,7 @@ class numPub(Node):
         self.declare_parameter('number_to_publish', 10)
         self.declare_parameter('publishFrequency', 1)
         self.period = 1/self.get_parameter('publishFrequency').value
+        #*********************************************
         self.number_publisher_ = self.create_publisher(Int64, 'number', 10)
         self.timer_callback = self.create_timer(self.period, self.publishNumber)
     

@@ -21,7 +21,7 @@ setup(
     entry_points={
         'console_scripts': [
             "py_node = py_pkg.first_node:main",
-#            "news_station = py_pkg.news_station:main",
+            "news_station = py_pkg.news_station:main",
  #           "radio = py_pkg.radio:main",
   #          "sum_server = py_pkg.sum_server:main",
    #         "addTwoInt_noop = py_pkg.client_sumServer_noop:main",
@@ -33,6 +33,7 @@ setup(
             "numberCounter = py_pkg.numberCounter:main",
             "activity004_server = py_pkg.activity004_server:main",
             "activity004_client = py_pkg.activity004_client:main",
+            "activity005 = py_pkg.activity005:main",
         ],
     },
 )
