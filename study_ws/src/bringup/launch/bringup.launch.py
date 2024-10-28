@@ -13,14 +13,21 @@ def generate_launch_description():
 
     ld = LaunchDescription()
 
+    remap_number_topic=('number', 'G_NUM')
+    remap_counter_topic=('number_count', 'CTR')
+
     n_count = Node(
         package='cpp_pkg',
-        executable='NumberCounter'
+        executable='NumberCounter',
+        name='N_CTR',
+        remappings=[remap_number_topic]
     )
 
     n_pub = Node(
         package='cpp_pkg',
-        executable='NumberPublisher'
+        executable='NumberPublisher',
+        name='N_PUB',
+        remappings=[remap_number_topic, remap_counter_topic]
     )
 
     ld.add_action(n_count)
