@@ -19,8 +19,8 @@ find_package(irobot_interfaces REQUIRED)
 add_executable(news_station src/news_station.cpp)
 ament_target_dependencies(news_station rclcpp std_msgs)
 
-#add_executable(radio src/radio.cpp)
-#ament_target_dependencies(radio rclcpp std_msgs)
+add_executable(radio src/radio.cpp)
+ament_target_dependencies(radio rclcpp std_msgs)
 
 add_executable(NumberPublisher src/NumberPublisher.cpp)
 ament_target_dependencies(NumberPublisher rclcpp std_msgs)
@@ -55,7 +55,7 @@ ament_target_dependencies(activity004_client rclcpp irobot_interfaces)
 install(TARGETS
 #  cpp_node
   news_station
-#  radio
+  radio
   NumberPublisher
   NumberCounter
 #  client_sumServer
