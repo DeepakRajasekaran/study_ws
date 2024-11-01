@@ -1,0 +1,11 @@
+# Ignore build, install, and log directories in all workspaces
+**/build/
+**/install/
+**/log/
+
+# Ignore Dockerfile and any other temporary or config files
+Dockerfile
+install_additional_libraries.sh
+*.swp
+ros2install.sh
+README.md

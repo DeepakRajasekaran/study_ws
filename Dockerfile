@@ -1,47 +1,48 @@
-# Use ROS 2 Humble Desktop as the base image
-FROM ros:humble-desktop
+# Use the ROS2 Humble Desktop image as the base
+FROM osrf/ros:humble-desktop
 
-# Install additional dependencies, including zsh, libmodbus, colcon extensions, and openssh-server
-RUN apt-get update && apt-get install -y \
-    python3-colcon-common-extensions \
-    libmodbus-dev \
+# Set up environment variables for convenience
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Install dependencies for Zsh, Oh My Zsh, and necessary plugins
+RUN apt update && apt install -y \
     zsh \
-    zsh-syntax-highlighting \
-    zsh-autosuggestions \
     curl \
-    openssh-server \
-    && rm -rf /var/lib/apt/lists/*
+    git \
+    && chsh -s $(which zsh)
 
 # Install Oh My Zsh
-RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" || true
 
-# Set zsh as the default shell
-RUN chsh -s /usr/bin/zsh
+# Install Zsh plugins (autosuggestions and syntax highlighting)
+RUN git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions \
+    && git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
-# Configure Oh My Zsh with plugins for syntax highlighting and autosuggestions
-RUN echo "source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ~/.zshrc && \
-    echo "source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh" >> ~/.zshrc && \
-    echo "autoload -U compinit && compinit" >> ~/.zshrc
+# Update the .zshrc to enable plugins
+RUN sed -i 's/plugins=(git)/plugins=(git zsh-autosuggestions zsh-syntax-highlighting)/' ~/.zshrc
 
-# Configure SSH
-RUN mkdir /var/run/sshd && \
-    echo 'root:password' | changeme && \
-    sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config && \
-    echo "PasswordAuthentication yes" >> /etc/ssh/sshd_config && \
-    echo "export VISIBLE=now" >> /etc/profile
+# Set up the workspace directory
+WORKDIR /home/user/humble_ws
 
-# Expose the SSH port
-EXPOSE 22
+# Copy the contents of your local workspace to the Docker container
+COPY . /home/user/humble_ws
 
-# Set the working directory
-WORKDIR /workspace
+# Install ROS dependencies and build the workspace
+RUN . /opt/ros/humble/setup.sh && \
+    rosdep update && \
+    rosdep install --from-paths src --ignore-src -r -y && \
+    colcon build
 
-# Copy the entire humble_ws folder into the container
-COPY . /workspace/humble_ws
+# Source the workspace and switch to Zsh as the default shell
+RUN echo "source /home/user/humble_ws/install/setup.bash" >> ~/.zshrc
 
-# Source ROS 2 setup and build all workspaces within humble_ws
-RUN /bin/bash -c "source /opt/ros/humble/setup.zsh && \
-                  colcon build --base-paths /workspace/humble_ws"
+# Provide a way to add new libraries easily
+# Add a script where users can specify additional libraries
+# COPY install_additional_libraries.sh /home/user/install_additional_libraries.sh
+RUN chmod +x /home/user/install_additional_libraries.sh
 
-# Start SSH and enter zsh shell on container start
-CMD ["/bin/zsh", "-c", "/usr/sbin/sshd && source /opt/ros/humble/setup.zsh && source /workspace/humble_ws/install/setup.zsh && zsh"]
+# Default shell to Zsh
+SHELL ["/bin/zsh", "-c"]
+
+# Start the container with Zsh
+CMD ["zsh"]
