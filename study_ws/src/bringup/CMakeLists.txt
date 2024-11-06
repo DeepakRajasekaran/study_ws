@@ -7,6 +7,11 @@ endif()
 
 # find dependencies
 find_package(ament_cmake REQUIRED)
+
+# FOR LAUNCHING TURTLE_HUNTER PROJECT
+find_package(turtlesim REQUIRED)
+find_package(turtle_hunter REQUIRED)
+
 # uncomment the following section in order to fill in
 # further dependencies manually.
 # find_package(<dependency> REQUIRED)
