@@ -39,7 +39,7 @@ RUN echo "source /home/user/humble_ws/install/setup.bash" >> ~/.zshrc
 # Provide a way to add new libraries easily
 # Add a script where users can specify additional libraries
 # COPY install_additional_libraries.sh /home/user/install_additional_libraries.sh
-RUN chmod +x /home/user/install_additional_libraries.sh
+# RUN chmod +x /home/user/install_additional_libraries.sh
 
 # Default shell to Zsh
 SHELL ["/bin/zsh", "-c"]

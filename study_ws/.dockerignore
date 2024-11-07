@@ -1,7 +1,12 @@
 # Ignore build, install, and log directories in all workspaces
-**/build/
-**/install/
-**/log/
+build/
+install/
+log/
+
+# Temporarily ignoring the bringup and turtle_hunter
+src/bringup/
+src/turtle_hunter/
+
 
 # Ignore Dockerfile and any other temporary or config files
 Dockerfile
