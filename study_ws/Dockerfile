@@ -4,45 +4,45 @@ FROM osrf/ros:humble-desktop
 # Set up environment variables for convenience
 ENV DEBIAN_FRONTEND=noninteractive
 
-# Install dependencies for Zsh, Oh My Zsh, and necessary plugins
+# Install dependencies as root
 RUN apt update && apt install -y \
     zsh \
     curl \
-    git \
-    && chsh -s $(which zsh)
+    git
 
-# Install Oh My Zsh
-RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" || true
+# Create a new user 'dev' without sudo privileges
+RUN useradd -m -s /bin/zsh dev
 
-# Install Zsh plugins (autosuggestions and syntax highlighting)
-RUN git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions \
-    && git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+# Install Oh My Zsh for the 'dev' user
+RUN su - dev -c "sh -c \"$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)\" || true"
 
-# Update the .zshrc to enable plugins
-RUN sed -i 's/plugins=(git)/plugins=(git zsh-autosuggestions zsh-syntax-highlighting)/' ~/.zshrc
+# Install Zsh plugins (autosuggestions and syntax highlighting) for the 'dev' user
+RUN su - dev -c "git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-/home/dev/.oh-my-zsh/custom}/plugins/zsh-autosuggestions" && \
+    su - dev -c "git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-/home/dev/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting"
 
-# Set up the workspace directory
-WORKDIR /home/user/humble_ws
+# Update .zshrc to enable plugins for the 'dev' user
+RUN su - dev -c "sed -i 's/plugins=(git)/plugins=(git zsh-autosuggestions zsh-syntax-highlighting)/' ~/.zshrc"
 
-# Copy the contents of your local workspace to the Docker container
-COPY . /home/user/humble_ws
+# Set up the workspace directory and copy the local contents
+WORKDIR /home/dev/humble_ws
+COPY . /home/dev/humble_ws
 
-# Install ROS dependencies and build the workspace
+# Change ownership of the workspace directory to 'dev'
+RUN chown -R dev:dev /home/dev
+
+# Install ROS dependencies and build the workspace as 'dev'
+USER dev
 RUN . /opt/ros/humble/setup.sh && \
     rosdep update && \
     rosdep install --from-paths src --ignore-src -r -y && \
     colcon build
 
-# Source the workspace and switch to Zsh as the default shell
-RUN echo "source /home/user/humble_ws/install/setup.bash" >> ~/.zshrc
+# Source the workspace in .zshrc for the 'dev' user
+RUN echo "source /home/dev/humble_ws/install/setup.bash" >> /home/dev/.zshrc
 
-# Provide a way to add new libraries easily
-# Add a script where users can specify additional libraries
-# COPY install_additional_libraries.sh /home/user/install_additional_libraries.sh
-# RUN chmod +x /home/user/install_additional_libraries.sh
-
-# Default shell to Zsh
+# Set the default shell to Zsh
 SHELL ["/bin/zsh", "-c"]
 
 # Start the container with Zsh
 CMD ["zsh"]
+
