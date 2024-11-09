@@ -11,6 +11,8 @@ from launch_ros.actions import Node
 
 def generate_launch_description(): 
 
+    ld = LaunchDescription()
+
     remap_number_topic=('number', 'G_NUM')
     remap_counter_topic=('number_count', 'CTR')
 
