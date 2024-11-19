@@ -13,10 +13,12 @@ find_package(rosidl_default_generators REQUIRED)
 # find_package(<dependency> REQUIRED)
 
 rosidl_generate_interfaces(${PROJECT_NAME}
-  "msg/HardwareStatus.msg"
-  "msg/LEDStates.msg"
-  "srv/RectangleParameters.srv"
-  "srv/SetLed.srv"
+  #"msg/HardwareStatus.msg"
+  #"msg/LEDStates.msg"
+  "msg/Turtleinfo.msg"
+  "msg/TurtleArray.msg"
+  #"srv/RectangleParameters.srv"
+  #"srv/SetLed.srv"
 )
 
 ament_package()
