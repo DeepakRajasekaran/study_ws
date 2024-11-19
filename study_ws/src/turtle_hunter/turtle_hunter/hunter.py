@@ -7,7 +7,7 @@ from math import atan2
 
 from turtlesim.msg import Pose
 from geometry_msgs.msg import Twist
-from irobot_interfaces.msg import Turtleinfo
+# from irobot_interfaces.msg import Turtleinfo
 from irobot_interfaces.msg import TurtleArray
 
 class Hunter_Node(Node): 
@@ -15,6 +15,7 @@ class Hunter_Node(Node):
         super().__init__("hunter")
 
         self.pose_ = None
+        self.target= None
 
         self.pose_subscriber_ = self.create_subscription(
             Pose, 'turtle1/pose', self.pose_subscriber_callback, 10)
@@ -22,7 +23,7 @@ class Hunter_Node(Node):
         self.cmd_vel_publisher_ = self.create_publisher(Twist, 'turtle1/cmd_vel', 10)
 
         self.target_subscriber_ = self.create_subscription(
-            TurtleArray, "alive_turtles", 10)
+            TurtleArray, "alive_turtles", self.find_target_pray, 10)
 
         # need to fix the publish_frequency with ros2_Parameters
         self.publish_frequency = 100 # unit Hz
@@ -32,19 +33,13 @@ class Hunter_Node(Node):
     def pose_subscriber_callback(self, msg):
         self.pose_  = msg
 
-    def find_target_pray(self):
-        target_log = TurtleArray()
-        self.target = Turtleinfo()
-        self.target.x = target_log[0].x
-        self.target.y = target_log[0].y
-        self.target.theta = target_log[0].theta
-        self.target.name = target_log[0].name
-        pass
+    def find_target_pray(self, msg):
+        if len(msg.turtles) > 0:
+            self.target = msg.turtles[0]
 
     def hunt_pray_callback(self):
         
-        # first find the position of the turtle using pythogorean theorem
-        if self.pose_ == None:
+        if self.pose_ == None or self.target == None:
             return
 
         dist_x = self.target.x - self.pose_.x
@@ -76,6 +71,7 @@ class Hunter_Node(Node):
             # elif diff < -pi:
             #     diff += 2*pi
             # According to GPT, The above commented shit can be achieved with the following equation 
+            # Execution will be according to BODMAS
             diff = (goal_theta - self.pose_.theta + pi) % (2 * pi) - pi
 
             msg.angular.z = kp_angular * diff
@@ -91,7 +87,6 @@ def main(args=None):
     node = Hunter_Node() 
     rclpy.spin(node)
     rclpy.shutdown()
-
 
 if __name__ == "__main__":
     main()
