@@ -7,8 +7,8 @@ from math import atan2
 
 from turtlesim.msg import Pose
 from geometry_msgs.msg import Twist
-# from irobot_interfaces.msg import Turtleinfo
 from irobot_interfaces.msg import TurtleArray
+from irobot_interfaces.srv import killSwitch
 
 class Hunter_Node(Node): 
     def __init__(self):
