@@ -25,6 +25,8 @@ class Hunter_Node(Node):
         self.target_subscriber_ = self.create_subscription(
             TurtleArray, "alive_turtles", self.find_target_pray, 10)
 
+        self.kill_request_ = self.create_service(KillSwitch, "killer")
+
         # need to fix the publish_frequency with ros2_Parameters
         self.publish_frequency = 100 # unit Hz
         self.timer_period = 1/self.publish_frequency
@@ -46,13 +48,15 @@ class Hunter_Node(Node):
         dist_y = self.target.y - self.pose_.y
 
         # Applying Pythogorean theorem.. (nerds also call it euclidean distance measurement)
+        # if we want we can simplify it even more like the following (which might save 32bits)
+        # distance = sqrt(((self.target.x - self.pose_.x)^2) + ((self.target.y - self.pose_.y)^2))
         distance = sqrt((dist_x * dist_x)+(dist_y * dist_y))
 
         msg = Twist()
 
         # Control Loop using P Controller..
 
-        # Propotional Value for Linear 
+        # Propotional Value for Linear and angular
         # {u(t) = kp * e(t)} | kp = proportional gain, u(t) = control signal, e(t) = error signal
         # for the human understanding multiply the distance the robot has to move with the gain value to achieve velocity
         kp_linear = 2
@@ -79,8 +83,17 @@ class Hunter_Node(Node):
         else:
             msg.linear.x = 0.0
             msg.angular.z = 0.0
+            self.kill_command(self.target.name)
 
         self.cmd_vel_publisher_.publish(msg)
+
+    def kill_command(self, name):
+        request = KillSwitch.Request()
+        request.name = name
+
+        self.future = self.kill_request_.call_async(self.request)
+        self.future.add_done_callback(self./* client_response_callback_name */)
+        
 
 def main(args=None):
     rclpy.init(args=args)

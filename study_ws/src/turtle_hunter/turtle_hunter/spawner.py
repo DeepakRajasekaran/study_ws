@@ -4,8 +4,10 @@ from rclpy.node import Node
 from math import pi
 
 from turtlesim.srv import Spawn
+from turtlesim.srv import Kill
 from irobot_interfaces.msg import Turtleinfo
 from irobot_interfaces.msg import TurtleArray
+from irobot_interfaces.srv import KillSwitch
 
 # Python Specifics
 import random
@@ -19,6 +21,8 @@ class spawner_node(Node):
         self.get_logger().info('Spawner Node has been initiated...')
         self.aliveTurtles_publisher_ = self.create_publisher(TurtleArray, 'alive_turtles', 10)
         self.spawner_ = self.create_client(Spawn, 'spawn')
+        self.killer_ = self.create_client(Kill, 'kill')
+        self.kill_command_ = self.create_client(KillSwitch, 'killer')
         self.turtle_count = 0
         self.alive_turtles = []
         # need to revisit for having common frequency in all nodes using ros2_parameters
@@ -44,22 +48,37 @@ class spawner_node(Node):
         self.turtle_count += 1
         turtle.name = "Pray_" + str(self.turtle_count) # here the pray_ is the prefix..
         future = self.spawner_.call_async(turtle)
-        future.add_done_callback(partial(self.log_turtle, turtle))
+        future.add_done_callback(partial(self.log_born_turtle, turtle))
         
-    def log_turtle(self, request, future):
+    def log_born_turtle(self, request, future):
         # append the data in self.alive_turtles array
         try:
             out = future.result()
             self.get_logger().info(f'Turtle {out.name} born at x: {request.x}, y: {request.y}')
-            alive_turtle = Turtleinfo()
-            alive_turtle.x = request.x
-            alive_turtle.y = request.y
-            alive_turtle.theta = request.theta
-            alive_turtle.name = request.name
-            self.alive_turtles.append(alive_turtle)
+            born_turtle = Turtleinfo()
+            born_turtle.x = request.x
+            born_turtle.y = request.y
+            born_turtle.theta = request.theta
+            born_turtle.name = request.name
+            self.alive_turtles.append(born_turtle)
 
         except Exception as e:
-            self.get_logger().error(f"Turtle died During birth: {e}")        
+            self.get_logger().error(f"Turtle died During birth: {e}")
+
+    def kill_turtle(self):
+        turtle = KillSwitch.Request()
+        future = self.killer_.call_async(turtle)
+        future.add_done_callback(partial(self.log_killed_turtle, turtle))
+        
+    def log_killed_turtle(self, request, future):
+        # append the data in self.alive_turtles array
+        try:
+            turtle_killed = future.result()
+            if turtle_killed:
+                self.get_logger().warn(f"{request} is killed by hunter..")
+                
+        except Exception as e:
+            self.get_logger().error(f"{request} escaped from hunter due to : {e}")        
 
 def main(args=None):
     rclpy.init(args=args)
