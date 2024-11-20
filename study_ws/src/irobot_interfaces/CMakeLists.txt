@@ -17,7 +17,7 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   #"msg/LEDStates.msg"
   "msg/Turtleinfo.msg"
   "msg/TurtleArray.msg"
-  "srv/killSwitch.srv"
+  "srv/KillSwitch.srv"
   #"srv/RectangleParameters.srv"
   #"srv/SetLed.srv"
 )
