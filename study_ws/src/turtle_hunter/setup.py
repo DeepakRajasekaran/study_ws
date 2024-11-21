@@ -20,7 +20,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            "spawner = turtle_hunter.spawner:main",
+            "deity = turtle_hunter.deity:main",
             "hunter = turtle_hunter.hunter:main"
         ],
     },
