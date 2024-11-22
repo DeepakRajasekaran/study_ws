@@ -17,6 +17,7 @@ class Hunter_Node(Node):
         self.target = None
         self.target_distance = None
         self.goal_theta = None
+        self.target_locked = False # By Default Target is not Locked
 
         self.declare_parameter('kill_closest_turtle_first', False)
         self.kill_closest_turtle_first = self.get_parameter('kill_closest_turtle_first').get_parameter_value().bool_value
@@ -35,22 +36,26 @@ class Hunter_Node(Node):
 
     def find_target_pray(self, msg):
         if self.kill_closest_turtle_first:
-            closest_turtle = None
+            closest_turtle = self.target
             closest_turtle_distance = None
-            dist_x = None
-            dist_y = None
 
-            for turtle in msg.turtles:
-                dist_x = turtle.x - self.pose_.x
-                dist_y = turtle.y - self.pose_.y
-                distance = sqrt((dist_x * dist_x) + (dist_y * dist_y))
-                if closest_turtle_distance is None or distance < closest_turtle_distance:
-                    closest_turtle_distance = distance
-                    closest_turtle = turtle
+            if not self.target_locked:
+                for turtle in msg.turtles:
+                    dist_x = turtle.x - self.pose_.x
+                    dist_y = turtle.y - self.pose_.y
+                    distance = sqrt((dist_x * dist_x) + (dist_y * dist_y))
+                    if closest_turtle_distance is None or distance < closest_turtle_distance:
+                        closest_turtle_distance = distance
+                        closest_turtle = turtle
+            else:
+                dist_x = self.target.x - self.pose_.x # getting error over here
+                dist_y = self.target.y - self.pose_.y
+                closest_turtle_distance = sqrt((dist_x * dist_x) + (dist_y * dist_y))
 
             self.target = closest_turtle
             self.target_distance = closest_turtle_distance
-            self.goal_theta = atan2(dist_y, dist_x)
+            self.goal_theta = atan2(dist_y, dist_x) # getting error over here
+            self.target_locked = True
 
         else:
             self.target = msg.turtles[0]
@@ -75,7 +80,6 @@ class Hunter_Node(Node):
             msg.linear.x = 0.0
             msg.angular.z = 0.0
             self.send_kill_request(self.target.name)
-            self.target = None
 
         self.cmd_vel_publisher_.publish(msg)
 
@@ -87,6 +91,13 @@ class Hunter_Node(Node):
         request = KillSwitch.Request()
         request.name = turtle_name
         future = self.kill_request_.call_async(request)
+
+        # Reset target-related data
+        self.target = None
+        self.target_distance = None
+        self.target_locked = False
+        self.goal_theta = None
+        
         future.add_done_callback(self.kill_request_response_callback_)
 
     def kill_request_response_callback_(self, future):

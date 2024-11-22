@@ -16,7 +16,7 @@ class deity_node(Node):
         self.get_logger().info("Deity Node has been initiated...")
 
         self.declare_parameter('spawn_freq', 1.0)
-        self.spawn_frequency_ = self.get_parameter('spawn_freq').value
+        self.spawn_period_ = 1/self.get_parameter('spawn_freq').get_parameter_value().double_value
 
         self.aliveTurtles_publisher_ = self.create_publisher(TurtleArray, "alive_turtles", 10)
 
@@ -28,7 +28,7 @@ class deity_node(Node):
         self.alive_turtles = []
 
         # Timer for spawning turtles at regular intervals
-        self.timer_ = self.create_timer(1.0, self.timer_callback_)
+        self.spawn_timer_ = self.create_timer(self.spawn_period_, self.timer_callback_)
 
     def timer_callback_(self):
         if not self.spawner_.wait_for_service(timeout_sec=1.0):
