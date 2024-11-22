@@ -15,6 +15,9 @@ class deity_node(Node):
         super().__init__("deity")
         self.get_logger().info("Deity Node has been initiated...")
 
+        self.declare_parameter('spawn_freq', 1.0)
+        self.spawn_frequency_ = self.get_parameter('spawn_freq').value
+
         self.aliveTurtles_publisher_ = self.create_publisher(TurtleArray, "alive_turtles", 10)
 
         self.spawner_ = self.create_client(Spawn, "spawn")
