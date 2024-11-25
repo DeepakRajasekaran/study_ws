@@ -9,14 +9,9 @@
 
   <buildtool_depend>ament_cmake</buildtool_depend>
 
-  <exec_depend>cpp_pkg</exec_depend>
-
-  <!-- FOR TURTLE_HUNTER PROJECT -->
+  <!-- FOR TURTLE HUNTER PROJECT -->
   <exec_depend>turtlesim</exec_depend>
   <exec_depend>turtle_hunter</exec_depend>
-  <exec_depend>geometry_msgs<exec_depend>
-  <exec_depend>irobot_interfaces<exec_depend>
-
 
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>
