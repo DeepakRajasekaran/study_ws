@@ -48,13 +48,13 @@ class Hunter_Node(Node):
                         closest_turtle_distance = distance
                         closest_turtle = turtle
             else:
-                dist_x = self.target.x - self.pose_.x # getting error over here
+                dist_x = self.target.x - self.pose_.x 
                 dist_y = self.target.y - self.pose_.y
                 closest_turtle_distance = sqrt((dist_x * dist_x) + (dist_y * dist_y))
 
             self.target = closest_turtle
             self.target_distance = closest_turtle_distance
-            self.goal_theta = atan2(dist_y, dist_x) # getting error over here
+            self.goal_theta = atan2(dist_y, dist_x) 
             self.target_locked = True
 
         else:
