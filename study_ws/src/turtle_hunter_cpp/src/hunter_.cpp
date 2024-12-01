@@ -1,7 +1,9 @@
 #include <rclcpp/rclcpp.hpp>
 #include <cmath>
 
-//IMPORT THE POSE, GEOMETRY_TWIST, 
+#include <irobot_interfaces/msg/turtle_array.hpp>
+#include <irobot_interfaces/msg/kill_switch.hpp>
+
 #include <geometry_msgs/msg/twist.hpp>
 #include <turtlesim/msg/pose.hpp>
 
@@ -17,7 +19,7 @@ public:
     }
 
 private:
-
+    
     
     
     
