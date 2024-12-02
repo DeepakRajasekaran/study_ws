@@ -37,7 +37,7 @@ class Hunter_Node(Node):
     def find_target_pray(self, msg):
         if self.kill_closest_turtle_first:
             closest_turtle = self.target
-            closest_turtle_distance = None
+            closest_turtle_distance = self.target_distance
 
             if not self.target_locked:
                 for turtle in msg.turtles:
@@ -56,6 +56,7 @@ class Hunter_Node(Node):
             self.target_distance = closest_turtle_distance
             self.goal_theta = atan2(dist_y, dist_x) 
             self.target_locked = True
+            self.get_logger().info('\033[92mtarget_locked..\033[0m')
 
         else:
             self.target = msg.turtles[0]
@@ -85,7 +86,7 @@ class Hunter_Node(Node):
 
     def send_kill_request(self, turtle_name):
         if not self.kill_request_.wait_for_service(timeout_sec=1.0):
-            self.get_logger().info("KillSwitch service unavailable. Retrying...")
+            self.get_logger().warn("KillSwitch service unavailable. Retrying...")
             return
 
         request = KillSwitch.Request()
@@ -93,10 +94,12 @@ class Hunter_Node(Node):
         future = self.kill_request_.call_async(request)
 
         # Reset target-related data
-        self.target = None
-        self.target_distance = None
-        self.target_locked = False
-        self.goal_theta = None
+        if self.target_locked:
+            self.target = None
+            self.target_distance = None
+            self.target_locked = False
+            self.goal_theta = None
+            self.get_logger().info('\033[92mtarget_resetted..\033[0m')
         
         future.add_done_callback(self.kill_request_response_callback_)
 
