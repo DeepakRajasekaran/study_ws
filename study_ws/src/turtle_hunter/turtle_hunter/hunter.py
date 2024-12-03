@@ -26,7 +26,7 @@ class Hunter_Node(Node):
 
         self.pose_subscriber_ = self.create_subscription(Pose, "turtle1/pose", self.pose_subscriber_callback, 10)
         self.cmd_vel_publisher_ = self.create_publisher(Twist, "turtle1/cmd_vel", 10)
-        self.target_subscriber_ = self.create_subscription(TurtleArray, "alive_turtles", self.find_target_pray, 10)
+        self.target_subscriber_ = self.create_subscription(TurtleArray, "alive_turtles", self.find_target_pray, 1)
 
         self.kill_request_ = self.create_client(KillSwitch, "killer")
         self.timer_ = self.create_timer(self.hunter_freq, self.hunt_pray_callback)
@@ -67,6 +67,7 @@ class Hunter_Node(Node):
 
     def hunt_pray_callback(self):
         if self.pose_ is None or self.target is None:
+            
             return
 
         msg = Twist()
