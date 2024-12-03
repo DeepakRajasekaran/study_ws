@@ -81,6 +81,10 @@ private:
         }
     }
 
+    bool pose_setted_and_target_locked(){
+        return (self_pose_ && current_target.locked);
+    }
+
 // Callbacks
     void pose_subscriber_callback(const turtlesim::msg::Pose::SharedPtr msg){
         self_pose_ = msg;
@@ -97,9 +101,11 @@ private:
                                                          self_pose_->y, 
                                                          turtle.x, 
                                                          turtle.y);
-
+`
                     // If closest_turtle_distance is unset (0.0) or a closer turtle is found
-                    if (!current_target.info || distance < closest_turtle_distance) {
+                    bool is_new_target_closer = (!closest_turtle || distance < closest_turtle_distance);
+
+                    if (is_new_target_closer) {
                         closest_turtle_distance = distance;
                         closest_turtle = std::make_shared<irobot_interfaces::msg::Turtleinfo>(turtle);
                     }
@@ -127,7 +133,7 @@ private:
         }
         else {
             // TODO: implement what to to when the param kill_closest_turtle_first is flase
-            current_target.info = msg->turtles[0];
+            current_target.info = msg->turtles.begin();
             current_target.distance = calculate_distance(self_pose_->x, 
                                                          self_pose_->y, 
                                                          current_target.info->x, 
@@ -139,32 +145,31 @@ private:
     }
 
     void hunt_pray_callback(){
-        // TODO: Implement hunting behavior
-        if (!self_pose_ || !current_target.locked) {
-            return;
+
+        if pose_setted_and_target_locked() {
+
+            // Define a necessary shit
+            auto twist_msg = geometry_msgs::msg::Twist();
+            double kp_linear = 0.8;
+            double kp_angular = 6.0;
+
+            // Calculate the difference between the current angle and the target angle
+            double angle_diff = std::fmod(current_target.theta - self_pose_->theta + M_PI, 2 * M_PI) - M_PI;
+
+            if (current_target.distance > 0.5) {
+                // Set linear and angular velocities
+                twist_msg.linear.x = kp_linear * current_target.distance; // Proportional control for linear velocity
+                twist_msg.angular.z = kp_angular * angle_diff; // Proportional control for angular velocity
+            } else {
+                twist_msg.linear.x = 0.0;
+                twist_msg.angular.z = 0.0;
+                send_kill_request(current_target.info->name);
+            }
+
+            // Publish the twist message
+            cmd_vel_publisher->publish(twist_msg);
+
         }
-
-        // Define a necessary shit
-        auto twist_msg = geometry_msgs::msg::Twist();
-        double kp_linear = 0.8;
-        double kp_angular = 6.0;
-
-        // Calculate the difference between the current angle and the target angle
-        double angle_diff = std::fmod(current_target.theta - self_pose_->theta + M_PI, 2 * M_PI) - M_PI;
-
-        if (current_target.distance > 0.5) {
-            // Set linear and angular velocities
-            twist_msg.linear.x = kp_linear * current_target.distance; // Proportional control for linear velocity
-            twist_msg.angular.z = kp_angular * angle_diff; // Proportional control for angular velocity
-        } else {
-            twist_msg.linear.x = 0.0;
-            twist_msg.angular.z = 0.0;
-            send_kill_request(current_target.info->name);
-        }
-
-        // Publish the twist message
-        cmd_vel_publisher->publish(twist_msg);
-
     }
 
     void send_kill_request(const std::string &turtle_name){

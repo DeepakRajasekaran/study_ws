@@ -3,6 +3,9 @@
 #include "irobot_interfaces/msg/led_states.hpp"
 #include <cstdlib>
 #include <array>
+#include <thread>
+#include <vector>
+#include <sstream>
 
 using ServiceResponseFuture = rclcpp::Client<irobot_interfaces::srv::SetLed>::SharedFuture;
 
@@ -27,7 +30,6 @@ public:
         }
     }
 
-
 private:
     rclcpp::Client<irobot_interfaces::srv::SetLed>::SharedPtr client_;
     std::vector<std::thread> threads_;
@@ -36,38 +38,44 @@ private:
     std::string endc = "\033[0m";
     short charge = 0;
 
-    void timer_callback(){
+    void timer_callback() {
         if (!client_->service_is_ready()) {
             RCLCPP_WARN(this->get_logger(), "Service 'set_led' not available yet. Retrying...");
+        } else {
+            threads_.emplace_back(std::thread(&BatteryNode::handler, this));
         }
-        else {threads_.emplace_back(std::thread(&BatteryNode::handler, this));}
     }
 
-    void handler(){response(client_request());}
+    void handler() {
+        response(client_request());
+    }
 
-    ServiceResponseFuture client_request(){
-
+    ServiceResponseFuture client_request() {
         auto request = std::make_shared<irobot_interfaces::srv::SetLed::Request>();
         charge = BatteryLevel();
-        request->input_array = process_led_states(request->input_array, charge); // Fixed for std::array<bool, 4>
+        request->input_array = process_led_states(request->input_array, charge);
+
         std::stringstream ss;
-        for (const auto& val : request->input_array) ss << val << " ";
-        RCLCPP_INFO(this->get_logger(), "Determined LED States: %s", ss.str().c_str());
-        try{
-            auto future = client_->async_send_request(request).share(); // Updated: Use .share()
-            return future;
+        for (const auto& val : request->input_array) {
+            ss << val << " ";
         }
-        catch(const std::exception &e){
+        RCLCPP_INFO(this->get_logger(), "Determined LED States: %s", ss.str().c_str());
+
+        try {
+            auto future = client_->async_send_request(request).share();
+            return future;
+        } catch(const std::exception &e) {
             RCLCPP_ERROR(this->get_logger(), "Error occurred during service call: %s", e.what());
-            return ServiceResponseFuture(); // Fixed: Return default-constructed future
+            return ServiceResponseFuture();
         }
     }
 
-    void response(ServiceResponseFuture future){
+    void response(ServiceResponseFuture future) {
         if (!future.valid()) {
             RCLCPP_ERROR(this->get_logger(), "Invalid future object.");
             return;
         }
+
         try {
             auto response = future.get();
             if (response->success) {
@@ -80,28 +88,26 @@ private:
         }
     }
 
-    short int BatteryLevel(){return rand() % 100 + 1;}
+    short int BatteryLevel() {
+        return rand() % 100 + 1;
+    }
 
-    std::array<bool, 4> process_led_states(std::array<bool, 4>& array, short int charge){ // Fixed for std::array
+    std::array<bool, 4> process_led_states(std::array<bool, 4>& array, short int charge) {
         if (charge < 25) {
             std::fill(array.begin(), array.end(), false);
-        } 
-        else if (charge < 50) {
+        } else if (charge < 50) {
             array[0] = true;
             std::fill(array.begin() + 1, array.end(), false);
-        } 
-        else if (charge < 75) {
+        } else if (charge < 75) {
             array[0] = true;
             array[1] = true;
             std::fill(array.begin() + 2, array.end(), false);
-        } 
-        else if (charge > 75 && charge < 95) {
+        } else if (charge > 75 && charge < 95) {
             array[0] = true;
             array[1] = true;
             array[2] = true;
             std::fill(array.begin() + 3, array.end(), false);
-        } 
-        else if (charge >= 95) {
+        } else if (charge >= 95) {
             std::fill(array.begin(), array.end(), true);
         }
 
