@@ -8,7 +8,7 @@
 #include <geometry_msgs/msg/twist.hpp>
 #include <turtlesim/msg/pose.hpp>
 
-//TODO: ADD THE REQUIRED PACKAGES IN CMAKELIST
+// TODO: ADD THE REQUIRED PACKAGES IN CMAKELIST
 
 class Hunter_Node : public rclcpp::Node 
 {
@@ -19,10 +19,10 @@ public:
 
         // parameters
         this->declare_parameter<int>("kill_closest_turtle_first", false);
-        this->kill_closest_turtle_first = this->get_parameter("kill_closest_turtle_first").get_value<int>();
+        kill_closest_turtle_first = this->get_parameter("kill_closest_turtle_first").get_value<int>();
 
         this->declare_parameter<int>("hunter_freq", 1);
-        this->hunter_frequency = this->get_parameter("hunter_freq").get_value<int>();
+        hunter_frequency = this->get_parameter("hunter_freq").get_value<int>();
         
        // Subscribers and publishers
         pose_subscriber = this->create_subscription<turtlesim::msg::Pose>(
@@ -55,24 +55,35 @@ private:
 
     struct Target 
     {
-        bool locked = false;
-        double distance = 0.0;
-        double theta = 0.0;
+        bool locked;
+        double distance;
+        double theta;
         std::shared_ptr<irobot_interfaces::msg::Turtleinfo> info;
+
+        Target() : locked(false), distance(0.0), theta(0.0), info(nullptr) {}
     };
 
-    bool kill_closest_turtle_first = false;
+    bool kill_closest_turtle_first;
     u_int hunter_frequency = 0;
     Target current_target;
 
     std::shared_ptr<turtlesim::msg::Pose> self_pose_ = nullptr;
 
-    void pose_subscriber_callback(const turtlesim::msg::Pose::SharedPtr msg){
-        self_pose_ = msg;
-    }
+// functions
 
     double calculate_distance(double x1, double y1, double x2, double y2){
         return std::sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));
+    }
+
+    void target_reset(){
+        if (current_target.locked) {
+            current_target = Target();
+        }
+    }
+
+// Callbacks
+    void pose_subscriber_callback(const turtlesim::msg::Pose::SharedPtr msg){
+        self_pose_ = msg;
     }
 
     void find_target_pray(const irobot_interfaces::msg::TurtleArray::SharedPtr msg){
@@ -117,24 +128,50 @@ private:
         else {
             // TODO: implement what to to when the param kill_closest_turtle_first is flase
             current_target.info = msg->turtles[0];
-
+            current_target.distance = calculate_distance(self_pose_->x, 
+                                                         self_pose_->y, 
+                                                         current_target.info->x, 
+                                                         current_target.info->y);
+            current_target.theta = std::atan2(current_target.info->y, current_target.info->x);
+            current_target.locked = true;
         }
         
     }
 
     void hunt_pray_callback(){
         // TODO: Implement hunting behavior
+        if (!self_pose_ || !current_target.locked) {
+            return;
+        }
+
+        // Define a necessary shit
+        auto twist_msg = geometry_msgs::msg::Twist();
+        double kp_linear = 0.8;
+        double kp_angular = 6.0;
+
+        // Calculate the difference between the current angle and the target angle
+        double angle_diff = std::fmod(current_target.theta - self_pose_->theta + M_PI, 2 * M_PI) - M_PI;
+
+        if (current_target.distance > 0.5) {
+            // Set linear and angular velocities
+            twist_msg.linear.x = kp_linear * current_target.distance; // Proportional control for linear velocity
+            twist_msg.angular.z = kp_angular * angle_diff; // Proportional control for angular velocity
+        } else {
+            twist_msg.linear.x = 0.0;
+            twist_msg.angular.z = 0.0;
+            send_kill_request(current_target.info->name);
+        }
+
+        // Publish the twist message
+        cmd_vel_publisher->publish(twist_msg);
+
     }
 
-    void send_kill_request(){
+    void send_kill_request(const std::string &turtle_name){
         // TODO: Implement kill request logic
     }
     
-    void target_reset(){
-        if (current_target.locked) {
-            current_target = Target();
-        }
-    }
+
     
     void kill_request_response_callback(){
         // TODO: Implement kill request response logic
