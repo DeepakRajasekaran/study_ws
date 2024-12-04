@@ -67,7 +67,6 @@ class Hunter_Node(Node):
 
     def hunt_pray_callback(self):
         if self.pose_ is None or self.target is None:
-            
             return
 
         msg = Twist()
@@ -88,7 +87,7 @@ class Hunter_Node(Node):
     def send_kill_request(self, turtle_name):
         if not self.kill_request_.wait_for_service(timeout_sec=1.0):
             self.get_logger().warn("KillSwitch service unavailable. Retrying...")
-            return
+            return # this shit wont send kill request properly.., this one should be a while loop or for loop
 
         request = KillSwitch.Request()
         request.name = turtle_name

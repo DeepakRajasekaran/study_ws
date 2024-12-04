@@ -45,30 +45,6 @@ public:
 
 private:
 
-    rclcpp::Subscription<turtlesim::msg::Pose>::SharedPtr pose_subscriber;
-    rclcpp::Subscription<irobot_interfaces::msg::TurtleArray>::SharedPtr target_subscriber;
-    rclcpp::Publisher<geometry_msgs::msg::Twist>::SharedPtr cmd_vel_publisher;
-
-    rclcpp::Client<irobot_interfaces::srv::KillSwitch>::SharedPtr kill_request_;
-
-    rclcpp::TimerBase::SharedPtr timer_;
-
-    struct Target 
-    {
-        bool locked;
-        double distance;
-        double theta;
-        std::shared_ptr<irobot_interfaces::msg::Turtleinfo> info;
-
-        Target() : locked(false), distance(0.0), theta(0.0), info(nullptr) {}
-    };
-
-    bool kill_closest_turtle_first;
-    u_int hunter_frequency = 0;
-    Target current_target;
-
-    std::shared_ptr<turtlesim::msg::Pose> self_pose_ = nullptr;
-
 // functions
 
     double calculate_distance(double x1, double y1, double x2, double y2){
@@ -101,11 +77,11 @@ private:
                                                          self_pose_->y, 
                                                          turtle.x, 
                                                          turtle.y);
-`
-                    // If closest_turtle_distance is unset (0.0) or a closer turtle is found
-                    bool is_new_target_closer = (!closest_turtle || distance < closest_turtle_distance);
 
-                    if (is_new_target_closer) {
+                    // If closest_turtle_distance is unset (0.0) or a closer turtle is found
+                    bool new_turtle_closer = (!closest_turtle || distance < closest_turtle_distance);
+
+                    if (new_turtle_closer) {
                         closest_turtle_distance = distance;
                         closest_turtle = std::make_shared<irobot_interfaces::msg::Turtleinfo>(turtle);
                     }
@@ -133,7 +109,7 @@ private:
         }
         else {
             // TODO: implement what to to when the param kill_closest_turtle_first is flase
-            current_target.info = msg->turtles.begin();
+            current_target.info = std::make_shared<irobot_interfaces::msg::Turtleinfo>(msg->turtles.begin());
             current_target.distance = calculate_distance(self_pose_->x, 
                                                          self_pose_->y, 
                                                          current_target.info->x, 
@@ -146,9 +122,9 @@ private:
 
     void hunt_pray_callback(){
 
-        if pose_setted_and_target_locked() {
+        if (pose_setted_and_target_locked()) {
 
-            // Define a necessary shit
+            // Define necessary shit
             auto twist_msg = geometry_msgs::msg::Twist();
             double kp_linear = 0.8;
             double kp_angular = 6.0;
@@ -163,7 +139,7 @@ private:
             } else {
                 twist_msg.linear.x = 0.0;
                 twist_msg.angular.z = 0.0;
-                send_kill_request(current_target.info->name);
+                Kill_request_thread.push_back(std::thread(&Hunter_Node::send_kill_request, current_target.info->name));
             }
 
             // Publish the twist message
@@ -174,13 +150,62 @@ private:
 
     void send_kill_request(const std::string &turtle_name){
         // TODO: Implement kill request logic
+        // wait for service to get alive
+        while (!kill_request_->wait_for_service(std::chrono::seconds(1))) {
+            if (!rclcpp::ok()) {
+                RCLCPP_ERROR(this->get_logger(), "Interruped while waiting for the server.");
+                return;
+            }
+            RCLCPP_INFO(this->get_logger(), "Server not available, waiting again...");
+        }
+        //create a request object and pass teh name to the element in the request template
+        auto request_ = std::make_shared<irobot_interfaces::srv::KillSwitch::Request>();
+        request_.name = turtle_name;
+        //send kill request and reset the target
+        auto future = kill_request_->async_send_request(
+            request_, std::bind(&Hunter_Node::kill_request_response_callback));  
+    
     }
     
 
     
     void kill_request_response_callback(){
         // TODO: Implement kill request response logic
+        //check the feedback of the service call
+        // if the success:= true than
+        //  rclcpp_info{"turtle successfully killed"}
+        //else:
+        // unable to kill the turtle due to an error
     }
+
+    // Declarations
+
+    rclcpp::Subscription<turtlesim::msg::Pose>::SharedPtr pose_subscriber;
+    rclcpp::Subscription<irobot_interfaces::msg::TurtleArray>::SharedPtr target_subscriber;
+    rclcpp::Publisher<geometry_msgs::msg::Twist>::SharedPtr cmd_vel_publisher;
+
+    rclcpp::Client<irobot_interfaces::srv::KillSwitch>::SharedPtr kill_request_;
+
+    rclcpp::TimerBase::SharedPtr timer_;
+
+    struct Target 
+    {
+        bool locked;
+        double distance;
+        double theta;
+        std::shared_ptr<irobot_interfaces::msg::Turtleinfo> info;
+
+        Target() : locked(false), distance(0.0), theta(0.0), info(nullptr) {}
+    };
+
+    Target current_target;
+
+    bool kill_closest_turtle_first;
+    u_int hunter_frequency = 0;
+
+    std::shared_ptr<turtlesim::msg::Pose> self_pose_ = nullptr;
+    
+    std::vector<std::thread> Kill_request_thread;
 
 };
 
