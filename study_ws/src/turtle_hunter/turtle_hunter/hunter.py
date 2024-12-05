@@ -85,9 +85,12 @@ class Hunter_Node(Node):
         self.cmd_vel_publisher_.publish(msg)
 
     def send_kill_request(self, turtle_name):
-        if not self.kill_request_.wait_for_service(timeout_sec=1.0):
-            self.get_logger().warn("KillSwitch service unavailable. Retrying...")
-            return # this shit wont send kill request properly.., this one should be a while loop or for loop
+        while not self.kill_request_.wait_for_service(timeout_sec=1.0):
+            if not rclpy.ok():
+                self.get_logger().error('Interruped while waiting for the server.')
+                return
+            else:
+                self.get_logger().info('Server not available, waiting again...')
 
         request = KillSwitch.Request()
         request.name = turtle_name
