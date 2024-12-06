@@ -8,7 +8,8 @@
 #include <geometry_msgs/msg/twist.hpp>
 #include <turtlesim/msg/pose.hpp>
 
-// TODO: ADD THE REQUIRED PACKAGES IN CMAKELIST
+/* @todo Work with the namespaces...
+*/
 
 class Hunter_Node : public rclcpp::Node 
 {
@@ -19,14 +20,14 @@ public:
 
         // parameters
         this->declare_parameter<int>("kill_closest_turtle_first", false);
-        kill_closest_turtle_first = this->get_parameter("kill_closest_turtle_first").get_value<int>();
-
         this->declare_parameter<int>("hunter_freq", 1);
-        hunter_frequency = this->get_parameter("hunter_freq").get_value<int>();
+
+        kill_closest_turtle_first = this->get_parameter("kill_closest_turtle_first").get_value<int>();
+        hunter_frequency          = this->get_parameter("hunter_freq").get_value<int>();
         
        // Subscribers and publishers
         pose_subscriber = this->create_subscription<turtlesim::msg::Pose>(
-            "turtle1/pose", 10, std::bind(&Hunter_Node::pose_subscriber_callback, this));
+            "turtle1/pose", 10, std::bind(&Hunter_Node::pose_subscriber_callback, this, std::placeholders::_1));
 
         target_subscriber = this->create_subscription<irobot_interfaces::msg::TurtleArray>(
             "alive_turtles", 10, std::bind(&Hunter_Node::find_target_pray, this, std::placeholders::_1));
@@ -41,6 +42,28 @@ public:
             std::chrono::seconds(this->hunter_frequency),
             std::bind(&Hunter_Node::hunt_pray_callback, this));
         
+    }
+
+/** 
+ *  @brief we have to use destructor to destroy all the threads when the node is exiting
+ *
+ *  @todo Learn about this topic, and understand how shit works...
+ * 
+*/
+
+    // Destructor
+    ~Hunter_Node() 
+    {
+        RCLCPP_INFO(this->get_logger(), "Hunter_Node is shutting down...");
+
+        // Join all threads to ensure clean exit
+        for (auto &thread : Kill_request_thread) {
+            if (thread.joinable()) {
+                thread.join();
+            }
+        }
+
+        RCLCPP_INFO(this->get_logger(), "All threads have been joined. Node shutdown complete.");
     }
 
 private:
@@ -67,57 +90,58 @@ private:
     }
 
     void find_target_pray(const irobot_interfaces::msg::TurtleArray::SharedPtr msg){
-        if (kill_closest_turtle_first){
-            auto closest_turtle = current_target.info;
-            auto closest_turtle_distance = current_target.distance;
+        if(!msg->turtles.empty()) {
+            if (kill_closest_turtle_first){
+                auto closest_turtle          = current_target.info;
+                auto closest_turtle_distance = current_target.distance;
 
-            if (!current_target.locked) {
-                for (const auto& turtle : msg->turtles) {
-                    double distance = calculate_distance(self_pose_->x, 
-                                                         self_pose_->y, 
-                                                         turtle.x, 
-                                                         turtle.y);
+                if (!current_target.locked) {
+                    for (const auto& turtle : msg->turtles) {
+                        double distance = calculate_distance(self_pose_->x, 
+                                                             self_pose_->y, 
+                                                             turtle.x, 
+                                                             turtle.y);
 
-                    // If closest_turtle_distance is unset (0.0) or a closer turtle is found
-                    bool new_turtle_closer = (!closest_turtle || distance < closest_turtle_distance);
+                        // If closest_turtle_distance is unset (0.0) or a closer turtle is found
+                        bool new_turtle_closer = (!closest_turtle || distance < closest_turtle_distance);
 
-                    if (new_turtle_closer) {
-                        closest_turtle_distance = distance;
-                        closest_turtle = std::make_shared<irobot_interfaces::msg::Turtleinfo>(turtle);
+                        if (new_turtle_closer) {
+                            closest_turtle_distance = distance;
+                            closest_turtle          = turtle; 
+                        }
                     }
                 }
-            } 
+                else {
+                    closest_turtle_distance = calculate_distance(self_pose_->x, 
+                                                                 self_pose_->y, 
+                                                                 current_target.info->x, 
+                                                                 current_target.info->y);
+                }
+
+                // Update the target
+                current_target.info     = closest_turtle;
+                current_target.distance = closest_turtle_distance;
+
+                // Compute the goal angle
+                if (closest_turtle) {
+                    double dist_x        = closest_turtle->x - self_pose_->x;
+                    double dist_y        = closest_turtle->y - self_pose_->y;
+                    current_target.theta = std::atan2(dist_y, dist_x);
+                }
+
+                current_target.locked = true;
+            }
+
             else {
-                closest_turtle_distance = calculate_distance(self_pose_->x, 
+                current_target.info     = msg->turtles.begin();
+                current_target.distance = calculate_distance(self_pose_->x, 
                                                              self_pose_->y, 
                                                              current_target.info->x, 
                                                              current_target.info->y);
+                current_target.theta    = std::atan2(current_target.info->y, current_target.info->x);
+                current_target.locked   = true;
             }
-
-            // Update the target
-            current_target.info = closest_turtle;
-            current_target.distance = closest_turtle_distance;
-
-            // Compute the goal angle
-            if (closest_turtle) {
-                double dist_x = closest_turtle->x - self_pose_->x;
-                double dist_y = closest_turtle->y - self_pose_->y;
-                current_target.theta = std::atan2(dist_y, dist_x);
-            }
-
-            current_target.locked = true;
         }
-        else {
-            // TODO: implement what to to when the param kill_closest_turtle_first is flase
-            current_target.info = std::make_shared<irobot_interfaces::msg::Turtleinfo>(msg->turtles.begin());
-            current_target.distance = calculate_distance(self_pose_->x, 
-                                                         self_pose_->y, 
-                                                         current_target.info->x, 
-                                                         current_target.info->y);
-            current_target.theta = std::atan2(current_target.info->y, current_target.info->x);
-            current_target.locked = true;
-        }
-        
     }
 
     void hunt_pray_callback(){
@@ -125,8 +149,8 @@ private:
         if (pose_setted_and_target_locked()) {
 
             // Define necessary shit
-            auto twist_msg = geometry_msgs::msg::Twist();
-            double kp_linear = 0.8;
+            auto twist_msg    = geometry_msgs::msg::Twist();
+            double kp_linear  = 0.8;
             double kp_angular = 6.0;
 
             // Calculate the difference between the current angle and the target angle
@@ -134,48 +158,43 @@ private:
 
             if (current_target.distance > 0.5) {
                 // Set linear and angular velocities
-                twist_msg.linear.x = kp_linear * current_target.distance; // Proportional control for linear velocity
+                twist_msg.linear.x  = kp_linear * current_target.distance; // Proportional control for linear velocity
                 twist_msg.angular.z = kp_angular * angle_diff; // Proportional control for angular velocity
             } else {
-                twist_msg.linear.x = 0.0;
+                twist_msg.linear.x  = 0.0;
                 twist_msg.angular.z = 0.0;
-                Kill_request_thread.push_back(std::thread(&Hunter_Node::send_kill_request, current_target.info->name));
+                Kill_request_thread.push_back(
+                    std::thread(&Hunter_Node::send_kill_request, this, current_target.info->name));
+
             }
 
             // Publish the twist message
             cmd_vel_publisher->publish(twist_msg);
-
         }
     }
 
-    void send_kill_request(const std::string &turtle_name){
-        // TODO: Implement kill request logic
-        // wait for service to get alive
-        while (!kill_request_->wait_for_service(std::chrono::seconds(1))) {
-            if (!rclcpp::ok()) {
-                RCLCPP_ERROR(this->get_logger(), "Interruped while waiting for the server.");
-                return;
-            }
-            RCLCPP_INFO(this->get_logger(), "Server not available, waiting again...");
-        }
-        //create a request object and pass teh name to the element in the request template
-        auto request_ = std::make_shared<irobot_interfaces::srv::KillSwitch::Request>();
-        request_.name = turtle_name;
-        //send kill request and reset the target
-        auto future = kill_request_->async_send_request(
-            request_, std::bind(&Hunter_Node::kill_request_response_callback));  
-    
-    }
-    
+void send_kill_request(const std::string &turtle_name) {
+    auto request_  = std::make_shared<irobot_interfaces::srv::KillSwitch::Request>();
+    request_->name = turtle_name;
 
-    
-    void kill_request_response_callback(){
-        // TODO: Implement kill request response logic
-        //check the feedback of the service call
-        // if the success:= true than
-        //  rclcpp_info{"turtle successfully killed"}
-        //else:
-        // unable to kill the turtle due to an error
+    // Send the request asynchronously
+    auto future = kill_request_->async_send_request(request_);
+
+    try{
+        auto response = future.get();
+
+        if (!response){
+            RCLCPP_WARN(this->get_logger(), "target_turtle_escaped from the hunter");
+        }
+        else{
+            RCLCPP_INFO(this->get_logger(), "%s, has been killed by hunter", turtle_name.c_str());
+        }
+    }
+
+    catch (const std::exception &e)
+        {
+            RCLCPP_ERROR(this->get_logger(), "Service call failed.");
+        }
     }
 
     // Declarations
