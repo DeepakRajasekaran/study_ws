@@ -8,6 +8,9 @@
 #include <geometry_msgs/msg/twist.hpp>
 #include <turtlesim/msg/pose.hpp>
 
+// @brief for testing purpose..
+#include <geometry_msgs/msg/pose2_d.hpp>
+
 /* @todo Work with the namespaces...
 */
 
@@ -21,7 +24,15 @@ public:
         // parameters
         this->declare_parameter<int>("kill_closest_turtle_first", false);
         this->declare_parameter<int>("hunter_freq", 1);
+        this->declare_parameter<bool>("test_mode", 0);
 
+        this->declare_parameter<float>("kp_linear", 1);
+        this->declare_parameter<float>("kp_angular", 1);
+
+        kp_linear                 = this->get_parameter("kp_linear").get_value<float>();
+        kp_angular                = this->get_parameter("kp_angular").get_value<float>();
+
+        test_mode                 = this->get_parameter("test_mode").get_value<bool>();
         kill_closest_turtle_first = this->get_parameter("kill_closest_turtle_first").get_value<int>();
         hunter_frequency          = this->get_parameter("hunter_freq").get_value<int>();
         
@@ -32,6 +43,11 @@ public:
         target_subscriber = this->create_subscription<irobot_interfaces::msg::TurtleArray>(
             "alive_turtles", 10, std::bind(&Hunter_Node::find_target_pray, this, std::placeholders::_1));
 
+        if (test_mode) {
+            test_vertex_subscriber = this->create_subscription<geometry_msgs::msg::Pose2D>(
+                "test_vertex", 10, std::bind(&Hunter_Node::test_vertex_callback, this,  std::placeholders::_1));
+        }
+
         cmd_vel_publisher = this->create_publisher<geometry_msgs::msg::Twist>("turtle1/cmd_vel", 10);
 
         // services
@@ -40,7 +56,7 @@ public:
         // timer_callbacks
         timer_ = this->create_wall_timer(
             std::chrono::seconds(this->hunter_frequency),
-            std::bind(&Hunter_Node::hunt_pray_callback, this));
+            std::bind(&Hunter_Node::hunt, this));
         
     }
 
@@ -84,9 +100,20 @@ private:
         return (self_pose_ && current_target.locked);
     }
 
-// Callbacks
+// Callbacks    
+
+    void hunt(){
+        test_mode ? test_ride() : hunt_pray_callback();
+    }
+
     void pose_subscriber_callback(const turtlesim::msg::Pose::SharedPtr msg){
         self_pose_ = msg;
+    }
+
+    void test_vertex_callback(const geometry_msgs::msg::Pose2D::SharedPtr msg)
+    {   
+        //test_goal = nullptr;
+        test_goal = msg;
     }
 
     void find_target_pray(const irobot_interfaces::msg::TurtleArray::SharedPtr msg){
@@ -107,7 +134,7 @@ private:
 
                         if (new_turtle_closer) {
                             closest_turtle_distance = distance;
-                            closest_turtle          = turtle; 
+                            closest_turtle          = std::make_shared<irobot_interfaces::msg::Turtleinfo>(turtle); 
                         }
                     }
                 }
@@ -133,7 +160,7 @@ private:
             }
 
             else {
-                current_target.info     = msg->turtles.begin();
+                current_target.info     = std::make_shared<irobot_interfaces::msg::Turtleinfo>(*msg->turtles.begin());
                 current_target.distance = calculate_distance(self_pose_->x, 
                                                              self_pose_->y, 
                                                              current_target.info->x, 
@@ -150,8 +177,6 @@ private:
 
             // Define necessary shit
             auto twist_msg    = geometry_msgs::msg::Twist();
-            double kp_linear  = 0.8;
-            double kp_angular = 6.0;
 
             // Calculate the difference between the current angle and the target angle
             double angle_diff = std::fmod(current_target.theta - self_pose_->theta + M_PI, 2 * M_PI) - M_PI;
@@ -163,6 +188,7 @@ private:
             } else {
                 twist_msg.linear.x  = 0.0;
                 twist_msg.angular.z = 0.0;
+                RCLCPP_INFO(this->get_logger(), "reached_target");
                 Kill_request_thread.push_back(
                     std::thread(&Hunter_Node::send_kill_request, this, current_target.info->name));
 
@@ -172,6 +198,48 @@ private:
             cmd_vel_publisher->publish(twist_msg);
         }
     }
+
+void test_ride() {
+
+    // Check if `self_pose_` and `test_goal` are valid
+    if (!self_pose_) {
+        RCLCPP_ERROR(this->get_logger(), "self_pose_ is null. Skipping test_ride.");
+        return;
+    }
+
+    if (!test_goal) {
+        RCLCPP_ERROR(this->get_logger(), "test_goal is null. Skipping test_ride.");
+        return;
+    }
+
+    auto twist_msg = geometry_msgs::msg::Twist();
+
+    // Calculate the difference between the current angle and the target angle
+    double angle_diff = std::fmod(test_goal->theta - self_pose_->theta + M_PI, 2 * M_PI) - M_PI;
+
+    double distance = calculate_distance(self_pose_->x, 
+                                         self_pose_->y, 
+                                         test_goal->x, 
+                                         test_goal->y);
+
+    RCLCPP_INFO(this->get_logger(), "(x1: %.2f, y1: %.2f),\n%*s(x2: %.2f, y2: %.2f)", 
+                                       self_pose_->x, self_pose_->y, 40, "", test_goal->x, test_goal->y);
+    RCLCPP_INFO(this->get_logger(), "Computed_distance = %.2f", distance);
+
+    if (distance > 0.5) {
+        // Set linear and angular velocities
+        twist_msg.linear.x  = kp_linear * distance; // Proportional control for linear velocity
+        twist_msg.angular.z = kp_angular * angle_diff; // Proportional control for angular velocity
+    } else {
+        twist_msg.linear.x  = 0.0;
+        twist_msg.angular.z = 0.0;
+        RCLCPP_INFO(this->get_logger(), "Reached goal.");
+    }
+
+    // Publish the twist message
+    cmd_vel_publisher->publish(twist_msg);
+}
+
 
 void send_kill_request(const std::string &turtle_name) {
     auto request_  = std::make_shared<irobot_interfaces::srv::KillSwitch::Request>();
@@ -199,9 +267,12 @@ void send_kill_request(const std::string &turtle_name) {
 
     // Declarations
 
+    rclcpp::Subscription<geometry_msgs::msg::Pose2D>::SharedPtr test_vertex_subscriber;
+
     rclcpp::Subscription<turtlesim::msg::Pose>::SharedPtr pose_subscriber;
     rclcpp::Subscription<irobot_interfaces::msg::TurtleArray>::SharedPtr target_subscriber;
     rclcpp::Publisher<geometry_msgs::msg::Twist>::SharedPtr cmd_vel_publisher;
+    
 
     rclcpp::Client<irobot_interfaces::srv::KillSwitch>::SharedPtr kill_request_;
 
@@ -219,10 +290,15 @@ void send_kill_request(const std::string &turtle_name) {
 
     Target current_target;
 
+    bool test_mode;
     bool kill_closest_turtle_first;
     u_int hunter_frequency = 0;
 
-    std::shared_ptr<turtlesim::msg::Pose> self_pose_ = nullptr;
+    float kp_linear;
+    float kp_angular;
+
+    std::shared_ptr<turtlesim::msg::Pose> self_pose_      = nullptr;
+    std::shared_ptr<geometry_msgs::msg::Pose2D> test_goal = nullptr;
     
     std::vector<std::thread> Kill_request_thread;
 
