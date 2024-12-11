@@ -24,10 +24,17 @@ ament_target_dependencies(hunter_
                           geometry_msgs
                           turtlesim)
 
+add_executable(deity_ src/deity_.cpp)
+ament_target_dependencies(deity_ 
+                          rclcpp
+                          irobot_interfaces
+                          geometry_msgs
+                          turtlesim)
+
 install(TARGETS
   # add target_executable names..
   hunter_
-
+  deity_
   DESTINATION lib/${PROJECT_NAME}
 )
 
