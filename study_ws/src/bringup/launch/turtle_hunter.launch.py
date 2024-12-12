@@ -10,16 +10,16 @@ def generate_launch_description():
     )
 
     deity_node = Node(
-        package="turtle_hunter",
-        executable="deity",
+        package="turtle_hunter_cpp",
+        executable="deity_",
         parameters=[
             {"spawn_freq": 1.0}
         ]
     )
 
     hunter_node = Node(
-        package="turtle_hunter",
-        executable="hunter",
+        package="turtle_hunter_cpp",
+        executable="hunter_",
         parameters=[
             {"kill_closest_turtle_first": True},
             {"hunter_freq": 80}

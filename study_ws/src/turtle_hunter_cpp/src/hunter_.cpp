@@ -240,11 +240,11 @@ private:
 
     double target_distance_;
     double goal_theta_;
-    bool target_locked_;
-    bool kill_closest_turtle_first_;
+    bool   target_locked_;
+    bool   kill_closest_turtle_first_;
     double kp_linear_;
     double kp_angular_;
-    bool test_mode_;
+    bool   test_mode_;
     double hunter_freq_;
 
     // Mutex for thread safety

@@ -8,6 +8,7 @@
 #include <random>
 #include <cmath>
 #include <functional>
+#include <thread>
 
 class DeityNode : public rclcpp::Node
 {
@@ -28,6 +29,27 @@ public:
         spawn_timer_ = this->create_wall_timer(std::chrono::duration<double>(spawn_period_), std::bind(&DeityNode::timer_callback_, this));
     }
 
+    // Destructor
+
+    ~DeityNode()
+    {
+        for (auto &thread : spawn_thread)
+        {
+            if (thread.joinable())
+            {
+                thread.join();
+            }
+        }
+
+        for (auto &thread : kill_thread)
+        {
+            if (thread.joinable())
+            {
+                thread.join();
+            }
+        }
+    }
+
 private:
     void timer_callback_()
     {
@@ -40,36 +62,73 @@ private:
     }
 
     void spawn_turtle()
-    {
+    {   
+        double xPos = static_cast<float>(rand() % 10 + 1);
+        double yPos = static_cast<float>(rand() % 10 + 1);
+        double theta = static_cast<float>(rand()) / static_cast<float>(RAND_MAX) * 2 * M_PI - M_PI;
+        spawn_thread.emplace_back(std::thread(&DeityNode::spawn_serviceCall, this, xPos, yPos, theta));
+    }
+
+    void spawn_serviceCall(double xPos, double yPos, double theta){
         auto request = std::make_shared<turtlesim::srv::Spawn::Request>();
-        request->x = static_cast<float>(rand() % 10 + 1);
-        request->y = static_cast<float>(rand() % 10 + 1);
-        request->theta = static_cast<float>(rand()) / static_cast<float>(RAND_MAX) * 2 * M_PI - M_PI;
+        request->x = xPos;
+        request->y = yPos;
+        request->theta = theta;
         turtle_count++;
         request->name = "Pray_" + std::to_string(turtle_count);
 
         auto future = spawner_->async_send_request(request);
-        if (rclcpp::spin_until_future_complete(this->get_node_base_interface(), future) == rclcpp::FutureReturnCode::SUCCESS)
+        std::cout << "\033[92mSpawn request sent for turtle: " << request->name << "\033[0m" << std::endl;
+        try
         {
-            log_spawned_turtle(request, future.share());
+            std::cout << "Before future.get()" << std::endl;
+            auto response = future.get();
+            std::cout << "After future.get()" << std::endl;
+            if (!response->name.empty())
+            {
+                log_spawned_turtle(request, response->name);
+                std::cout << "Turtle spawned successfully" << std::endl;
+            }
+            else
+            {
+                RCLCPP_ERROR(this->get_logger(), "Failed to spawn turtle");
+            }
         }
-        else
+        catch (const std::exception &e)
         {
-            RCLCPP_ERROR(this->get_logger(), "Failed to spawn turtle");
+            RCLCPP_ERROR(this->get_logger(), "Exception while spawning turtle: %s", e.what());
         }
     }
 
-    void log_spawned_turtle(std::shared_ptr<turtlesim::srv::Spawn::Request> request, rclcpp::Client<turtlesim::srv::Spawn>::SharedFuture future)
-    {
+    void kill_request(std::string turtle_ID){
+        
+        auto kill_request = std::make_shared<turtlesim::srv::Kill::Request>();
+        kill_request->name = turtle_ID;
+
+        auto future = killer_->async_send_request(kill_request);
+        std::cout << "\033[91mKill request sent for turtle: " << kill_request->name << "\033[0m" << std::endl;
         try
         {
             auto response = future.get();
-            RCLCPP_INFO(this->get_logger(), "Turtle %s born at x: %f, y: %f", response->name.c_str(), request->x, request->y);
+            log_killed_turtle(kill_request->name);
+        }
+        catch (const std::exception &e)
+        {
+            RCLCPP_ERROR(this->get_logger(), "Exception while killing turtle: %s", e.what());
+        }
+    }
+
+    void log_spawned_turtle(std::shared_ptr<turtlesim::srv::Spawn::Request> request, std::string name)
+    {
+        std::cout << "Inside log_spawned_turtle" << std::endl;
+        try
+        {
+            RCLCPP_INFO(this->get_logger(), "Turtle %s born at x: %f, y: %f", name.c_str(), request->x, request->y);
             irobot_interfaces::msg::Turtleinfo born_turtle;
             born_turtle.x = request->x;
             born_turtle.y = request->y;
             born_turtle.theta = request->theta;
-            born_turtle.name = response->name;
+            born_turtle.name = name;
             alive_turtles.push_back(born_turtle);
             publish_alive_turtles();
         }
@@ -93,24 +152,13 @@ private:
             return;
         }
 
-        auto kill_request = std::make_shared<turtlesim::srv::Kill::Request>();
-        kill_request->name = turtle_ID;
-        auto future = killer_->async_send_request(kill_request);
-        if (rclcpp::spin_until_future_complete(this->get_node_base_interface(), future) == rclcpp::FutureReturnCode::SUCCESS)
-        {
-            log_killed_turtle(turtle_ID, future.share());
-        }
-        else
-        {
-            RCLCPP_ERROR(this->get_logger(), "Failed to kill turtle %s", turtle_ID.c_str());
-        }
+        kill_thread.emplace_back(std::thread(&DeityNode::kill_request, this, turtle_ID));
     }
 
-    void log_killed_turtle(const std::string &turtle_ID, rclcpp::Client<turtlesim::srv::Kill>::SharedFuture future)
+    void log_killed_turtle(const std::string &turtle_ID)
     {
         try
         {
-            future.get();
             auto it = std::remove_if(alive_turtles.begin(), alive_turtles.end(), [&turtle_ID](const irobot_interfaces::msg::Turtleinfo &turtle) {
                 return turtle.name == turtle_ID;
             });
@@ -139,6 +187,11 @@ private:
     double spawn_period_;
     int turtle_count;
     std::vector<irobot_interfaces::msg::Turtleinfo> alive_turtles;
+
+    // threads for async service calls..
+    std::vector<std::thread> spawn_thread;
+    std::vector<std::thread> kill_thread;
+
 };
 
 int main(int argc, char **argv)
