@@ -1,0 +1,5 @@
+try all communication with ros by the end of the week and learn the
+communication part of everything from plc, rs232, rs485, modbus-tcp,
+modbus-serial, uart, and everything,,
+
+
