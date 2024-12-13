@@ -5,3 +5,5 @@ dsa_ws/build
 dsa_ws/install
 dsa_ws/log
 .vscode
+test_ws
+
