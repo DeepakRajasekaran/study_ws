@@ -1,0 +1,48 @@
+[0.013s] Invoking command in '/home/lucifer/humble_ws/test_ws/build/modbus_client_cpp': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/lucifer/humble_ws/study_ws/install/turtle_hunter:/opt/ros/humble /usr/bin/cmake /home/lucifer/humble_ws/test_ws/src/modbus_client_cpp -DCMAKE_INSTALL_PREFIX=/home/lucifer/humble_ws/test_ws/install/modbus_client_cpp
+[0.070s] -- The C compiler identification is GNU 11.4.0
+[0.120s] -- The CXX compiler identification is GNU 11.4.0
+[0.127s] -- Detecting C compiler ABI info
+[0.208s] -- Detecting C compiler ABI info - done
+[0.211s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.212s] -- Detecting C compile features
+[0.212s] -- Detecting C compile features - done
+[0.214s] -- Detecting CXX compiler ABI info
+[0.302s] -- Detecting CXX compiler ABI info - done
+[0.306s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.306s] -- Detecting CXX compile features
+[0.307s] -- Detecting CXX compile features - done
+[0.309s] -- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.445s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.536s] -- Found rclcpp: 16.0.11 (/opt/ros/humble/share/rclcpp/cmake)
+[0.569s] -- Found rosidl_generator_c: 3.1.6 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.573s] -- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.581s] -- Found rosidl_generator_cpp: 3.1.6 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.590s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.603s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.639s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.642s] -- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.722s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[0.743s] -- Found FastRTPS: /opt/ros/humble/include  
+[0.775s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.781s] -- Looking for pthread.h
+[0.856s] -- Looking for pthread.h - found
+[0.856s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[0.935s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[0.936s] -- Found Threads: TRUE  
+[0.979s] -- Found PkgConfig: /usr/bin/pkg-config (found version "0.29.2") 
+[0.980s] -- Checking for module 'libmodbus'
+[0.994s] --   Found libmodbus, version 3.1.6
+[1.084s] -- Configuring done
+[1.094s] -- Generating done
+[1.097s] -- Build files have been written to: /home/lucifer/humble_ws/test_ws/build/modbus_client_cpp
+[1.106s] Invoked command in '/home/lucifer/humble_ws/test_ws/build/modbus_client_cpp' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/lucifer/humble_ws/study_ws/install/turtle_hunter:/opt/ros/humble /usr/bin/cmake /home/lucifer/humble_ws/test_ws/src/modbus_client_cpp -DCMAKE_INSTALL_PREFIX=/home/lucifer/humble_ws/test_ws/install/modbus_client_cpp
+[1.107s] Invoking command in '/home/lucifer/humble_ws/test_ws/build/modbus_client_cpp': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/lucifer/humble_ws/study_ws/install/turtle_hunter:/opt/ros/humble /usr/bin/cmake --build /home/lucifer/humble_ws/test_ws/build/modbus_client_cpp -- -j4 -l4
+[1.154s] [35m[1mConsolidate compiler generated dependencies of target modbus_tcp_client[0m
+[1.166s] [ 50%] [32m[1mLinking CXX executable modbus_tcp_client[0m
+[1.212s] /usr/bin/ld: /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o: in function `_start':
+[1.212s] (.text+0x1b): undefined reference to `main'
+[1.213s] collect2: error: ld returned 1 exit status
+[1.216s] gmake[2]: *** [CMakeFiles/modbus_tcp_client.dir/build.make:151: modbus_tcp_client] Error 1
+[1.216s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/modbus_tcp_client.dir/all] Error 2
+[1.216s] gmake: *** [Makefile:146: all] Error 2
+[1.219s] Invoked command in '/home/lucifer/humble_ws/test_ws/build/modbus_client_cpp' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/lucifer/humble_ws/study_ws/install/turtle_hunter:/opt/ros/humble /usr/bin/cmake --build /home/lucifer/humble_ws/test_ws/build/modbus_client_cpp -- -j4 -l4

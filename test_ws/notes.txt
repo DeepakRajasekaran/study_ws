@@ -4,9 +4,16 @@
 
 cpp-netlib - https://cpp-netlib.org/
 
+checkout sockets too
 
 libmodbus - https://libmodbus.org/
+
+serial_communication - ros2serial, 
  
 #python
 
 socket.io - https://docs.python.org/3/library/socket.html
+
+pymodbus - https://pypi.org/project/pymodbus/
+
+serial_communication - pyserial, ros2serial, 

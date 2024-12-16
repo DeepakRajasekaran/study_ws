@@ -1,0 +1,2 @@
+source;share/modbus_client_cpp/environment/ament_prefix_path.sh
+source;share/modbus_client_cpp/environment/path.sh
