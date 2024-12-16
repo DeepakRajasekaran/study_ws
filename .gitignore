@@ -4,6 +4,9 @@ study_ws/log
 dsa_ws/build
 dsa_ws/install
 dsa_ws/log
+test_ws/build
+test_ws/install
+test_ws/log
 .vscode
 
 
