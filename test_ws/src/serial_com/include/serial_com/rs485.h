@@ -12,9 +12,13 @@ class SerialPort {
 public:
     SerialPort(const char* port, int baud_rate);
     ~SerialPort();
+    void writeData(const unsigned char* data, size_t size);
 
 private:
     int serial_port;
+    int baud_rate;
+    std::string port;
+    struct termios tty;
 };
 
 #endif // RS485_H
