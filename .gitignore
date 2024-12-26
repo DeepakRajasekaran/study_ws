@@ -1,12 +1,6 @@
-study_ws/build
-study_ws/install
-study_ws/log
-dsa_ws/build
-dsa_ws/install
-dsa_ws/log
-test_ws/build
-test_ws/install
-test_ws/log
+**/build
+**/install
+**/log
 .vscode
 
 
