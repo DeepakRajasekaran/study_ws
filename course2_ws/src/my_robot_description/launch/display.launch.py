@@ -9,7 +9,7 @@ from launch.substitutions import PathJoinSubstitution
 
 def generate_launch_description():
 
-	urdf_path = os.path.join(get_package_share_path('my_robot_description'), 'urdf', 'udemy_robot.urdf')
+	urdf_path = os.path.join(get_package_share_path('my_robot_description'), 'urdf', 'udemy_robot_urdf.xacro')
 
 	robot_description = ParameterValue(Command(['xacro ', urdf_path]), value_type=str)
 
