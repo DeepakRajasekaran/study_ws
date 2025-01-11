@@ -1,3 +1,13 @@
 <launch>
 <!-- @TODO   -->
+
+    <include file="$(find-pkg-share ros_gz_sim)/launch/gz_sim.launch.py">
+        <arg name="gz_args" value="empty.sdf"/>
+    </include>
+
+    <include file="$(find-pkg-share my_robot_description)/launch/display.launch.xml"/>
+
+    <node pkg="ros_gz_sim" exec="create" args="-topic robot_description" output="screen"/>
+
+
 </launch>
