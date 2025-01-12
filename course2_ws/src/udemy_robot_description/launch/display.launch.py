@@ -9,12 +9,12 @@ from launch.substitutions import PathJoinSubstitution
 
 def generate_launch_description():
 
-	urdf_path = os.path.join(get_package_share_path('my_robot_description'), 'urdf', 'udemy_robot_urdf.xacro')
+	urdf_path = os.path.join(get_package_share_path('udemy_robot_description'), 'urdf', 'udemy_robot_urdf.xacro')
 
 	robot_description = ParameterValue(Command(['xacro ', urdf_path]), value_type=str)
 
 	rviz_config_file = PathJoinSubstitution(
-           [FindPackageShare("my_robot_description"), "rviz", "udemy_robot.rviz"]
+           [FindPackageShare("udemy_robot_description"), "rviz", "udemy_robot.rviz"]
    		)
 
 	robot_state_publisher_node = Node(
