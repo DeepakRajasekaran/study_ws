@@ -1,13 +1,20 @@
 <launch>
 <!-- @TODO   -->
 
+    <let name="gazebo_bridge_config" value="$(find-pkg-share bringup)/config/gazebo_bridge.yaml"/>
+
+    <!-- launches robot_state_publisher and rviz2-->
+    <include file="$(find-pkg-share my_robot_description)/launch/display.launch.xml"/>
+
     <include file="$(find-pkg-share ros_gz_sim)/launch/gz_sim.launch.py">
         <arg name="gz_args" value="empty.sdf"/>
     </include>
 
-    <include file="$(find-pkg-share my_robot_description)/launch/display.launch.xml"/>
-
     <node pkg="ros_gz_sim" exec="create" args="-topic robot_description" output="screen"/>
 
+    <!-- <node pkg="ros_gz_bridge" exec="parameter_bridge" output="screen">
+        <param name="config_file" 
+               value="$(var gazebo_bridge_config)"/>
+    </node> -->
 
 </launch>

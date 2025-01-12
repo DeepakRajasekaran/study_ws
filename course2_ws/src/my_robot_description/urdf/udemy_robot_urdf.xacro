@@ -4,5 +4,6 @@
     <xacro:include filename="common_properties.xacro"/>
     <xacro:include filename="robot_properties.xacro"/>
     <xacro:include filename="robot_representation.xacro"/>
+    <xacro:include filename="udemy_robot_gazebo.xacro"/>
 
 </robot>
