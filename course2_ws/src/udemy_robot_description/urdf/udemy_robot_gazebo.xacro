@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
-<robot xmlns:xacro="http://ros.org/wiki/xacro" name="udemy_robot">
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
 
-    <gazebo reference="caster_wheel_link">
+    <gazebo reference="caster_wheel">
     <!-- friction coefficients -->
-        <mu1 value="0.1" /> 
-        <mu2 value="0.1" />
+        <mu1 value="0.0" /> 
+        <mu2 value="0.0" />
     </gazebo>
 
     <gazebo>

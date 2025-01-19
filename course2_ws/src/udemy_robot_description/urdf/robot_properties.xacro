@@ -1,14 +1,39 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-
+    <!-- Dimensions -->
     <xacro:property name="body_length" value="0.6"/>
     <xacro:property name="body_width" value="0.4"/>
     <xacro:property name="body_height" value="0.2"/>
-    <xacro:property name="wheel_radius" value="${body_height/2.0}"/>
+    <xacro:property name="wheel_radius" value="0.1"/>
     <xacro:property name="wheel_thickness" value="0.05"/>
-    <xacro:property name="caster_radius" value="0.05"/>
+    <xacro:property name="caster_radius" value="${wheel_radius/2.0}"/>
 
+    <!-- Offsets -->
+    <xacro:property name="body_ground_offset_z" 
+                    value="${wheel_radius}"/>
+
+    <xacro:property name="wheel_joint_offset_x" 
+                    value="${-body_length / 4.0}"/>
+
+    <xacro:property name="left_wheel_joint_offset_y" 
+                    value="${-(body_width + wheel_thickness)/ 2.0}"/>
+
+    <xacro:property name="right_wheel_joint_offset_y" 
+                    value="${(body_width + wheel_thickness) / 2.0}"/>
+
+    <xacro:property name="caster_wheel_joint_offset_x" 
+                    value="${body_length / 3.0}"/>
+
+    <xacro:property name="caster_wheel_joint_offset_z" 
+                    value="${-wheel_radius / 2.0}"/>
+
+    <!-- Diff_drive_configs -->
+    <xacro:property name="wheel_separation" 
+                    value="${left_wheel_joint_offset_y + right_wheel_joint_offset_y}"/>
+
+
+    <!-- Properties -->
     <xacro:property name="body_mass" value="5.0"/>
     <xacro:property name="wheel_mass" value="1.0"/>
     <xacro:property name="caster_mass" value="0.5"/>

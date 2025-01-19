@@ -20,6 +20,7 @@
     <!--http://wiki.ros.org/urdf/Tutorials/Adding%20Physical%20and%20Collision%20Properties%20to%20a%20URDF%20Model-->
     <!--https://en.wikipedia.org/wiki/List_of_moments_of_inertia-->
 
+
     <xacro:macro name="box_inertia" params="m l w h xyz rpy">
         <inertial>
             <origin xyz="${xyz}" rpy="${rpy}"/>

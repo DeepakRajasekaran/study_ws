@@ -4,8 +4,8 @@
     <let name="gazebo_bridge_config" 
          value="$(find-pkg-share bringup)/config/gazebo_bridge.yaml"/>
 
-    <!-- launches robot_state_publisher and rviz2-->
-    <!-- <include file="$(find-pkg-share udemy_robot_description)/launch/display.launch.xml"/> -->
+    <let name="world_file" 
+         value="$(find-pkg-share bringup)/worlds/maze.sdf"/>
 
     <let name="urdf_path" 
 	     value="$(find-pkg-share udemy_robot_description)/urdf/udemy_robot_urdf.xacro"/>
@@ -18,7 +18,11 @@
 		       value="$(command 'xacro $(var urdf_path)')"/>
 	</node>
 
-    <include file="$(find-pkg-share ros_gz_sim)/launch/gz_sim.launch.py">
+    <!-- <include file="$(find-pkg-share ros_gz_sim)/launch/gz_sim.launch.py">
+        <arg name="gz_args" value="$(find-pkg-share bringup)/worlds/maze.sdf -r"/>
+    </include> -->
+
+     <include file="$(find-pkg-share ros_gz_sim)/launch/gz_sim.launch.py">
         <arg name="gz_args" value="empty.sdf -r"/>
     </include>
 
@@ -29,6 +33,6 @@
                value="$(var gazebo_bridge_config)"/>
     </node>
 
-    	<node pkg="rviz2" exec="rviz2" args="-d $(var rviz_config_file)" output="screen" />
+    <node pkg="rviz2" exec="rviz2" args="-d $(var rviz_config_file)" output="screen" />
 
 </launch>
