@@ -5,7 +5,7 @@
          value="$(find-pkg-share bringup)/config/gazebo_bridge.yaml"/>
 
     <let name="world_file" 
-         value="$(find-pkg-share bringup)/worlds/maze.sdf"/>
+         value="$(find-pkg-share bringup)/worlds/empty.sdf"/>
 
     <let name="urdf_path" 
 	     value="$(find-pkg-share udemy_robot_description)/urdf/udemy_robot_urdf.xacro"/>
@@ -18,11 +18,8 @@
 		       value="$(command 'xacro $(var urdf_path)')"/>
 	</node>
 
-    <!-- <include file="$(find-pkg-share ros_gz_sim)/launch/gz_sim.launch.py">
-        <arg name="gz_args" value="$(find-pkg-share bringup)/worlds/maze.sdf -r"/>
-    </include> -->
-
-     <include file="$(find-pkg-share ros_gz_sim)/launch/gz_sim.launch.py">
+    <include file="$(find-pkg-share ros_gz_sim)/launch/gz_sim.launch.py">
+        <!-- <arg name="gz_args" value="$(var world_file) -r"/> -->
         <arg name="gz_args" value="empty.sdf -r"/>
     </include>
 
